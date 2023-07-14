@@ -1,0 +1,50 @@
+#nav{
+    background-color: #A7EDE7 ;
+    font-family: 'fraunces', serif;
+}
+#register{
+    width:1000px;
+    margin: 40px auto;
+    background-color: #A7EDE7;
+    padding: 20px;
+}
+
+body{
+    font-family: 'Fraunces', serif;
+    background-color:  #8CC0DE;
+}
+#footer{
+    background-color: #FDBA9A;
+    margin-top: 50px;
+    padding-top: 30px;
+    font-family: 'fraunces', serif;  
+}
+#footer a{
+    text-decoration: none;
+    color: white;
+}
+#foot-left{
+    margin-left: 100px;
+    width: 400px;
+    font-size: 13px;
+}
+#foot-mid{
+    margin-left: 150px;
+    width: 300px;
+    font-size: 13px;
+
+}
+#foot-right{
+    margin-left:100px;
+    width: 300px;
+    font-size: 13px;
+}
+.social{
+    margin-top: 40px;
+}
+.copyright{
+    margin-top: 20px;
+}
+#website{
+    margin-top: 43px;
+}

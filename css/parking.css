@@ -1,0 +1,223 @@
+ body{
+   background-color: #8CC0DE ;
+}
+/* #park{
+
+} */
+.parking-top{
+    background-color: #A7EDE7;
+    margin-left: 90px;
+    padding-bottom: 2px;
+    padding-left: 5px;
+    margin-top: 2px;
+
+}
+.top{
+    margin-top: 30px;
+    background-color: #A7EDE7;
+    font-family: 'Montserrat',serif; 
+}
+.action{
+    padding-top: 10px;
+    background-color: #A7EDE7;
+    font-family: 'Fraunces', serif;
+}
+#nav{
+    background-color: #A7EDE7 ;
+    font-family: 'fraunces', serif;
+}
+#truck{
+    font-family: 'Fraunces', serif;
+    background-color: #A7EDE7;
+    width: 500px;
+    margin-left: 100px;
+    height:250px;
+    margin-top: 30px;
+    border-radius: 10px;
+}
+#car{
+    font-family: 'Fraunces', serif;
+    font-family: 'Fraunces', serif;
+    background-color: #A7EDE7;
+    width: 500px;
+    margin-left: 150px;
+    margin-top: 30px;
+    border-radius: 10px;
+}
+#taxi{
+    font-family: 'Fraunces', serif;
+    background-color: #A7EDE7;
+    margin-left: 100px;
+    width: 500px;
+    height: 250px;
+    margin-top: 30px;
+    border-radius: 10px;
+}
+#coaster{
+    font-family: 'Fraunces', serif;
+    background-color: #A7EDE7;
+    width: 500px;
+    height: 250px;
+    margin-left: 150px;
+    margin-top: 30px;
+    border-radius: 10px;
+}
+#boda{
+    font-family: 'Fraunces', serif;
+    background-color: #A7EDE7;
+    width: 500px;
+    height: 250px;
+    margin-left: 100px;
+    margin-top: 30px;
+    border-radius: 10px;
+}
+#options{
+    font-size: 20px;
+    margin-top: 45px;
+   
+}
+.options-a{
+    color: #fff;
+    text-decoration: none;
+    border: 1px groove;
+    border-radius: 10px;
+    background-color: #344D67;
+   
+}
+#a-right{
+    padding: 13px;
+    margin-left: 0px;
+    padding-right: 110px;
+}
+#a-left{
+    margin-left: 40px;
+    padding: 13px;
+    padding-right: 110px;
+    
+}
+.h4{
+    margin-top: 10px;
+}
+#truck-icon{
+    font-size: 90px;
+    margin-top: 20px;
+}
+#options2{
+    font-size: 20px;
+    margin-top: 15px;  
+}
+#b-right{
+    padding: 13px;
+    margin-left: 0px;
+    padding-right: 110px;
+}
+#b-left{
+    margin-left: 40px;
+    padding: 13px;
+    padding-right: 110px;
+    
+}
+#car-icon{
+    text-align: center;
+    font-size: 90px;
+    margin-top: 5px;
+}
+#options3{
+    font-size: 20px;
+    margin-top: 15px;  
+}
+#c-right{
+    padding: 13px;
+    margin-left: 0px;
+    padding-right: 110px;
+}
+#c-left{
+    margin-left: 40px;
+    padding: 13px;
+    padding-right: 110px;
+    
+}
+#taxi-icon{
+    text-align: center;
+    font-size: 90px;
+    margin-top: 5px;
+}
+#options4{
+    font-size: 20px;
+    margin-top: 15px;  
+}
+#d-right{
+    padding: 13px;
+    margin-left: 0px;
+    padding-right: 110px;
+}
+#d-left{
+    margin-left: 40px;
+    padding: 13px;
+    padding-right: 110px;
+    
+}
+#coaster-icon{
+    text-align: center;
+    font-size: 90px;
+    margin-top: 5px;
+}
+
+#options5{
+    font-size: 20px;
+    margin-top: 45px;
+  
+}
+#e-right{
+    padding: 13px;
+    margin-left: 0px;
+    padding-right: 110px;
+}
+#e-left{
+    margin-left: 40px;
+    padding: 13px;
+    padding-right: 110px;
+    
+}
+#boda-icon{
+    font-size: 90px;
+    margin-top: 20px;
+}
+/* .info{
+    /* color: #fff; 
+} */
+#footer{
+    background-color: #FDBA9A;
+    margin-top: 50px;
+    padding-top: 30px;
+    font-family: 'fraunces', serif;  
+}
+#footer a{
+    text-decoration: none;
+    color: white;
+}
+#foot-left{
+    margin-left: 100px;
+    width: 400px;
+    font-size: 13px;
+}
+#foot-mid{
+    margin-left: 150px;
+    width: 300px;
+    font-size: 13px;
+
+}
+#foot-right{
+    margin-left:100px;
+    width: 300px;
+    font-size: 13px;
+}
+.social{
+    margin-top: 40px;
+}
+.copyright{
+    margin-top: 20px;
+}
+#website{
+    margin-top: 43px;
+}

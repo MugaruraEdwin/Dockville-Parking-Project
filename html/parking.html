@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@100;300;400;700&family=Montserrat:wght@100;500;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/aff02a4ba3.js" crossorigin="anonymous"></script>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="/libs/css/bootstrap.css" />
+    <link rel="stylesheet" href="/css/parking.css">
+    <title>Parking</title>
+</head>
+<body>
+  <div id="nav">
+    <nav class="navbar navbar-expand-lg bg-info-subtle">
+      <div class="container-fluid" >
+        <a class="navbar-brand" href="dashboard.html">Dockville Parking</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="dashboard.html">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Parking
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="parking.html">Pick vehicle type</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Tyre Clinic
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Battery Section
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <div class="parking-top">
+    <h2 class="top" >Parking Unit</h2>
+    <hr>
+    <h4 class="action">Select Action</h4>
+  </div>
+  <div class="conatainer-fluid" id="park">
+    <div class="row">
+      <div class="col-md-6 col-sm-12" id="truck">
+        <div class="container-fluid">
+          <div class="row">
+              <div class="col-sm-6">
+                <h4 class="h4">Trucks</h4>
+                <i class="fa-solid fa-truck" id="truck-icon"></i>
+              </div>
+              <div class="col-sm-12" id="options">
+                <a class="options-a" id="a-right" href="register.html">Register</a>
+                <a class="options-a" id="a-left" href="signout.html">Signout</a>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-12" id="car">
+        <div class="container-fluid">
+          <div class="row">
+              <div class="col-sm-6">
+                <h4 class="h4">Personal Cars</h4>
+                <p class="info">Not above 5 seaters</p>
+                <i class="fa-solid fa-car" id="car-icon"></i>
+              </div>
+              <div class="col-sm-12" id="options2">
+                <a class="options-a" id="b-right" href="register.html">Register</a>
+                <a class="options-a" id="b-left" href="signout.html">Signout</a>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-12" id="taxi">
+        <div class="container-fluid">
+          <div class="row">
+              <div class="col-sm-6">
+                <h4 class="h4">Taxis</h4>
+                <p class="info">Below 14 seaters</p>
+                <i class="fa-solid fa-taxi" id="taxi-icon"></i>
+              </div>
+              <div class="col-sm-12" id="options3">
+                <a class="options-a" id="c-right" href="register.html">Register</a>
+                <a class="options-a" id="c-left" href="signout.html">Signout</a>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-12" id="coaster">
+        <div class="container-fluid">
+          <div class="row">
+              <div class="col-sm-6">
+                <h4 class="h4">Coasters</h4>
+                <p class="info">16 passengers and above</p>
+                <i class="fa-solid fa-bus" id="coaster-icon"></i>
+              </div>
+              <div class="col-sm-12" id="options4">
+                <a class="options-a" id="d-right" href="register.html">Register</a>
+                <a class="options-a" id="d-left" href="signout.html">Signout</a>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-12" id="boda">
+        <div class="container-fluid">
+          <div class="row">
+              <div class="col-sm-6">
+                <h4 class="h4">BodaBodas</h4>
+                <i class="fa-solid fa-motorcycle" id="boda-icon"></i>
+              </div>
+              <div class="col-sm-12" id="options5">
+                <a class="options-a" id="e-right" href="boda-register.html">Register</a>
+                <a class="options-a" id="e-left" href="signout.html">Signout</a>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid" id="footer">
+    <div class="row">
+      <div class="col-md-4 col-sm-12" id="foot-left">
+        <h3>Dockville Parking</h3>
+        <p>Built to offer you that one time parking, clinic and accesories solution. Bluit around Design thinking to offer the greatest features and maintain its standardc inorder to resonate the user needs</p>
+        <p class="social">Facebook   Twitter   Instagram</p>
+      </div>
+      <div  class="col-md-4 col-sm-12" id="foot-mid">
+        <h4>Menu</h4>
+        <a href="">About</a><br>
+        <a href=""> Recent Products </a><br>
+        <a href="">Featured Products</a><br>
+        <a href="">Testimonials</a><br>
+        <a href="">Product Galleries</a><br>
+        <p class="copyright">All rights reserved to IosApps</p>
+      </div>
+      <div  class="col-md-4 col-sm-12" id="foot-right">
+        <h4>Company</h4>
+        <a href="">FAQ</a><br>
+        <a href="">Terms and Conditions</a> <br>
+        <a href="">Privacy and Policies</a><br>
+        <a href="">Support</a><br>
+        <p id="website"><a href="">info@iosapps.com </a</p>
+      </div>
+    </div>
+  </div>
+   
+  <script src="/libs/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

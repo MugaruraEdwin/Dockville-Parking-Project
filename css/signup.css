@@ -1,0 +1,68 @@
+body{
+    background-color: #D8D8D8;
+}
+.container{
+    margin-top: 30px;
+    background-color: #fff;
+    font-family: 'Fraunces', serif;
+    border-radius: 15px;
+}
+.margin{
+    padding: 20px;
+}
+#back-img{
+    background-image:url(/images/customer3.jpeg) ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #A1DD70;
+    font-size: 30px;
+    font-family: 'Fraunces', serif;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius:15px;
+
+    padding-top: 480px;
+}
+.form-width{
+    margin-top: 10px;
+    width: 100%;
+}
+.google{
+    border: 1px solid;
+}
+.account{
+    font-size: 10px;
+    text-align: center;
+    margin-top: 10px;
+}
+#g-1{
+    color: #4285F4;
+}
+#o-1{
+    color: #DB4437;
+}
+#o-2{
+    color: #F4B400;
+}
+#g-2{
+    color: #4285F4;
+}
+#l{
+    color: #0F9D58;
+}
+#e{
+    color: red;
+}
+#smart{
+    color: #fff;
+}
+#para{
+    font-size: 20px;
+    font-weight: 400;
+}
+#para-1{
+    font-size: 15px;
+    font-weight: 100;
+}
+#para-0{
+    font-weight: 700;
+}

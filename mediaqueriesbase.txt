@@ -1,0 +1,209 @@
+@media (min-width:901px) and (max-width:1200px){
+    #home{
+        width: 100%;
+    }
+    #top-head{
+        font-size: 40px !important;
+        padding-left: 150px !important;
+        font-weight: 900 !important ;
+    }
+}
+@media (min-width:701px) and (max-width:900px){
+    #home{
+        width: 99.4%;
+    }
+    #top-head{
+        font-size: 35px !important;
+        font-weight: 700 !important;
+        padding-left: 100px !important;
+        /* width:300px !important; */
+    }
+}
+@media (min-width:481px) and (max-width:700px){
+ 
+    #top-head{
+        font-size: 27px !important;
+        font-weight: 700 !important;
+        padding-left: 100px !important;
+        width:500px !important;
+    }
+}
+@media (max-width:480px){
+   
+    #top-head{
+        font-size: 20px !important;
+        width:350px !important;
+        font-weight: 700 !important;
+        padding-left: 50px !important;
+    }
+}
+
+/* body{
+
+} */
+/* #press{
+    
+} */
+#home{
+    background-image: url(images/park2.jpg);
+    height: 600px;
+    color: white;
+    background-size: cover;
+   
+   
+}
+#top-head{
+    padding-top: 150px;
+    padding-left: 350px;
+    font-size: 60px;
+    font-family: 'Montserrat', serif;
+    font-weight: 700;
+    width: 1200px;
+    
+}
+.nav-top{
+    font-family: 'fraunces', serif;
+}
+#car-icon{
+    margin-top: 40px;
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+#clinic-icon{
+    margin-top: 40px;
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+#battery-icon{
+    margin-top: 40px;
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+/* .mid-part{
+
+} */
+.mid-part p{
+    margin-top: 40px;
+    text-align: center;
+}
+.mid-p{
+    font-size: 45px;
+    font-family: 'fraunces', serif;
+}
+.mid-p2{
+    font-size: 18px;
+    font-family: 'fraunces', serif;
+    font-weight: 300;
+    width:60%;
+    margin-left: 280px;
+}
+#mid-low{
+    margin-top: 30px;
+    padding-left: 30px;
+}
+
+.card1{
+    /* padding-top: 30px; */
+    margin-left: 70px;
+    background-color: #A7EDE7;
+    width:400px;
+    text-align: center;
+    font-family: 'fraunces', serif;
+    font-size: 13px;
+    height:250px;
+}
+.card1 p{
+    margin-top: 20px;
+}
+.card2 p{
+    margin-top: 20px;
+}
+.card3 p{
+    margin-top: 20px;
+}
+.card-h3{
+    font-family: 'fraunces', serif;
+    font-size: 25px;
+}
+.card2{
+    /* padding-top: 30px; */
+    margin-left: 15px;
+    background-color: #9AC5F4;
+    width:400px;
+    text-align: center;
+    font-family: 'fraunces', serif;
+    font-size: 13px;
+    height:250px;
+}
+.card3{
+    /* padding-top: 30px; */
+    width:400px;
+    background-color: #FFEBEB;
+    margin-left: 15px;
+    text-align: center;
+    font-family: 'fraunces', serif;
+    font-size: 13px;
+    height:250px;
+}
+.before-foot{
+    background-color: #E8F6EF;
+    margin-top: 50px;
+    text-align: center;
+    margin-left: 80px;
+    margin-right: 110px;
+}
+.before-foot h2{
+    padding-top: 20px;
+    font-size: 40px;
+    font-family: 'fraunces', serif;
+    width: 450px;
+    margin-left: 400px;
+}
+#btn-sub{
+    margin-top: 15px;
+    margin-bottom: 30px;
+    border-radius: 20px;
+    width: 100px;
+    height:40px;
+}
+.input{
+    font-family: 'fraunces', serif;
+    height:50px;
+    width:200px;
+
+}
+#footer{
+    background-color: #FDBA9A;
+    margin-top: 50px;
+    padding-top: 30px;
+    font-family: 'fraunces', serif;
+    
+}
+#footer a{
+    text-decoration: none;
+}
+#foot-left{
+    margin-left: 100px;
+    width: 400px;
+    font-size: 13px;
+}
+#foot-mid{
+    margin-left: 150px;
+    width: 300px;
+    font-size: 13px;
+
+}
+#foot-right{
+    margin-left:100px;
+    width: 300px;
+    font-size: 13px;
+}
+.social{
+    margin-top: 40px;
+}
+.copyright{
+    margin-top: 20px;
+}
+#website{
+    margin-top: 43px;
+}

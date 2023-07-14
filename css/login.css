@@ -1,0 +1,70 @@
+body{
+    background-color: #DDE6ED;
+}
+.design{
+    list-style-type: none;
+}
+.left{
+    float: right;
+    margin-top: -25px;
+}
+.container{
+    margin-top: 100px;
+    font-family: 'Fraunces', serif;
+}
+.info{
+    background-color: white;
+    padding: 30px;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+}
+.welcome{
+    background-image: url(/images/customer3.jpeg);
+    padding: 30px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    padding-top: 300px;
+    font-weight: 700;
+    color: #A1DD70;
+
+}
+.flex{
+    display: inline-flex;
+}
+.val{
+    margin-left: 10px;
+}
+.password{
+    margin-left: 140px;
+}
+.google{
+    border: 1px solid;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.account{
+    font-size: 10px;
+    text-align: center;
+    margin-top: 10px;
+}
+#g-1{
+    color: #4285F4;
+}
+#o-1{
+    color: #DB4437;
+}
+#o-2{
+    color: #F4B400;
+}
+#g-2{
+    color: #4285F4;
+}
+#l{
+    color: #0F9D58;
+}
+#e{
+    color: red;
+}
+.more{
+    width: 100%;
+}

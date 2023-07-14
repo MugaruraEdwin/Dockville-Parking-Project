@@ -1,0 +1,67 @@
+.clinic-top{
+    background-color: #A7EDE7;
+    margin-left: 90px;
+    padding-bottom: 2px;
+    padding-left: 5px;
+    margin-top: 2px;
+
+}
+.top{
+    margin-top: 30px;
+    background-color: #A7EDE7;
+    font-family: 'Montserrat',serif; 
+}
+.action{
+    padding-top: 10px;
+    background-color: #A7EDE7;
+    font-family: 'Fraunces', serif;
+}
+#nav{
+    background-color: #A7EDE7 ;
+    font-family: 'fraunces', serif;
+}
+#register{
+    width:1000px;
+    margin: 40px auto;
+    background-color: #A7EDE7;
+    padding: 20px;
+}
+
+body{
+    font-family: 'Fraunces', serif;
+    background-color: #8CC0DE;
+}
+#footer{
+    background-color: #FDBA9A;
+    margin-top: 50px;
+    padding-top: 30px;
+    font-family: 'fraunces', serif;  
+}
+#footer a{
+    text-decoration: none;
+}
+#foot-left{
+    margin-left: 100px;
+    width: 400px;
+    font-size: 13px;
+}
+#foot-mid{
+    margin-left: 150px;
+    width: 300px;
+    font-size: 13px;
+
+}
+#foot-right{
+    margin-left:100px;
+    width: 300px;
+    font-size: 13px;
+}
+.social{
+    margin-top: 40px;
+}
+.copyright{
+    margin-top: 20px;
+}
+#website{
+    margin-top: 43px;
+}
