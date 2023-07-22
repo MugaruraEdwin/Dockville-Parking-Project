@@ -9,6 +9,7 @@ const Validate = () =>{
     let parkOption = document.truckregister.park;
     let time = document.truckregister.time;
     let carType = document.truckregister.type;
+   
 
     //Picking the error fields
     let firstNameError = document.getElementById("firstnameerror");
@@ -17,7 +18,8 @@ const Validate = () =>{
     let phoneNumberError = document.getElementById("phonenumbererror");
     let emailError = document.getElementById("emailerror");
     let parkError = document.getElementById("parkerror");
-    let typeError = document.getElementById("typeerror")
+    let typeError = document.getElementById("typeerror");
+ 
 
 
     //Validating name input

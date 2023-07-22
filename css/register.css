@@ -1,32 +1,51 @@
-#nav{
-    background-color: #A7EDE7 ;
+.navbar{
+    background-color: #001C30 !important;
     font-family: 'fraunces', serif;
 }
+.nav-link{
+    color:#fff;
+}
+#change{
+    color:#fff;
+}
+.navbar-brand{
+    color: #fff;
+}
 #register{
-    width:800px;
+    width:680px;
     margin: 40px auto;
-    background-color: #A7EDE7;
+    background-color:#ECF8F9;
     padding: 20px;
+    color: #001C30;
+    border-radius: 10px;
+}
+.h3{
+    color: #64CCC5;
 }
 
 body{
     font-family: 'Fraunces', serif;
-    background-color:  #8CC0DE;
+    background-color: #A7EDE7 ;
 }
 #footer{
-    background-color: #FDBA9A;
+    background-color: #001C30;
     margin-top: 50px;
     padding-top: 30px;
     font-family: 'fraunces', serif;  
+    color: #fff;
 }
 #footer a{
     text-decoration: none;
-    color: white;
+    color:#fff;
+}
+h4{
+    color: #64CCC5;
 }
 #foot-left{
     margin-left: 100px;
     width: 400px;
     font-size: 13px;
+    color: #fff;
 }
 #foot-mid{
     margin-left: 150px;
@@ -47,4 +66,10 @@ body{
 }
 #website{
     margin-top: 43px;
+}
+a:hover{
+    color: #64CCC5 !important;
+}
+#btn-color{
+    background: #64CCC5 ;
 }

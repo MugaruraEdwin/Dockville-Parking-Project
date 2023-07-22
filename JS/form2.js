@@ -13,6 +13,8 @@ const Validate = (event) =>{
     let time = document.truckregister.time;
     let carType = document.truckregister.type;
     let color = document.truckregister.color;
+    let carmodel = document.truckregister.model;
+    let date = document.truckregister.date;
 
     //Picking the error fields
     let firstNameError = document.getElementById("firstnameerror");
@@ -21,8 +23,11 @@ const Validate = (event) =>{
     let phoneNumberError = document.getElementById("phonenumbererror");
     let emailError = document.getElementById("emailerror");
     let parkError = document.getElementById("parkerror");
+    let timeError = document.getElementById("timeerror")
     let typeError = document.getElementById("typeerror")
-    let colorError  = document.getElementById("colorError")
+    let colorError  = document.getElementById("colorerror")
+    let carModelError = document.getElementById("modelerror");
+    let dateError = document.getElementById("dateerror");
 
 
     //Validating name input
@@ -65,7 +70,7 @@ const Validate = (event) =>{
 
 
     if(lastName.value == ""){
-        lastName.style.border = "1px solid red";
+        lastName.style.border = "2px solid red";
         lastNameError.textContent = "Last name is required";
         //styling error
         lastNameError.style = "color: red; font-size:11px; font-family: Helevetica,Arial;";
@@ -80,7 +85,7 @@ const Validate = (event) =>{
     }
 
     if(numberPlate.value == ""){
-        numberPlate.style.border = "1px solid red";
+        numberPlate.style.border = "2px solid red";
         numberPlateError.textContent = "Number Plate is required";
         //styling error
         numberPlateError.style = "color: red; font-size:11px; font-family: Helevetica,Arial;";
@@ -94,6 +99,22 @@ const Validate = (event) =>{
         //focus cursor
         color.focus();
         // return false; // stops form submission until you collect the input before - only for errors
+    }
+
+    if(color.value == ""){
+        color.style.border = "2px solid red";
+        colorError.textContent = "Car color is required";
+        //styling error
+        colorError.style = "color: red; font-size:11px; font-family: Helevetica,Arial;";
+        //focus cursor
+        color.focus();
+        // return false;
+        error++;
+    }else{
+        color.style.border = "2px solid green";
+        colorError.textContent = "";
+        //focus cursor
+        email.focus();
     }
 
     let emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
@@ -110,7 +131,69 @@ const Validate = (event) =>{
         email.style.border = "2px solid green";
         emailError.textContent = "";
         //focus cursor
+        carmodel.focus();
+    }
+
+
+    
+
+    if(carmodel.value == ""){
+        carmodel.style.border = "2px solid red";
+        carModelError.textContent = "Car model is required";
+        //styling error
+        carModelError.style = "color: red; font-size:11px; font-family: Helevetica,Arial;";
+        //focus cursor
+        carmodel.focus();
+        // return false;
+        error++;
+    }
+
+    if(time.value == ""){
+        time.style.border = "2px solid red";
+        timeError.textContent = "Time of arrival is required";
+        //styling error
+        timeError.style = "color: red; font-size:11px; font-family: Helevetica,Arial;";
+        //focus cursor
         time.focus();
+        // return false;
+        error++;
+    }else{
+        time.style.border = "2px solid green";
+        timeError.textContent = "";
+        //focus cursor
+        carType.focus();
+    }
+
+    if(carType.value == ""){
+        carType.style.border = "2px solid red";
+        typeError.textContent = "Car type is required";
+        //styling error
+        typeError.style = "color: red; font-size:11px; font-family: Helevetica,Arial;";
+        //focus cursor
+        carType.focus();
+        // return false;
+        error++;
+    }else{
+        carType.style.border = "2px solid green";
+        typeError.textContent = "";
+        //focus cursor
+        date.focus();
+    }
+    
+    if(date.value == ""){
+        date.style.border = "2px solid red";
+        dateError.textContent = "Select Parking option";
+        //styling error
+        dateError.style = "color: red; font-size:11px; font-family: Helevetica,Arial;";
+        //focus cursor
+        date.focus();
+        // return false;
+        error++;
+    }else{
+        date.style.border = "2px solid green";
+        dateError.textContent = "";
+        //focus cursor
+        phoneNumber.focus();
     }
 
     // Validating phone number
@@ -145,6 +228,7 @@ const Validate = (event) =>{
         // return false;
         error++;
     }
+
     
     const uniqueNumberRegex = /^BB-([0-9]{3})+$/;
     const personalCarRegex = /^PC-([0-9]{3})+$/;

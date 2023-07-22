@@ -69,50 +69,60 @@
         </nav>
     </div>
     <div class="container-fluid" id="register">
-        <h3>SignOut Here</i></h3>
-        <form>
+          <h3>SignOut Here</i></h3>
+          <form action="#" method="POST" id="signout" name="signout" onsubmit="return Validate(event);">
             <div class="form-group">
-                <label for="name"> Name</label>
-                <input type="text" class="form-control" id="name"  placeholder="Enter receiver name">
-              </div>
-              <br>
-            <div class="form-group">
-                <label for="numberplate">Receipt Number</label>
-                <input type="text" class="form-control" id="receiptnumber"  placeholder="Enter Receipt Number">
+              <label for="firstname">First Name</label>
+              <input type="text" class="form-control" id="firstname"  placeholder="Enter driver's first name" name="firstname">
+              <!-- first name error -->
+              <span id="firstnameerror"></span>
             </div>
+            <br>
+            <div class="form-group">
+              <label for="lastname">Last Name</label>
+              <input type="text" class="form-control" id="lastname"  placeholder="Enter driver's last name" name="lastname">
+              <!-- last name error -->
+              <span id="lastnameerror"></span>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="receiptnumber">Receipt Number</label>
+                <input type="text" class="form-control" id="receiptnumber"  placeholder="Enter Receipt Number" name="receiptnumber">
+            </div>
+            <span id="receiptnumbererror"></span>
             <br>
             <div class="form-group">
                 <label for="phonenumber">Phone Number</label>
-                <input type="tel" class="form-control" id="phonenumber">
+                <input type="tel" class="form-control" id="phonenumber" name="phonenumber">
             </div>
+            <span id="phonenumbererror"></span>
             <br>
             <div class="form-group">
               <label for="time">Time </label>
-              <input type="time" class="form-control" id="time">
+              <input type="time" class="form-control" id="time" name="time"> 
             </div>
+            <span id="timeerror"></span>
             <br>
             <div class="form-group">
                 <label for="Date">Date</label>
-                <input type="date" class="form-control" id="date">
+                <input type="date" class="form-control" id="date" name="date">
             </div>
+            <span id="dateerror"></span>
             <br>
-            <select class="form-select" aria-label="Gender">
-                <option selected>Gender</option>
+            <select class="form-select" aria-label="Gender" id="gender" name="gender">
+                <option value="">Gender</option>
                 <option value="male">Male</option>
                 <option value="female">Female</option>
             </select>
+            <span id="gendererror"></span>
             <br>
             <div class="form-group">
                 <label for="nin">NIN Number</label>
-                <input type="text" class="form-control" id="nin"  placeholder="Enter NIN number" required>
+                <input type="text" class="form-control" id="nin"  placeholder="Enter NIN number" name="nin">
             </div>
+            <span id="ninerror"></span>
             <br>
-            <div class="form-check">
-              <input type="checkbox" class="form-check-input" id="agree">
-              <label class="form-check-label" for="agree">Confirm Details</label>
-            </div>
-            <br>
-            <button type="submit" class="btn btn-primary form-width">Sign Out</button>
+            <button type="submit" name="submit" id="submit" class="btn btn-primary form-width">Sign Out</button>
           </form>
     </div>
     <div class="container-fluid" id="footer">
@@ -124,16 +134,12 @@
           </div>
           <div  class="col-md-4 col-sm-12" id="foot-mid">
             <h4>Menu</h4>
-            <a href="">About</a><br>
-            <a href=""> Recent Products </a><br>
-            <a href="">Featured Products</a><br>
             <a href="">Testimonials</a><br>
             <a href="">Product Galleries</a><br>
             <p class="copyright">All rights reserved to IosApps</p>
           </div>
           <div  class="col-md-4 col-sm-12" id="foot-right">
             <h4>Company</h4>
-            <a href="">FAQ</a><br>
             <a href="">Terms and Conditions</a> <br>
             <a href="">Privacy and Policies</a><br>
             <a href="">Support</a><br>
@@ -142,5 +148,6 @@
         </div>
       </div>
     <script src="/libs/js/bootstrap.bundle.min.js"></script>
+    <script src="../JS/signout.js"></script>
 </body>
 </html>
