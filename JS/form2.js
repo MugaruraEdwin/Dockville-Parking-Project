@@ -15,6 +15,7 @@ const Validate = (event) =>{
     let color = document.truckregister.color;
     let carmodel = document.truckregister.model;
     let date = document.truckregister.date;
+    let receiptNumber = document.truckregister.receiptnumber;
 
     //Picking the error fields
     let firstNameError = document.getElementById("firstnameerror");
@@ -28,6 +29,7 @@ const Validate = (event) =>{
     let colorError  = document.getElementById("colorerror")
     let carModelError = document.getElementById("modelerror");
     let dateError = document.getElementById("dateerror");
+    let receiptNumberError = document.getElementById("receiptnumbererror");
 
 
     //Validating name input
@@ -146,6 +148,11 @@ const Validate = (event) =>{
         carmodel.focus();
         // return false;
         error++;
+    }else{
+        carmodel.style.border = "2px solid green";
+        carModelError.textContent = "";
+        //focus cursor
+        time.focus();
     }
 
     if(time.value == ""){
@@ -229,12 +236,70 @@ const Validate = (event) =>{
         error++;
     }
 
-    
     const uniqueNumberRegex = /^BB-([0-9]{3})+$/;
     const personalCarRegex = /^PC-([0-9]{3})+$/;
     const truckCarRegex = /^TC-([0-9]{3})+$/;
     const coasterCarRegex = /^CC-([0-9]{3})+$/;
     const taxiCarRegex = /^TAXI-([0-9]{3})+$/;
+
+    if(receiptNumber.value == ""){
+        receiptNumber.style.border = "2px solid red";
+        receiptNumberError.textContent = "Receipt numeber is required";
+        //styling error
+        receiptNumberError.style = "color: red; font-size:11px; font-family: Helevetica,Arial;";
+        //focus cursor
+        receiptNumber.focus();
+        // return false;
+        error++;
+    }else if(!(receiptNumber.value.match(uniqueNumberRegex) || receiptNumber.value.match(personalCarRegex) || receiptNumber.value.match(truckCarRegex) || receiptNumber.value.match(coasterCarRegex) || receiptNumber.value.match(taxiCarRegex))){
+        receiptNumber.style.border = "2px solid red";
+        receiptNumberError.textContent = "Correct format: TC-000 for trucks / PC-000 for personalcars / TAX1-000 for taxis / CC-000 for coasters / BB-000 for bodas";
+        //styling error
+        receiptNumberError.style = "color: red; font-size:11px; font-family: Helevetica,Arial;";
+        //focus cursor
+        receiptNumber.focus();
+        // return false;
+        error++;
+    }
+    // else if(!(taxiCarRegex.test(receiptNumber.value) && carType.value == "taxi")){
+    //     receiptNumber.style.border = "2px solid red";
+    //     receiptNumberError.textContent = "Enter a receipt number in format TAXI-000";
+    //     //styling error
+    //     receiptNumberError.style = "color: red; font-size:11px; font-family: Helevetica,Arial;";
+    //     //focus cursor
+    //     receiptNumber.focus();
+    //     // return false;
+    //     error++;
+    //  }
+    // }else if(carType.value == "personalcar" ){
+    //     !personalCarRegex.test(receiptNumber.value)
+    //     receiptNumber.style.border = "2px solid red";
+    //     receiptNumberError.textContent = "Enter a receipt number in format PC-000";
+    //     //styling error
+    //     receiptNumberError.style = "color: red; font-size:11px; font-family: Helevetica,Arial;";
+    //     //focus cursor
+    //     receiptNumber.focus();
+    //     // return false;
+    //     error++;
+    // }else if(carType.value == "coaster" ){
+    //     !coasterCarRegex.test(receiptNumber.value)
+    //     receiptNumber.style.border = "2px solid red";
+    //     receiptNumberError.textContent = "Enter a receipt number in format CC-000";
+    //     //styling error
+    //     receiptNumberError.style = "color: red; font-size:11px; font-family: Helevetica,Arial;";
+    //     //focus cursor
+    //     receiptNumber.focus();
+    //     // return false;
+    //     error++;
+    else{
+        receiptNumber.style.border = "2px solid green";
+        receiptNumberError.textContent = "";
+        //focus cursor
+        // parkOption.focus();
+    }
+
+    
+  
     //e.g. BB-001, BB-002
     
 
