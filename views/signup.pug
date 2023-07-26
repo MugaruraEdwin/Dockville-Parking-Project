@@ -1,0 +1,59 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='preconnect' href='https://fonts.googleapis.com')
+  link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
+  link(href='https://fonts.googleapis.com/css2?family=Fraunces:wght@100;400;700&family=Montserrat:wght@100;500;700&display=swap' rel='stylesheet')
+  script(src='https://kit.fontawesome.com/aff02a4ba3.js' crossorigin='anonymous')
+  link(rel='stylesheet' href='/libs/css/bootstrap.css')
+  link(rel='stylesheet' href='/css/signup.css')
+  title Sign Up
+.container
+  .row
+    #back-img.col-sm-8.margin
+      p(is='para-0')
+        span#smart Dockville parking 
+        |  allows you to manage or plan and schedule as we focus on simply delivering quality
+      p#para Mugarura Edwin
+      p#para-1 Development Agency
+    .col-sm-4.margin
+      h2 Create an account
+      p Let&apos;s get started with your 30 day free trial
+      form#signup_form(name='signup_form' action='#' method='POST' onsubmit='return Validate(event)')
+        .form-group
+          label(for='firstname') First Name
+          input#firstname.form-control(type='text' placeholder='Enter First Name' name='firtname')
+        span#firstnameerror
+        .form-group
+          label(for='lastname') Last Name
+          input#lastname.form-control(type='text' placeholder='Enter Last Name' name='lastname')
+        span#lastnameerror
+        .form-group
+          label(for='email') Email address
+          input#email.form-control(type='email' aria-describedby='emailHelp' placeholder='Enter email' name='email')
+          small#emailHelp.form-text.text-muted We&apos;ll never share your email with anyone else.
+        span#emailerror
+        .form-group
+          label(for='password') Password
+          input#password.form-control(type='password' placeholder='Password' name='password')
+        span#passworderror
+        .form-group
+          label(for='confirmpassword') Confirm Password
+          input#confirmpassword.form-control(type='password' placeholder='Retype Password' name='confirmpassword')
+        span#confirmpassworderror
+        button#sumbit.btn.btn-primary.form-width(type='submit' name='submit') Create Account
+        button.btn.btn-light.form-width.google
+          | Sign Up with 
+          span#g-1 G
+          span#o-1 o
+          span#o-2 o
+          span#g-2 g
+          span#l l
+          span#e e
+        p.account
+          | Already have an account? 
+          a(href='login') Login
+script(src='/libs/js/bootstrap.bundle.min.js')
+script(src='../JS/signup.js')

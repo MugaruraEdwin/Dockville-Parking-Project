@@ -1,0 +1,40 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='preconnect' href='https://fonts.googleapis.com')
+  link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
+  link(href='https://fonts.googleapis.com/css2?family=Fraunces:wght@100;300;400;700&family=Montserrat:wght@100;500;700&display=swap' rel='stylesheet')
+  link(rel='stylesheet' href='../css/index.css')
+  link(rel='stylesheet' href='../libs/css/bootstrap.css')
+  title Dockville Night and Day Parking
+
+.design
+  #carouselExampleCaptions.carousel.slide.carousel-fade(data-bs-ride='carousel')
+
+    .carousel-inner
+      .carousel-item.active(data-bs-interval='5000')
+        img#imageheight.d-block.w-100(src='../images/park.jpg' alt='...')
+        .carousel-caption.d-none.d-md-block
+          h2 Dockville Night and Day Parking
+          h3 Parking Services
+          button.login(onclick="location.href='login'") Login
+          button.signup(onclick="location.href='signup'") SignUp
+      .carousel-item(data-bs-interval='5000')
+        img#imageheight_2.d-block.w-100(src='/images/battery.jpg' alt='...')
+        .carousel-caption.d-none.d-md-block
+          h2 Dockville Night and Day Parking
+          h3 Battery Services
+          button.login(onclick="location.href='login'") Login
+          button.signup(onclick="location.href='signup'") SignUp
+      .carousel-item(data-bs-interval='5000')
+        img#imageheight_3.d-block.w-100(src='../images/tyre.jpg' alt='...')
+        .carousel-caption.d-none.d-md-block
+          h2 Dockville Night and Day Parking
+          h3 Car Tyre Clinic
+          button.login(onclick="location.href='login'") Login
+          button.signup(onclick="location.href='signup'") SignUp
+  
+
+script(src='../libs/js/bootstrap.bundle.min.js')
