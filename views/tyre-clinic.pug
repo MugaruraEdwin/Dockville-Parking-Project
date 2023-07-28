@@ -7,25 +7,25 @@ head
   link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
   link(href='https://fonts.googleapis.com/css2?family=Fraunces:wght@100;400;700&family=Montserrat:wght@100;500;700&display=swap' rel='stylesheet')
   script(src='https://kit.fontawesome.com/aff02a4ba3.js' crossorigin='anonymous')
-  link(rel='stylesheet' href='/libs/css/bootstrap.css')
-  link(rel='stylesheet' href='/css/tyre-clinic.css')
+  link(rel='stylesheet' href='../libs/css/bootstrap.css')
+  link(rel='stylesheet' href='../css/tyre-clinic.css')
   title Tyre Clinic
 #nav
   nav.navbar.navbar-expand-lg.bg-info-subtle
     .container-fluid
-      a.navbar-brand(href='dashboard') Dockville Parking
+      a.navbar-brand(href='dashboard.html') Dockville Parking
       button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
         span.navbar-toggler-icon
       #navbarSupportedContent.collapse.navbar-collapse
         ul.navbar-nav.me-auto.mb-2.mb-lg-0
           li.nav-item
-            a.nav-link.active(aria-current='page' href='dashboard') Home
+            a.nav-link.active(aria-current='page' href='dashboard.html') Home
           li.nav-item.dropdown
             a.nav-link.dropdown-toggle(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false')
               | Parking
             ul.dropdown-menu
               li
-                a.dropdown-item(href='parking') Pick vehicle type
+                a.dropdown-item(href='parking.html') Pick vehicle type
               li
                 a.dropdown-item(href='#') Another action
               li
@@ -65,24 +65,38 @@ head
   h4.action Determine Tyre Price
 #register.container-fluid
   h4 Enter details to determine Car Tyre Price 
-  form
+  form#tyreclinicform(name='tyreclinicform' method='POST' action='#' onsubmit='return Validate(event);')
     .form-group
       label(for='name')  TireSize
-      input#tiresize.form-control(type='text' placeholder='Enter car tire size')
+      input#tiresize.form-control(type='text' name='tiresize' placeholder='Enter car tire size')
+    span#tiresizeerror
     br
-    .form-group
-      label(for='carmake') Car Make
-      input#carmake.form-control(type='text' placeholder='Enter car make')
+    select#type.form-select(aria-label='Default select example' name='type')
+      option(value='') Select Automobile make
+      option(value='truck') Truck
+      option(value='taxi') Taxi
+      option(value='personalcar') Personal Car
+      option(value='coaster') Coaster
+      option(value='bodaboda') BodaBoda
+    span#typeerror
     br
-    .form-group
-      label(for='car model') Car Model
-      input#carmodel.form-control(type='text' placeholder='Enter car model')
+    select#carmodel.form-select(aria-label='Default select example' name='carmodel')
+      option(value='') Select Automobile model
+      option(value='hactchback') Hatch Back
+      option(value='sedan') Sedan
+      option(value='suv') SUV
+      option(value='coupe') Coupe
+      option(value='convertible') Convertible
+      option(value='sportscar') Sports Car
+      option(value='minivan') Mini Van
+      option(value='stationwagon') Station Wagon
+      option(value='crossover') Cross Over
+      option(value='pickuptruck') Pickup Truck
+    span#carmodelerror
     br
-    .form-check
-      input#agree.form-check-input(type='checkbox')
-      label.form-check-label(for='agree') Confirm Details
+    span#total
     br
-    button.btn.btn-primary.form-width(type='submit') Print Receipt
+    button#submit.btn.btn-primary.form-width(type='submit' name='submit') Print Receipt
 #footer.container-fluid
   .row
     #foot-left.col-md-4.col-sm-12
@@ -116,4 +130,5 @@ head
       p#website
         a(href='')
           | info@iosapps.com
-script(src='/libs/js/bootstrap.bundle.min.js')
+script(src='../libs/js/bootstrap.bundle.min.js')
+script(src='../JS/tyreclinic.js')

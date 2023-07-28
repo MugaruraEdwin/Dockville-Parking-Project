@@ -4,7 +4,7 @@ const Validate = (event) =>{
 
     let firstName = document.signout.firstname;
     let lastName = document.signout.lastname;
-    let receiptnumber = document.signout.receiptnumber;
+    let receiptNumber = document.signout.receiptnumber;
     let phoneNumber = document.signout.phonenumber;
     let time = document.signout.time;
     let date = document.signout.date;
@@ -72,6 +72,37 @@ const Validate = (event) =>{
         //focus cursor
         receiptnumber.focus();
         // return false; // stops form submission until you collect the input before - only for errors
+    }
+
+    const uniqueNumberRegex = /^BB-([0-9]{3})+$/;
+    const personalCarRegex = /^PC-([0-9]{3})+$/;
+    const truckCarRegex = /^TC-([0-9]{3})+$/;
+    const coasterCarRegex = /^CC-([0-9]{3})+$/;
+    const taxiCarRegex = /^TAXI-([0-9]{3})+$/;
+
+    if(receiptNumber.value == ""){
+        receiptNumber.style.border = "2px solid red";
+        receiptNumberError.textContent = "Receipt numeber is required";
+        //styling error
+        receiptNumberError.style = "color: red; font-size:11px; font-family: Helevetica,Arial;";
+        //focus cursor
+        receiptNumber.focus();
+        // return false;
+        error++;
+    }else if(!(receiptNumber.value.match(uniqueNumberRegex) || receiptNumber.value.match(personalCarRegex) || receiptNumber.value.match(truckCarRegex) || receiptNumber.value.match(coasterCarRegex) || receiptNumber.value.match(taxiCarRegex))){
+        receiptNumber.style.border = "2px solid red";
+        receiptNumberError.textContent = "Correct format: TC-000 for trucks / PC-000 for personalcars / TAX1-000 for taxis / CC-000 for coasters / BB-000 for bodas";
+        //styling error
+        receiptNumberError.style = "color: red; font-size:11px; font-family: Helevetica,Arial;";
+        //focus cursor
+        receiptNumber.focus();
+        // return false;
+        error++;
+    }else{
+        receiptNumber.style.border = "2px solid green";
+        receiptNumberError.textContent = "";
+        //focus cursor
+        phoneNumber.focus();
     }
 
     let phoneRegex = /^\+256\d{9}$/;

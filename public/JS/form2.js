@@ -35,6 +35,8 @@ const Validate = (event) =>{
     //Validating name input
     //Validating for emptiness
 
+    let nameRegex = /^[A-Z][a-zA-Z]*$/;
+
     if(firstName.value == ""){
         firstName.style.border = "2px solid red";
         firstNameError.textContent = "First name is required";
@@ -62,6 +64,15 @@ const Validate = (event) =>{
         firstName.focus();
         // return false;
         error++;
+    }else if(!nameRegex.test(firstName.value)){
+        firstName.style.border = "2px solid red";
+        firstNameError.textContent = "First name must start with a capital letter and only include letters i.e. Yukon ";
+        //styling error
+        firstNameError.style = "color: red; font-size:11px; font-family: Helevetica,Arial;";
+        //focus cursor
+        firstName.focus();
+        // return false;
+        error++;
     }else{
         firstName.style.border = "2px solid green";
         firstNameError.textContent = "";
@@ -78,6 +89,33 @@ const Validate = (event) =>{
         lastNameError.style = "color: red; font-size:11px; font-family: Helevetica,Arial;";
         //focus cursor
         lastName.focus();
+    }else if(lastName.value.length < 2){
+        lastName.style.border = "2px solid red";
+        lastNameError.textContent = "Last name must be atleast 2 characters";
+        //styling error
+        lastNameError.style = "color: red; font-size:11px; font-family: Helevetica,Arial;";
+        //focus cursor
+        lastName.focus();
+        // return false;
+        error++;
+    }else if(lastName.value.length > 15){
+        lastName.style.border = "2px solid red";
+        lastNameError.textContent = "Last name must be less than or equal to 15";
+        //styling error
+        lastNameError.style = "color: red; font-size:11px; font-family: Helevetica,Arial;";
+        //focus cursor
+        lastName.focus();
+        // return false;
+        error++;
+    }else if(!nameRegex.test(lastName.value)){
+        lastName.style.border = "2px solid red";
+        lastNameError.textContent = "Last name must start with a capital letter and only include letters i.e. Yukon ";
+        //styling error
+        lastNameError.style = "color: red; font-size:11px; font-family: Helevetica,Arial;";
+        //focus cursor
+        lastName.focus();
+        // return false;
+        error++;
     }else{
         lastName.style.border = "2px solid green";
         lastNameError.textContent = "";
@@ -86,9 +124,28 @@ const Validate = (event) =>{
         // return false; // stops form submission until you collect the input before - only for errors
     }
 
+    let numberPlateRegex = /^(UA|UB)[A-Z][A-Z0-9]{0,4}[A-Z]$/;
     if(numberPlate.value == ""){
         numberPlate.style.border = "2px solid red";
         numberPlateError.textContent = "Number Plate is required";
+        //styling error
+        numberPlateError.style = "color: red; font-size:11px; font-family: Helevetica,Arial;";
+        //focus cursor
+        numberPlate.focus();
+        // return false;
+        error++;
+    }else if(numberPlate.value.length > 7){
+        numberPlate.style.border = "2px solid red";
+        numberPlateError.textContent = "Enter a number plate with 7 or less characters";
+        //styling error
+        numberPlateError.style = "color: red; font-size:11px; font-family: Helevetica,Arial;";
+        //focus cursor
+        numberPlate.focus();
+        // return false;
+        error++;
+    }else if(!numberPlateRegex.test(numberPlate.value)){
+        numberPlate.style.border = "2px solid red";
+        numberPlateError.textContent = "Enter a number plate that is valid i.e. UBA001A, UAA002E";
         //styling error
         numberPlateError.style = "color: red; font-size:11px; font-family: Helevetica,Arial;";
         //focus cursor

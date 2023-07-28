@@ -8,8 +8,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@100;400;700&family=Montserrat:wght@100;500;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/aff02a4ba3.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/libs/css/bootstrap.css">
-    <link rel="stylesheet" href="/css/tyre-clinic.css">
+    <link rel="stylesheet" href="../public/libs/css/bootstrap.css">
+    <link rel="stylesheet" href="../public/css/tyre-clinic.css">
     <title>Tyre Clinic</title>
 </head>
 <body>
@@ -59,7 +59,7 @@
                   </ul>
                 </li>
               </ul>
-              <form class="d-flex" role="search">
+              <form class="d-flex" role="search" >
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">Search</button>
               </form>
@@ -74,28 +74,41 @@
       </div>
       <div id="register" class="container-fluid"> 
         <h4>Enter details to determine Car Tyre Price </h4>
-        <form>
+        <form name="tyreclinicform" id="tyreclinicform" method="POST" action="#" onsubmit="return Validate(event);">
             <div class="form-group">
                 <label for="name"> TireSize</label>
-                <input type="text" class="form-control" id="tiresize"  placeholder="Enter car tire size">
+                <input type="text" class="form-control" id="tiresize"  name="tiresize" placeholder="Enter car tire size">
               </div>
+              <span id="tiresizeerror"></span>
               <br>
-            <div class="form-group">
-                <label for="carmake">Car Make</label>
-                <input type="text" class="form-control" id="carmake"  placeholder="Enter car make">
-            </div>
+              <select class="form-select" aria-label="Default select example" name="type" id="type">
+                <option value="" >Select Automobile make</option>
+                <option value="truck">Truck</option>
+                <option value="taxi">Taxi</option>
+                <option value="personalcar">Personal Car</option>
+                <option value="coaster">Coaster</option>
+                <option value="bodaboda">BodaBoda</option>
+              </select>
+              <span id="typeerror"></span>
+              <br>
+              <select class="form-select" aria-label="Default select example" name="carmodel" id="carmodel">
+                <option value="" >Select Automobile model</option>
+                <option value="hactchback">Hatch Back</option>
+                <option value="sedan">Sedan</option>
+                <option value="suv">SUV</option>
+                <option value="coupe">Coupe</option>
+                <option value="convertible">Convertible</option>
+                <option value="sportscar">Sports Car</option>
+                <option value="minivan">Mini Van</option>
+                <option value="stationwagon">Station Wagon</option>
+                <option value="crossover">Cross Over</option>
+                <option value="pickuptruck">Pickup Truck</option>
+              </select>
+              <span id="carmodelerror"></span>
+              <br>
+            <span id="total"></span>
             <br>
-            <div class="form-group">
-                <label for="car model">Car Model</label>
-                <input type="text" class="form-control" id="carmodel"  placeholder="Enter car model">
-            </div>
-            <br>
-            <div class="form-check">
-              <input type="checkbox" class="form-check-input" id="agree">
-              <label class="form-check-label" for="agree">Confirm Details</label>
-            </div>
-            <br>
-            <button type="submit" class="btn btn-primary form-width">Print Receipt</button>
+            <button type="submit" name="submit" id="submit" class="btn btn-primary form-width">Print Receipt</button>
           </form>
       </div>
       <div class="container-fluid" id="footer">
@@ -124,6 +137,7 @@
           </div>
         </div>
       </div>
-    <script src="/libs/js/bootstrap.bundle.min.js"></script>
+    <script src="../public/libs/js/bootstrap.bundle.min.js"></script>
+    <script src="../public/JS/tyreclinic.js"></script>
 </body>
 </html>
