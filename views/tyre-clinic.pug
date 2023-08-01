@@ -10,125 +10,141 @@ head
   link(rel='stylesheet' href='../libs/css/bootstrap.css')
   link(rel='stylesheet' href='../css/tyre-clinic.css')
   title Tyre Clinic
-#nav
-  nav.navbar.navbar-expand-lg.bg-info-subtle
-    .container-fluid
-      a.navbar-brand(href='dashboard.html') Dockville Parking
-      button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
-        span.navbar-toggler-icon
-      #navbarSupportedContent.collapse.navbar-collapse
-        ul.navbar-nav.me-auto.mb-2.mb-lg-0
-          li.nav-item
-            a.nav-link.active(aria-current='page' href='dashboard.html') Home
-          li.nav-item.dropdown
-            a.nav-link.dropdown-toggle(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false')
-              | Parking
-            ul.dropdown-menu
-              li
-                a.dropdown-item(href='parking.html') Pick vehicle type
-              li
-                a.dropdown-item(href='#') Another action
-              li
-                hr.dropdown-divider
-              li
-                a.dropdown-item(href='#') Something else here
-          li.nav-item.dropdown
-            a.nav-link.dropdown-toggle(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false')
-              | Tyre Clinic
-            ul.dropdown-menu
-              li
-                a.dropdown-item(href='#') Action
-              li
-                a.dropdown-item(href='#') Another action
-              li
-                hr.dropdown-divider
-              li
-                a.dropdown-item(href='#') Something else here
-          li.nav-item.dropdown
-            a.nav-link.dropdown-toggle(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false')
-              | Battery Section
-            ul.dropdown-menu
-              li
-                a.dropdown-item(href='#') Action
-              li
-                a.dropdown-item(href='#') Another action
-              li
-                hr.dropdown-divider
-              li
-                a.dropdown-item(href='#') Something else here
-        form.d-flex(role='search')
-          input.form-control.me-2(type='search' placeholder='Search' aria-label='Search')
-          button.btn.btn-outline-success(type='submit') Search
-.clinic-top
-  h2.top Tyre Clinic Unit
-  hr
-  h4.action Determine Tyre Price
-#register.container-fluid
-  h4 Enter details to determine Car Tyre Price 
-  form#tyreclinicform(name='tyreclinicform' method='POST' action='#' onsubmit='return Validate(event);')
-    .form-group
-      label(for='name')  TireSize
-      input#tiresize.form-control(type='text' name='tiresize' placeholder='Enter car tire size')
-    span#tiresizeerror
-    br
-    select#type.form-select(aria-label='Default select example' name='type')
-      option(value='') Select Automobile make
-      option(value='truck') Truck
-      option(value='taxi') Taxi
-      option(value='personalcar') Personal Car
-      option(value='coaster') Coaster
-      option(value='bodaboda') BodaBoda
-    span#typeerror
-    br
-    select#carmodel.form-select(aria-label='Default select example' name='carmodel')
-      option(value='') Select Automobile model
-      option(value='hactchback') Hatch Back
-      option(value='sedan') Sedan
-      option(value='suv') SUV
-      option(value='coupe') Coupe
-      option(value='convertible') Convertible
-      option(value='sportscar') Sports Car
-      option(value='minivan') Mini Van
-      option(value='stationwagon') Station Wagon
-      option(value='crossover') Cross Over
-      option(value='pickuptruck') Pickup Truck
-    span#carmodelerror
-    br
-    p#total
-    br
-    button#submit.btn.btn-primary.form-width(type='submit' name='submit') Print Receipt
-#footer.container-fluid
-  .row
-    #foot-left.col-md-4.col-sm-12
-      h3 Dockville Parking
-      p
-        | Built to offer you that one time parking, clinic and accesories solution. Bluit around Design thinking to offer the greatest features and maintain its standardc inorder to resonate the user needs
-      p.social Facebook   Twitter   Instagram
-    #foot-mid.col-md-4.col-sm-12
-      h4 Menu
-      a(href='') About
-      br
-      a(href='')  Recent Products 
-      br
-      a(href='') Featured Products
-      br
-      a(href='') Testimonials
-      br
-      a(href='') Product Galleries
-      br
-      p.copyright All rights reserved to IosApps
-    #foot-right.col-md-4.col-sm-12
-      h4 Company
-      a(href='') FAQ
-      br
-      a(href='') Terms and Conditions
-      br
-      a(href='') Privacy and Policies
-      br
-      a(href='') Support
-      br
-      p#website
-        a(href='')
-          | info@iosapps.com
+.divides
+  .dashboard
+    ul.list
+      li#head Dockville Parking
+      hr
+      li#dash
+        span#position Dashboard
+      // <li class="dark">Parking</li>
+      li.nav-item.dropdown
+        a.nav-link.dropdown-toggle(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false')
+          | Parking
+        ul.dropdown-menu
+          li
+            a.dropdown-item(href='parking') Pick vehicle type
+          li
+            a.dropdown-item(href='#') Another action
+      li#dashboard.nav-item.dropdown
+        a.nav-link.dropdown-toggle(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false')
+          | Tyre Clinic
+        ul.dropdown-menu
+          li
+            a.dropdown-item(href='tyre-clinic') Tyre Price
+          li
+            a.dropdown-item(href='tyre-services') Tyre Services
+      li.nav-item.dropdown
+        a.nav-link.dropdown-toggle(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false')
+          | Battery Section
+        ul.dropdown-menu
+          li
+            a.dropdown-item(href='battery-section') Hire Battery
+          li
+            a.dropdown-item(href='batterysignout ') SignOut Battery
+  .divider2
+    .clinic-top
+      h2.top Tyre Clinic Unit
+      hr
+      h4.action Determine Tyre Price
+    #register.container-fluid
+      h4 Enter details to determine Car Tyre Price 
+      form#tyreclinicform(name='tyreclinicform' method='POST' action='#' onsubmit='return Validate(event);')
+        .form-group
+          label(for='firstname') First Name
+          input#firstname.form-control(type='text' placeholder="Enter driver's first name" name='firstname')
+          // first name error
+          span#firstnameerror
+        br
+        .form-group
+          label(for='lastname') Last Name
+          input#lastname.form-control(type='text' placeholder="Enter driver's last name" name='lastname')
+          // last name error
+          span#lastnameerror
+        br
+        .form-group
+          label(for='email') Email
+          input#email.form-control(type='email' name='email')
+          span#emailerror
+        br
+        .form-group
+          label(for='Date') Date
+          input#date.form-control(type='date' name='date')
+        span#dateerror
+        br
+        .form-group
+          label(for='phonenumber') Phone Number
+          input#phonenumber.form-control(type='tel' name='phonenumber')
+          span#phonenumbererror
+        br
+        .form-group
+          label(for='receiptnumber') ReceiptNumber
+          input#receiptnumber.form-control(type='text' name='receiptnumber')
+          span#receiptnumbererror
+        br
+        .form-group
+          label(for='name')  TireSize
+          input#tiresize.form-control(type='text' name='tiresize' placeholder='Enter car tire size')
+        span#tiresizeerror
+        br
+        select#type.form-select(aria-label='Default select example' name='type')
+          option(value='') Select Automobile make
+          option(value='truck') Truck
+          option(value='taxi') Taxi
+          option(value='personalcar') Personal Car
+          option(value='coaster') Coaster
+          option(value='bodaboda') BodaBoda
+        span#typeerror
+        br
+        select#carmodel.form-select(aria-label='Default select example' name='carmodel')
+          option(value='') Select Automobile model
+          option(value='hactchback') Hatch Back
+          option(value='sedan') Sedan
+          option(value='suv') SUV
+          option(value='coupe') Coupe
+          option(value='convertible') Convertible
+          option(value='sportscar') Sports Car
+          option(value='minivan') Mini Van
+          option(value='stationwagon') Station Wagon
+          option(value='crossover') Cross Over
+          option(value='pickuptruck') Pickup Truck
+        span#carmodelerror
+        br
+        p#total
+        br
+        button#submit.btn.btn-primary.form-width(type='submit' name='submit') Print Receipt
+    #footer.container-fluid
+      .row
+        #foot-left.col-md-4.col-sm-12
+          h3 Dockville Parking
+          p
+            | Built to offer you that one time parking, clinic and accesories solution. Bluit around Design thinking to offer the greatest features and maintain its standardc inorder to resonate the user needs
+          p.social Facebook   Twitter   Instagram
+        #foot-mid.col-md-4.col-sm-12
+          h4 Menu
+          a(href='') About
+          br
+          a(href='')  Recent Products 
+          br
+          a(href='') Featured Products
+          br
+          a(href='') Testimonials
+          br
+          a(href='') Product Galleries
+          br
+          p.copyright All rights reserved to IosApps
+        #foot-right.col-md-4.col-sm-12
+          h4 Company
+          a(href='') FAQ
+          br
+          a(href='') Terms and Conditions
+          br
+          a(href='') Privacy and Policies
+          br
+          a(href='') Support
+          br
+          p#website
+            a(href='')
+              | info@iosapps.com
 script(src='../libs/js/bootstrap.bundle.min.js')
 script(src='../JS/tyreclinic.js')
