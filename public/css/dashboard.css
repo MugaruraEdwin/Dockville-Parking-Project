@@ -1,10 +1,102 @@
 body{
-    background-color:  #8CC0DE;
+    background-color: #D8D9DA;
 }
 #nav{
-    background-color: #A7EDE7 ;
+    background-color: #749BC2 ;
     font-family: 'fraunces', serif;
 }
+.navbar{
+    background-color:#3f4d60  !important;
+    font-family: 'fraunces', serif;
+}
+.nav-link{
+    color:#D8D9DA;
+}
+.nav-link:hover{
+    color:#fff;
+}
+#change{
+    color: #fff;
+}
+.navbar-brand{
+    color: #fff;
+}
+
+/* dashboard css */
+.divides{
+   display: flex;
+}
+
+.list{
+    list-style-type: none;
+    margin-left: 0px;
+    padding-left: 15px;
+    padding-right: 10px;
+}
+.dashboard{
+    height: 196.5vh;
+    width: 20%;
+    border: 1px solid;
+    border-radius: 0px;
+    margin-right: 5px;
+    background-color: #4682A9;
+}
+hr{
+    padding-left: 0px;
+    width: 100%;
+}
+body{
+    margin: 0px;
+    padding: 0px;
+    color: grey;
+}
+#head{
+    font-family: serif;
+    font-size: 25px;
+    color: #fff;
+}
+.list li{
+    margin-bottom: 10px;
+    height:50px;
+    padding-left: 20px;
+    padding-top: 12px;
+    
+}
+#dashboard{
+    border: 1px solid;
+    color: white;
+    background-color: #749BC2;
+    border-radius: 25px;
+}
+
+.dark:hover{
+    border: 1px solid;
+    color: white;
+    background-color: black;
+    border-radius: 25px;
+    
+}
+
+.divider2{
+    width: 80%;
+}
+
+/*drop down menu */
+
+.dropdown-menu{
+    background-color: #3f4d60;;
+}
+.dropdown-item{
+    color: #F6F4EB;
+    padding-left: 5px !important;
+    padding-right: 7px !important;
+    margin-bottom: 10px !important;
+}
+.dropdown-item:hover{
+    color: #749BC2;
+}
+
+
 
 #welcome{
     margin-top: 30px;
@@ -15,26 +107,35 @@ body{
 
 #left{
     padding-left: 20px;
-    background-color: #A7EDE7;
+    background-color: #4682A9;
     font-family: 'fraunces', serif;
     width: 400px;
     padding-top: 15px;
     padding-bottom: 10px;
     font-size: 30px;
+    color: #F6F4EB;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius:10px;
    
 }
 #right{
-    margin-left: 855px;
+    margin-left: 955px;
     width: 185px;
-    background-color: #A7EDE7;
+    background-color: #4682A9;
     padding-top: 10px;
     padding-bottom: 10px;
-   
+    font-weight: bold;
+    font-family:'Didot', "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif; font-size: 24px; font-style: normal;
+    color: #F6F4EB;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius:10px;
+    margin-top: -60px;
 }
 .top{
     float: right;
     font-size: 15px;
-    margin-top: 5px;
+    margin-top: 10px;
+    margin-right: 10px;
 
 }
 .profile-image{
@@ -43,7 +144,7 @@ body{
 }
 #report{
     margin-top: 20px;
-    background-image: url(/images/report4.jpg);
+    background-image: url(../images/report4.jpg);
     background-size: cover;
     font-family: 'fraunces', serif;
     color: white;
@@ -54,11 +155,13 @@ body{
     padding-top: 60px;
     margin-left: 100px;
     font-size: 35px;
+    color: #F6F4EB;
 }
 .report-p{
     margin-top: 30px;
     margin-left: 100px;
     font-size: 25px;
+    color: #F6F4EB;
 }
 
 a{
@@ -72,7 +175,7 @@ a{
     width: 150px;
     border: 1px groove;
     border-radius: 10px;
-    background-color: #4FC0D0;
+    background-color: #4682A9;
 }
 #mid-low{
     margin-top: 30px;
@@ -80,13 +183,17 @@ a{
 }
 .card1{
     /* padding-top: 30px; */
-    margin-left: 70px;
-    background-color: #A7EDE7;
-    width:400px;
+    margin-left: 10px;
+    background-color: #4682A9;
+    width:350px;
     text-align: center;
     font-family: 'fraunces', serif;
     font-size: 40px;
     height:300px;
+    color: #fff;
+}
+.card1:hover{
+    opacity: 1;
 }
 .card1 p{
     margin-top: 20px;
@@ -107,22 +214,26 @@ a{
 .card2{
     /* padding-top: 30px; */
     margin-left: 15px;
-    background-color: #9AC5F4;
-    width:400px;
+    background-color:  #4682A9;
+    width:350px;
     text-align: center;
     font-family: 'fraunces', serif;
     font-size: 40px;
     height:300px;
+    color: #c9cdd2;
+    color: #fff;
 }
 .card3{
     /* padding-top: 30px; */
-    width:400px;
-    background-color: #FFEBEB;
+    width:350px;
+    background-color:  #4682A9;
     margin-left: 15px;
     text-align: center;
     font-family: 'fraunces', serif;
     font-size: 40px;
     height:300px;
+    color: #c9cdd2;
+    color: #fff;
 }
 #car-icon{
     margin-top: 40px;
@@ -146,6 +257,7 @@ a{
 .mid-p{
     font-size: 45px;
     font-family: 'fraunces', serif;
+    color: #4682A9;
     
 }
 .mid-p2{
@@ -154,6 +266,7 @@ a{
     font-weight: 300;
     width:60%;
     margin-left: 280px;
+    color: #4682A9;;
 }
 #before-foot{
     background-color: #E8F6EF;
@@ -189,30 +302,33 @@ a{
 
 .card4{
     /* padding-top: 30px; */
-    margin-left: 70px;
-    background-color: #A7EDE7;
-    width:400px;
+    margin-left: 10px;
+    background-color: #4682A9;
+    width:350px;
     text-align: center;
     font-family: 'fraunces', serif;
     height:300px;
+    color: #fff;
 }
 .card5{
     /* padding-top: 30px; */
     margin-left: 15px;
-    background-color: #9AC5F4;
-    width:400px;
+    background-color: #4682A9;
+    width:350px;
     text-align: center;
     font-family: 'fraunces', serif;
     height:300px;
+    color: #fff;
 }
 .card6{
     /* padding-top: 30px; */
-    width:400px;
-    background-color: #FFEBEB;
+    width:350px;
+    background-color: #4682A9;
     margin-left: 15px;
     text-align: center;
     font-family: 'fraunces', serif;
     height:300px;
+    color: #fff;
 }
 .card-h4{
     font-family: 'fraunces', serif;
@@ -222,37 +338,62 @@ a{
     margin-left: 30px;
 }
 #footer{
-    background-color: #FDBA9A;
+    background-color: #4682A9;;
     margin-top: 50px;
     padding-top: 30px;
     font-family: 'fraunces', serif;  
+    color: #fff;
+}
+#dockpara{
+    color: #fff;
 }
 #footer a{
     text-decoration: none;
-    color: white;
+    color: #F6F4EB;
 }
 #foot-left{
-    margin-left: 100px;
+    margin-left: 50px;
     width: 400px;
     font-size: 13px;
+   
 }
 #foot-mid{
-    margin-left: 150px;
+    margin-left: 40px;
     width: 300px;
     font-size: 13px;
 
 }
 #foot-right{
-    margin-left:100px;
+    margin-left:40px;
     width: 300px;
     font-size: 13px;
 }
 .social{
     margin-top: 40px;
+    color: #F6F4EB;
 }
 .copyright{
     margin-top: 20px;
+    color: #F6F4EB;
 }
 #website{
     margin-top: 43px;
+}
+.card2:hover{
+    opacity: 1;
+}
+.card3:hover{
+    opacity: 1;
+}
+.card4:hover{
+    opacity: 1;
+}
+.card5:hover{
+    opacity: 1;
+}
+.card6:hover{
+    opacity: 1;
+}
+.dock{
+    color: #fff;;
 }

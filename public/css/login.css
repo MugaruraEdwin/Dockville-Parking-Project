@@ -19,13 +19,13 @@ body{
     border-top-left-radius: 10px;
 }
 .welcome{
-    background-image: url(/images/customer3.jpeg);
+    background-image: url(../images/customer3.jpeg);
     padding: 30px;
     border-bottom-right-radius: 10px;
     border-top-right-radius: 10px;
     padding-top: 300px;
     font-weight: 700;
-    color: #A1DD70;
+    color: #21a6e8;
 
 }
 .flex{
@@ -67,4 +67,14 @@ body{
 }
 .more{
     width: 100%;
+}
+#login_button{
+    background-color: #21a6e8;
+    border: 1px solid #21a6e8;
+}
+a{
+    color: #21a6e8;
+}
+#login_button:hover{
+    background-color:#118fce ;
 }

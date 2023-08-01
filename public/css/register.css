@@ -1,34 +1,117 @@
+#nav{
+    background-color: #749BC2 ;
+    font-family: 'fraunces', serif;
+}
 .navbar{
-    background-color: #001C30 !important;
+    background-color:#3f4d60  !important;
     font-family: 'fraunces', serif;
 }
 .nav-link{
+    color:#D8D9DA;
+}
+.nav-link:hover{
     color:#fff;
 }
 #change{
-    color:#fff;
+    color: #fff;
 }
 .navbar-brand{
     color: #fff;
 }
+
+/* dashboard css */
+.divides{
+   display: flex;
+}
+
+.list{
+    list-style-type: none;
+    margin-left: 0px;
+    padding-left: 15px;
+    padding-right: 10px;
+}
+.dashboard{
+    height: 178.5vh;
+    width: 20%;
+    border: 1px solid;
+    border-radius: 0px;
+    margin-right: 5px;
+    background-color: #4682A9;
+}
+hr{
+    padding-left: 0px;
+    width: 100%;
+    color: #fff;
+}
+body{
+    margin: 0px;
+    padding: 0px;
+    color: grey;
+}
+#head{
+    font-family: serif;
+    font-size: 25px;
+    color: #fff;
+}
+.list li{
+    margin-bottom: 10px;
+    height:50px;
+    padding-left: 20px;
+    padding-top: 12px;
+    
+}
+#dashboard{
+    border: 1px solid;
+    color: white;
+    background-color: #8ba8c4;
+    border-radius: 25px;
+}
+
+.dark:hover{
+    border: 1px solid;
+    color: white;
+    background-color: black;
+    border-radius: 25px;
+    
+}
+
+.divider2{
+    width: 80%;
+}
+
+/*drop down menu */
+
+.dropdown-menu{
+    background-color: #3f4d60;;
+}
+.dropdown-item{
+    color: #ebecf6;
+    padding-left: 5px !important;
+    padding-right: 7px !important;
+    margin-bottom: 10px !important;
+}
+.dropdown-item:hover{
+    color: #749BC2;
+}
 #register{
     width:680px;
     margin: 40px auto;
-    background-color:#ECF8F9;
+    background-color:#91C8E4;
     padding: 20px;
-    color: #001C30;
+    color: #166d99;
     border-radius: 10px;
 }
 .h3{
-    color: #64CCC5;
+    color: #fff;
 }
 
 body{
     font-family: 'Fraunces', serif;
-    background-color: #A7EDE7 ;
+    background-color: #F6F4EB ;
+    
 }
 #footer{
-    background-color: #001C30;
+    background-color: #4682A9;
     margin-top: 50px;
     padding-top: 30px;
     font-family: 'fraunces', serif;  
@@ -39,22 +122,22 @@ body{
     color:#fff;
 }
 h4{
-    color: #64CCC5;
+    color: #fff;
 }
 #foot-left{
-    margin-left: 100px;
+    margin-left: 40px;
     width: 400px;
     font-size: 13px;
     color: #fff;
 }
 #foot-mid{
-    margin-left: 150px;
+    margin-left: 40px;
     width: 300px;
     font-size: 13px;
 
 }
 #foot-right{
-    margin-left:100px;
+    margin-left:40px;
     width: 300px;
     font-size: 13px;
 }
@@ -67,9 +150,13 @@ h4{
 #website{
     margin-top: 43px;
 }
-a:hover{
-    color: #64CCC5 !important;
+.follow a:hover{
+    color: #91C8E4  !important;
 }
 #btn-color{
-    background: #64CCC5 ;
+    background: #21a6e8 ;
+    color: #fff;
+}
+#begin{
+    color: #fff;
 }

@@ -9,145 +9,130 @@
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@100;300;400;700&family=Montserrat:wght@100;500;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/aff02a4ba3.js" crossorigin="anonymous"></script>
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous"> -->
-    <link rel="stylesheet" href="/libs/css/bootstrap.css" />
-    <link rel="stylesheet" href="/css/register.css">
+    <link rel="stylesheet" href="../public/libs/css/bootstrap.css" />
+    <link rel="stylesheet" href="../public/css/register.css">
     <title>Truck SignOut</title>
 </head>
 <body>
-    <div id="nav">
-        <nav class="navbar navbar-expand-lg bg-info-subtle">
-          <div class="container-fluid" >
-            <a class="navbar-brand" href="dashboard.html">Dockville Parking</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="dashboard.html">Home</a>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Parking
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="parking.html">Pick vehicle type</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                  </ul>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Tyre Clinic
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                  </ul>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Battery Section
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                  </ul>
-                </li>
-              </ul>
-              <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-              </form>
-            </div>
-          </div>
-        </nav>
+  <div class="divides">
+    <div class="dashboard" style="height: 140.5vh;">
+      <ul class="list">
+        <li id="head">Dockville Parking</li>
+        <hr>
+        <li class="nav-item ">
+        <a class="nav-link " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Dashboard
+        </a>
+        </li>
+        <!-- <li class="dark">Parking</li> -->
+        <li id="dashboard"><span id="position" class="nav-item ">
+          <a class="nav-link " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Park Signout
+          </a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Tyre Clinic
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="tyre-clinic.html">Tyre Price</a></li>
+            <li><a class="dropdown-item" href="tyre-services.html">Tyre Services</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Battery Section
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="battery-section.html">Hire Battery</a></li>
+            <li><a class="dropdown-item" href="batterysignout.html ">SignOut Battery</a></li>
+          </ul>
+        </li>
+      </ul>
     </div>
-    <div class="container-fluid" id="register">
-          <h3>SignOut Here</i></h3>
-          <form action="#" method="POST" id="signout" name="signout" onsubmit="return Validate(event);">
-            <div class="form-group">
-              <label for="firstname">First Name</label>
-              <input type="text" class="form-control" id="firstname"  placeholder="Enter driver's first name" name="firstname">
-              <!-- first name error -->
-              <span id="firstnameerror"></span>
-            </div>
-            <br>
-            <div class="form-group">
-              <label for="lastname">Last Name</label>
-              <input type="text" class="form-control" id="lastname"  placeholder="Enter driver's last name" name="lastname">
-              <!-- last name error -->
-              <span id="lastnameerror"></span>
-            </div>
-            <br>
-            <div class="form-group">
-                <label for="receiptnumber">Receipt Number</label>
-                <input type="text" class="form-control" id="receiptnumber"  placeholder="Enter Receipt Number" name="receiptnumber">
-            </div>
-            <span id="receiptnumbererror"></span>
-            <br>
-            <div class="form-group">
-                <label for="phonenumber">Phone Number</label>
-                <input type="tel" class="form-control" id="phonenumber" name="phonenumber">
-            </div>
-            <span id="phonenumbererror"></span>
-            <br>
-            <div class="form-group">
-              <label for="time">Time </label>
-              <input type="time" class="form-control" id="time" name="time"> 
-            </div>
-            <span id="timeerror"></span>
-            <br>
-            <div class="form-group">
-                <label for="Date">Date</label>
-                <input type="date" class="form-control" id="date" name="date">
-            </div>
-            <span id="dateerror"></span>
-            <br>
-            <select class="form-select" aria-label="Gender" id="gender" name="gender">
-                <option value="">Gender</option>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-            </select>
-            <span id="gendererror"></span>
-            <br>
-            <div class="form-group">
-                <label for="nin">NIN Number</label>
-                <input type="text" class="form-control" id="nin"  placeholder="Enter NIN number" name="nin">
-            </div>
-            <span id="ninerror"></span>
-            <br>
-            <button type="submit" name="submit" id="submit" class="btn btn-primary form-width">Sign Out</button>
-          </form>
-    </div>
-    <div class="container-fluid" id="footer">
-        <div class="row">
-          <div class="col-md-4 col-sm-12" id="foot-left">
-            <h3>Dockville Parking</h3>
-            <p>Built to offer you that one time parking, clinic and accesories solution. Bluit around Design thinking to offer the greatest features and maintain its standardc inorder to resonate the user needs</p>
-            <p class="social">Facebook   Twitter   Instagram</p>
+    <div class="divider2">
+      <div class="container-fluid" id="register" >
+        <h3 id="begin">SignOut Here</i></h3>
+        <form action="#" method="POST" id="signout" name="signout" onsubmit="return Validate(event);">
+          <div class="form-group">
+            <label for="firstname">First Name</label>
+            <input type="text" class="form-control" id="firstname"  placeholder="Enter driver's first name" name="firstname">
+            <!-- first name error -->
+            <span id="firstnameerror"></span>
           </div>
-          <div  class="col-md-4 col-sm-12" id="foot-mid">
-            <h4>Menu</h4>
-            <a href="">Testimonials</a><br>
-            <a href="">Product Galleries</a><br>
-            <p class="copyright">All rights reserved to IosApps</p>
+          <br>
+          <div class="form-group">
+            <label for="lastname">Last Name</label>
+            <input type="text" class="form-control" id="lastname"  placeholder="Enter driver's last name" name="lastname">
+            <!-- last name error -->
+            <span id="lastnameerror"></span>
           </div>
-          <div  class="col-md-4 col-sm-12" id="foot-right">
-            <h4>Company</h4>
-            <a href="">Terms and Conditions</a> <br>
-            <a href="">Privacy and Policies</a><br>
-            <a href="">Support</a><br>
-            <p id="website"><a href="">info@iosapps.com </a</p>
+          <br>
+          <div class="form-group">
+              <label for="receiptnumber">Receipt Number</label>
+              <input type="text" class="form-control" id="receiptnumber"  placeholder="Enter Receipt Number" name="receiptnumber">
           </div>
+          <span id="receiptnumbererror"></span>
+          <br>
+          <div class="form-group">
+              <label for="phonenumber">Phone Number</label>
+              <input type="tel" class="form-control" id="phonenumber" name="phonenumber">
+          </div>
+          <span id="phonenumbererror"></span>
+          <br>
+          <div class="form-group">
+            <label for="time">Time </label>
+            <input type="time" class="form-control" id="time" name="time"> 
+          </div>
+          <span id="timeerror"></span>
+          <br>
+          <div class="form-group">
+              <label for="Date">Date</label>
+              <input type="date" class="form-control" id="date" name="date">
+          </div>
+          <span id="dateerror"></span>
+          <br>
+          <select class="form-select" aria-label="Gender" id="gender" name="gender">
+              <option value="">Gender</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+          </select>
+          <span id="gendererror"></span>
+          <br>
+          <div class="form-group">
+              <label for="nin">NIN Number</label>
+              <input type="text" class="form-control" id="nin"  placeholder="Enter NIN number" name="nin">
+          </div>
+          <span id="ninerror"></span>
+          <br>
+          <button type="submit" name="submit" id="btn-color" class="btn form-width">Sign Out</button>
+        </form>
+      </div>
+      <div class="container-fluid" id="footer">
+      <div class="row">
+        <div class="col-md-4 col-sm-12" id="foot-left">
+          <h3>Dockville Parking</h3>
+          <p>Built to offer you that one time parking, clinic and accesories solution. Bluit around Design thinking to offer the greatest features and maintain its standardc inorder to resonate the user needs</p>
+          <p class="social">Facebook   Twitter   Instagram</p>
+        </div>
+        <div  class="col-md-4 col-sm-12" id="foot-mid">
+          <h4>Menu</h4>
+          <a href="">Testimonials</a><br>
+          <a href="">Product Galleries</a><br>
+          <p class="copyright">All rights reserved to IosApps</p>
+        </div>
+        <div  class="col-md-4 col-sm-12" id="foot-right">
+          <h4>Company</h4>
+          <a href="">Terms and Conditions</a> <br>
+          <a href="">Privacy and Policies</a><br>
+          <a href="">Support</a><br>
+          <p id="website"><a href="">info@iosapps.com </a</p>
         </div>
       </div>
-    <script src="/libs/js/bootstrap.bundle.min.js"></script>
-    <script src="../JS/signout.js"></script>
+    </div>
+  </div>
+       
+    <script src="../public/libs/js/bootstrap.bundle.min.js"></script>
+    <script src="../public/JS/signout.js"></script>
 </body>
 </html>

@@ -1,87 +1,194 @@
  body{
-   background-color: #8CC0DE ;
+   background-color: #F6F4EB ;
+}
+
+#nav{
+    background-color: #749BC2 ;
+    font-family: 'fraunces', serif;
+}
+.navbar{
+    background-color:#3f4d60  !important;
+    font-family: 'fraunces', serif;
+}
+.nav-link{
+    color:#D8D9DA;
+}
+.nav-link:hover{
+    color:#fff;
+}
+#change{
+    color: #fff;
+}
+.navbar-brand{
+    color: #fff;
+}
+
+/* dashboard css */
+.divides{
+   display: flex;
+}
+
+.list{
+    list-style-type: none;
+    margin-left: 0px;
+    padding-left: 15px;
+    padding-right: 10px;
+}
+.dashboard{
+    height: 161vh;
+    width: 20%;
+    border: 1px solid;
+    border-radius: 0px;
+    margin-right: 5px;
+    background-color: #4682A9;
+}
+hr{
+    padding-left: 0px;
+    width: 100%;
+}
+body{
+    margin: 0px;
+    padding: 0px;
+    color: grey;
+}
+#head{
+    font-family: serif;
+    font-size: 25px;
+    color: #fff;
+}
+.list li{
+    margin-bottom: 10px;
+    height:50px;
+    padding-left: 20px;
+    padding-top: 12px;
+    
+}
+#dashboard{
+    border: 1px solid;
+    color: white;
+    background-color: #749BC2;
+    border-radius: 25px;
+}
+
+.dark:hover{
+    border: 1px solid;
+    color: white;
+    background-color: black;
+    border-radius: 25px;
+    
+}
+
+.divider2{
+    width: 80%;
+}
+
+/*drop down menu */
+
+.dropdown-menu{
+    background-color: #3f4d60;;
+}
+.dropdown-item{
+    color: #F6F4EB;
+    padding-left: 5px !important;
+    padding-right: 7px !important;
+    margin-bottom: 10px !important;
+}
+.dropdown-item:hover{
+    color: #749BC2;
 }
 /* #park{
 
 } */
 .parking-top{
-    background-color: #A7EDE7;
-    margin-left: 90px;
+    background-color: #4682A9;;
+    margin-left: 40px;
     padding-bottom: 2px;
     padding-left: 5px;
     margin-top: 2px;
+    color: #fff;
 
 }
 .top{
     margin-top: 30px;
-    background-color: #A7EDE7;
-    font-family: 'Montserrat',serif; 
+    background-color: #4682A9;;
+    /* font-family: 'Montserrat',serif;  */
+    font-family:'Didot', "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif; 
+    /* font-size: 24px; 
+    font-style: normal; */
 }
 .action{
     padding-top: 10px;
-    background-color: #A7EDE7;
+    background-color: #4682A9;;
     font-family: 'Fraunces', serif;
+    font-size: 18px;
 }
 #nav{
-    background-color: #A7EDE7 ;
+    background-color: #A7EDE7;
     font-family: 'fraunces', serif;
 }
 #truck{
     font-family: 'Fraunces', serif;
-    background-color: #A7EDE7;
+    background-color: #4682A9;;
     width: 500px;
-    margin-left: 100px;
+    margin-left: 50px;
     height:250px;
     margin-top: 30px;
     border-radius: 10px;
+   color:#000000 ;
 }
 #car{
     font-family: 'Fraunces', serif;
-    font-family: 'Fraunces', serif;
-    background-color: #A7EDE7;
+    background-color: #4682A9;;
     width: 500px;
-    margin-left: 150px;
+    margin-left: 50px;
     margin-top: 30px;
     border-radius: 10px;
+    color:#000000 ;
 }
 #taxi{
     font-family: 'Fraunces', serif;
-    background-color: #A7EDE7;
-    margin-left: 100px;
+    background-color: #4682A9;;
+    margin-left: 50px;
     width: 500px;
     height: 250px;
     margin-top: 30px;
     border-radius: 10px;
+    color:#000000 ;
 }
 #coaster{
     font-family: 'Fraunces', serif;
-    background-color: #A7EDE7;
+    background-color: #4682A9;;
     width: 500px;
     height: 250px;
-    margin-left: 150px;
+    margin-left: 50px;
     margin-top: 30px;
     border-radius: 10px;
+    color:#000000 ;
 }
 #boda{
     font-family: 'Fraunces', serif;
-    background-color: #A7EDE7;
+    background-color: #4682A9;;
     width: 500px;
     height: 250px;
-    margin-left: 100px;
+    margin-left: 50px;
     margin-top: 30px;
     border-radius: 10px;
+    color:#000000 ;
 }
 #options{
     font-size: 20px;
     margin-top: 45px;
    
+    
+   
 }
 .options-a{
-    color: #fff;
+    color:#000000 ;
     text-decoration: none;
     border: 1px groove;
     border-radius: 10px;
-    background-color: #344D67;
+    background-color: #91C8E4;
+    
    
 }
 #a-right{
@@ -187,28 +294,29 @@
     /* color: #fff; 
 } */
 #footer{
-    background-color: #FDBA9A;
+    background-color: #4682A9;
     margin-top: 50px;
     padding-top: 30px;
     font-family: 'fraunces', serif;  
+    color: #fff;
 }
 #footer a{
     text-decoration: none;
     color: white;
 }
 #foot-left{
-    margin-left: 100px;
+    margin-left: 40px;
     width: 400px;
     font-size: 13px;
 }
 #foot-mid{
-    margin-left: 150px;
+    margin-left: 40px;
     width: 300px;
     font-size: 13px;
 
 }
 #foot-right{
-    margin-left:100px;
+    margin-left:40px;
     width: 300px;
     font-size: 13px;
 }
@@ -220,4 +328,7 @@
 }
 #website{
     margin-top: 43px;
+}
+hr{
+     color: white;
 }

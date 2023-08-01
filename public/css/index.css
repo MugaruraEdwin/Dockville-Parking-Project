@@ -20,7 +20,7 @@
 h2{
     margin-bottom: 580px !important;
     font-size: 60px !important;
-    color: #F4E0B9 !important;
+    color :#21a6e8  !important;
     text-align: left !important;
     margin-right: 80px;
 }
@@ -35,15 +35,27 @@ h2{
 .login{
     height: 40px ;
     width: 100px;
-    background-color: #EFE1D1;
+    background-color: #21a6e8;
     border-radius: 10px;
+    color: white;
+    border: 1px solid #21a6e8;
 }
 .signup{
     height: 40px;
     width: 100px;
-    background-color: #EFE1D1;
+    background-color: #21a6e8;
     border-radius: 10px;
+    color: white;
+    border: 1px solid #21a6e8;
 }
 .design{
     height: 600px !important;
+}
+
+.signup:hover{
+    background-color: #70c1e9;
+}
+
+.login:hover{
+    background-color: #70c1e9;
 }

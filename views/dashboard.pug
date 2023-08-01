@@ -8,137 +8,121 @@ head
   link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
   link(href='https://fonts.googleapis.com/css2?family=Fraunces:wght@100;300;400;700&family=Montserrat:wght@100;500;700&display=swap' rel='stylesheet')
   script(src='https://kit.fontawesome.com/aff02a4ba3.js' crossorigin='anonymous')
-  link(rel='stylesheet' href='/libs/css/bootstrap.css')
-  link(rel='stylesheet' href='/css/dashboard.css')
-#nav
-  nav.navbar.navbar-expand-lg.bg-info-subtle
-    .container-fluid
-      a.navbar-brand(href='dashboard.html') Dockville Parking
-      button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
-        span.navbar-toggler-icon
-      #navbarSupportedContent.collapse.navbar-collapse
-        ul.navbar-nav.me-auto.mb-2.mb-lg-0
-          li.nav-item
-            a.nav-link.active(aria-current='page' href='dashboard') Home
-          li.nav-item.dropdown
-            a.nav-link.dropdown-toggle(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false')
-              | Parking
-            ul.dropdown-menu
-              li
-                a.dropdown-item(href='parking') Pick vehicle type
-              li
-                a.dropdown-item(href='#') Another action
-              li
-                hr.dropdown-divider
-              li
-                a.dropdown-item(href='#') Something else here
-          li.nav-item.dropdown
-            a.nav-link.dropdown-toggle(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false')
-              | Tyre Clinic
-            ul.dropdown-menu
-              li
-                a.dropdown-item(href='tyreclinic') Tyre Price
-              li
-                a.dropdown-item(href='tyreservices') Tyre Services
-              li
-                hr.dropdown-divider
-              li
-                a.dropdown-item(href='#') Something else here
-          li.nav-item.dropdown
-            a.nav-link.dropdown-toggle(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false')
-              | Battery Section
-            ul.dropdown-menu
-              li
-                a.dropdown-item(href='batteryservices') Hire Battery
-              li
-                a.dropdown-item(href='batterysignout ') SignOut Battery
-              li
-                hr.dropdown-divider
-              li
-                a.dropdown-item(href='#') Something else here
-        form.d-flex(role='search')
-          input.form-control.me-2(type='search' placeholder='Search' aria-label='Search')
-          button.btn.btn-outline-success(type='submit') Search
-#welcome.container-fluid
-  .row
-    #left.col-sm-6
-      h4 Welcome back Manager!
-    #right.col-sm-6
-      img.profile-image(src='/images/Cv picture.jpeg' alt='profile picture')
-      h4.top Manager Name
-#report.container-fluid
-  h4.report-h4 General Weekly Report
-  p.report-p Track the system statitics
-  button.report-button
-    a(href='#') View
-#mid-low.container-fluid
-  .row
-    .col-md-4.col-sm-12.card1
-      i#car-icon.fa-solid.fa-car
-      h3.card-h3 Revenue from cars parked today
-      p 100,000
-    .col-md-4.col-sm-12.card2
-      i#clinic-icon.fa-solid.fa-house-chimney-medical
-      h3.card-h3 Revenue from batteries hired today
-      p 50,000
-    .col-md-4.col-sm-12.card3
-      i#battery-icon.fa-solid.fa-car-battery
-      h3.card-h3 Revenue from tyre sells today
-      p 200,000
-.mid-part
-  p.mid-p Important to remember during registration
-  p.mid-p2
-    | The system provides functionality that enables great book keeping, greater security based of two factor authentication logins and it just keeps getting better.
-#before-footer.container-fluid
-  .row
-    .col-md-4.col-sm-12.card4
-      h3.card-h4 Key Parking metrics
-      p  Name of the driver
-      p Color 
-      p Time of the arrival
-      p Model
-      p Date
-      p Phone number
-    .col-md-4.col-sm-12.card5
-      h3.card-h4 Key Parking Battery metrics
-      p Tyre sizes
-      p make
-      p Intended car model
-    .col-md-4.col-sm-12.card6
-      h3.card-h4 Key Car Clinic metrics
-      p Size 
-      p Price determined by section manager
-#footer.container-fluid
-  .row
-    #foot-left.col-md-4.col-sm-12
-      h3 Dockville Parking
-      p
-        | Built to offer you that one time parking, clinic and accesories solution. Bluit around Design thinking to offer the greatest features and maintain its standardc inorder to resonate the user needs
-      p.social Facebook   Twitter   Instagram
-    #foot-mid.col-md-4.col-sm-12
-      h4 Menu
-      a(href='') About
-      br
-      a(href='')  Recent Products 
-      br
-      a(href='') Featured Products
-      br
-      a(href='') Testimonials
-      br
-      a(href='') Product Galleries
-      br
-      p.copyright All rights reserved to IosApps
-    #foot-right.col-md-4.col-sm-12
-      h4 Company
-      a(href='') FAQ
-      br
-      a(href='') Terms and Conditions
-      br
-      a(href='') Privacy and Policies
-      br
-      a(href='') Support
-      br
-      p#website
-        a(href='')
-          | info@iosapps.com
-script(src='/libs/js/bootstrap.bundle.min.js')
+  link(rel='stylesheet' href='../libs/css/bootstrap.css')
+  link(rel='stylesheet' href='../css/dashboard.css')
+.divides
+  .dashboard
+    ul.list
+      li#head Dockville Parking
+      hr
+      li#dashboard
+        span#position Dashboard
+      // <li class="dark">Parking</li>
+      li.nav-item.dropdown
+        a.nav-link.dropdown-toggle(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false')
+          | Parking
+        ul.dropdown-menu
+          li
+            a.dropdown-item(href='parking') Pick vehicle type
+          li
+            a.dropdown-item(href='#') Another action
+      li.nav-item.dropdown
+        a.nav-link.dropdown-toggle(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false')
+          | Tyre Clinic
+        ul.dropdown-menu
+          li
+            a.dropdown-item(href='tyre-clinic') Tyre Price
+          li
+            a.dropdown-item(href='tyre-services') Tyre Services
+      li.nav-item.dropdown
+        a.nav-link.dropdown-toggle(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false')
+          | Battery Section
+        ul.dropdown-menu
+          li
+            a.dropdown-item(href='battery-section') Hire Battery
+          li
+            a.dropdown-item(href='batterysignout ') SignOut Battery
+  .divider2
+    #welcome.container-fluid
+      .row
+        #left.col-sm-6
+          h4 Welcome back Manager!
+        #right.col-sm-6
+          img.profile-image(src='../images/Cv picture.jpeg' alt='profile picture')
+          h4.top Manager Name
+    #report.container-fluid
+      h4.report-h4 General Weekly Report
+      p.report-p Track the system statitics
+      button.report-button
+        a(href='#') View
+    #mid-low.container-fluid
+      .row
+        .col-md-4.col-sm-12.card1
+          i#car-icon.fa-solid.fa-car
+          h3.card-h3 Revenue from cars parked today
+          p 100,000
+        .col-md-4.col-sm-12.card2
+          i#clinic-icon.fa-solid.fa-house-chimney-medical
+          h3.card-h3 Revenue from batteries hired today
+          p 50,000
+        .col-md-4.col-sm-12.card3
+          i#battery-icon.fa-solid.fa-car-battery
+          h3.card-h3 Revenue from tyre sells today
+          p 200,000
+    .mid-part
+      p.mid-p Important to remember during registration
+      p.mid-p2
+        | The system provides functionality that enables great book keeping, greater security based of two factor authentication logins and it just keeps getting better.
+    #before-footer.container-fluid
+      .row
+        .col-md-4.col-sm-12.card4
+          h3.card-h4 Key Parking metrics
+          p  Name of the driver
+          p Color 
+          p Time of the arrival
+          p Model
+          p Date
+          p Phone number
+        .col-md-4.col-sm-12.card5
+          h3.card-h4 Key Parking Battery metrics
+          p Tyre sizes
+          p make
+          p Intended car model
+        .col-md-4.col-sm-12.card6
+          h3.card-h4 Key Car Clinic metrics
+          p Size 
+          p Price determined by section manager
+    #footer.container-fluid
+      .row
+        #foot-left.col-md-4.col-sm-12
+          h3 Dockville Parking
+          p#dockpara
+            | Built to offer you that one time parking, clinic and accesories solution. Bluit around Design thinking to offer the greatest features and maintain its standardc inorder to resonate the user needs
+          p.social Facebook   Twitter   Instagram
+        #foot-mid.col-md-4.col-sm-12
+          h4 Menu
+          a(href='') About
+          br
+          a(href='')  Recent Products 
+          br
+          a(href='') Featured Products
+          br
+          a(href='') Testimonials
+          br
+          a(href='') Product Galleries
+          br
+          p.copyright All rights reserved to IosApps
+        #foot-right.col-md-4.col-sm-12
+          h4 Company
+          a(href='') FAQ
+          br
+          a(href='') Terms and Conditions
+          br
+          a(href='') Privacy and Policies
+          br
+          a(href='') Support
+          br
+          p#website
+            a(href='')
+              | info@iosapps.com
+script(src='../libs/js/bootstrap.bundle.min.js')

@@ -138,9 +138,9 @@ const Validate = (event) => {
 
 
     if(!carType.value == "" && !newTireSize == "" ){
-        total.textContent = "Total cost is "+ price +" for "+ newTireSize + " inch " + carType.value + " tyre";
+        total.innerHTML = "Total cost is "+ price +" for "+ newTireSize + " inch " + carType.value + " tyre";
     }else if(!carType.value == "" && !tireSizeRegex.test(tireSize.value)){
-        total.textContent ="Correct car tyre size to right format"
+        total.innerHTML ="Correct car tyre size to right format"
     }
 
 
