@@ -9,97 +9,87 @@
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@100;300;400;700&family=Montserrat:wght@100;500;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/aff02a4ba3.js" crossorigin="anonymous"></script>
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous"> -->
-    <link rel="stylesheet" href="/libs/css/bootstrap.css" />
-    <link rel="stylesheet" href="../css/register.css">
+    <link rel="stylesheet" href="../public/libs/css/bootstrap.css" />
+    <link rel="stylesheet" href="../public/css/register.css">
     <title>Battery SignOut</title>
 </head>
 <body>
-    <div id="nav">
-        <nav class="navbar navbar-expand-lg bg-info-subtle">
-          <div class="container-fluid" >
-            <a class="navbar-brand" href="dashboard.html">Dockville Parking</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="dashboard.html">Home</a>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Parking
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="parking.html">Pick vehicle type</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                  </ul>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Tyre Clinic
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                  </ul>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Battery Section
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                  </ul>
-                </li>
-              </ul>
-              <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-              </form>
-            </div>
-          </div>
-        </nav>
+  <div class="divides">
+    <div class="dashboard" style="height: 110.5vh;">
+      <ul class="list">
+        <li id="head">Dockville Parking</li>
+        <hr>
+        <li id="dash"><span id="position"><a class="dropdown-item" href="dashboard.html">Dashboard</a></span></li>
+        <!-- <li class="dark">Parking</li> -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Parking
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="parking.html">Pick vehicle type</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Tyre Clinic
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="tyre-clinic.html">Tyre Price</a></li>
+            <li><a class="dropdown-item" href="tyre-services.html">Tyre Services</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" id="dashboard">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Battery Section
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="battery-section.html">Hire Battery</a></li>
+            <li><a class="dropdown-item" href="batterysignout.html ">SignOut Battery</a></li>
+          </ul>
+        </li>
+      </ul>
     </div>
-    <div class="container-fluid" id="register">
+    <div class="divider2">
+      <div class="container-fluid" id="register">
         <h3>SignOut Battery Here</i></h3>
-        <form>
+        <form name="batterysignout" id="batterysignout" method="POST" action="#" onsubmit="return Validate(event)">
             <div class="form-group">
-                <label for="name"> Name</label>
-                <input type="text" class="form-control" id="name"  placeholder="Enter receiver name">
-              </div>
-              <br>
+              <label for="firstname">First Name</label>
+              <input type="text" class="form-control" id="firstname"  placeholder="Enter receiver's first name" name="firstname">
+              <!-- first name error -->
+              <span id="firstnameerror"></span>
+            </div>
+            <br>
             <div class="form-group">
-                <label for="numberplate">Receipt Number</label>
+              <label for="lastname">Last Name</label>
+              <input type="text" class="form-control" id="lastname"  placeholder="Enter receiver's last name" name="lastname">
+              <!-- last name error -->
+              <span id="lastnameerror"></span>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="receiptnumber">Receipt Number</label>
                 <input type="text" class="form-control" id="receiptnumber"  placeholder="Enter Receipt Number">
             </div>
+            <span id="receiptnumbererror"></span>
             <br>
             <div class="form-group">
               <label for="time">Time </label>
               <input type="time" class="form-control" id="time">
             </div>
+            <span id="timeerror"></span>
             <br>
             <div class="form-group">
                 <label for="Date">Date</label>
                 <input type="date" class="form-control" id="date">
             </div>
+            <span id="dateerror"></span>
             <br>
-            <div class="form-check">
-              <input type="checkbox" class="form-check-input" id="agree">
-              <label class="form-check-label" for="agree">Confirm Details</label>
-            </div>
-            <br>
-            <button type="submit" class="btn btn-primary form-width">Sign Out</button>
+            <button type="submit" name="submit" class="btn btn-primary form-width">Sign Out</button>
           </form>
-    </div>
-    <div class="container-fluid" id="footer">
+      </div>
+      <div class="container-fluid" id="footer">
         <div class="row">
           <div class="col-md-4 col-sm-12" id="foot-left">
             <h3>Dockville Parking</h3>
@@ -125,6 +115,10 @@
           </div>
         </div>
       </div>
-    <script src="/libs/js/bootstrap.bundle.min.js"></script>
+    </div>
+  </div>
+   
+  <script src="../public/JS/batterysignout.js"></script>
+  <script src="../public/libs/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
