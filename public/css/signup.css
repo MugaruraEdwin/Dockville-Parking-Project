@@ -14,7 +14,7 @@ body{
     background-image:url(/images/customer3.jpeg) ;
     background-repeat: no-repeat;
     background-size: cover;
-    color: #A1DD70;
+    color: #8fcbf3;
     font-size: 30px;
     font-family: 'Fraunces', serif;
     border-top-left-radius: 15px;
@@ -25,6 +25,9 @@ body{
 .form-width{
     margin-top: 10px;
     width: 100%;
+}
+.red{
+    color: red;
 }
 .google{
     border: 1px solid;

@@ -20,27 +20,36 @@ head
       p#para-1 Development Agency
     .col-sm-4.margin
       h2 Create an account
-      p Let&apos;s get started with your 30 day free trial
-      form#signup_form(name='signup_form' action='#' method='POST' onsubmit='return Validate(event)')
+      form#signup_form(name='signup_form' action='/api/regmanager' method='POST' onsubmit='return Validate(event)')
         .form-group
-          label(for='firstname') First Name
-          input#firstname.form-control(type='text' placeholder='Enter First Name' name='firtname')
+          label(for='firstname')
+            | First Name
+            span.red *
+          input#firstname.form-control(type='text' placeholder='Enter First Name' name='firstname')
         span#firstnameerror
         .form-group
-          label(for='lastname') Last Name
+          label(for='lastname')
+            | Last Name
+            span.red *
           input#lastname.form-control(type='text' placeholder='Enter Last Name' name='lastname')
         span#lastnameerror
         .form-group
-          label(for='email') Email address
+          label(for='email')
+            | Email address
+            span.red *
           input#email.form-control(type='email' aria-describedby='emailHelp' placeholder='Enter email' name='email')
           small#emailHelp.form-text.text-muted We&apos;ll never share your email with anyone else.
         span#emailerror
         .form-group
-          label(for='password') Password
+          label(for='password')
+            | Password
+            span.red *
           input#password.form-control(type='password' placeholder='Password' name='password')
         span#passworderror
         .form-group
-          label(for='confirmpassword') Confirm Password
+          label(for='confirmpassword')
+            | Confirm Password
+            span.red *
           input#confirmpassword.form-control(type='password' placeholder='Retype Password' name='confirmpassword')
         span#confirmpassworderror
         button#sumbit.btn.btn-primary.form-width(type='submit' name='submit') Create Account
@@ -54,6 +63,7 @@ head
           span#e e
         p.account
           | Already have an account? 
-          a(href='login') Login
+          a(href='login.html') Login
+
 script(src='/libs/js/bootstrap.bundle.min.js')
 script(src='../JS/signup.js')

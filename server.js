@@ -6,16 +6,24 @@ const port = process.env.PORT || 4000;
 
 const app = express();
 
-app.use(express.static(path.join(__dirname,'public')));
-
 const systemRoutes = require('./controllers/systemRoutes')
+const managerRoutes = require('./controllers/managerRoutes')
+const parkerRoutes = require('./controllers/parkerRoutes')
+
+app.use(express.urlencoded({extended:false}));
+app.use(express.json());
+
 connectDB();
 
 app.engine('pug', require('pug').__express);
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
 
+app.use(express.static(path.join(__dirname,'public')));
+
 app.use('/api', systemRoutes)
+app.use('/api', managerRoutes)
+app.use('/api', parkerRoutes)
 
 
 app.listen(port,() => {

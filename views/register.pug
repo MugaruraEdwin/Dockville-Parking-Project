@@ -16,9 +16,10 @@ head
     ul.list
       li#head Dockville Parking
       hr
-      li.nav-item
-        a.nav-link(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false')
-          | Dashboard
+      li#dash
+        span#position
+          a.dropdown-item(href='dashboard.html') Dashboard
+      // <li class="dark">Parking</li>
       li#dashboard
         span#position.nav-item
           a.nav-link(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false')
@@ -28,21 +29,21 @@ head
           | Tyre Clinic
         ul.dropdown-menu
           li
-            a.dropdown-item(href='tyre-clinic') Tyre Price
+            a.dropdown-item(href='tyre-clinic.html') Tyre Price
           li
-            a.dropdown-item(href='tyre-services') Tyre Services
+            a.dropdown-item(href='tyre-services.html') Tyre Services
       li.nav-item.dropdown
         a.nav-link.dropdown-toggle(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false')
           | Battery Section
         ul.dropdown-menu
           li
-            a.dropdown-item(href='battery-section') Hire Battery
+            a.dropdown-item(href='battery-section.html') Hire Battery
           li
-            a.dropdown-item(href='batterysignout ') SignOut Battery
+            a.dropdown-item(href='batterysignout.html ') SignOut Battery
   .divider2
     #register.container-fluid
       h3#begin Register Automobile 
-      form#truckregister(action='#' onsubmit='return Validate(event);' name='truckregister' method='POST')
+      form#truckregister(action='/api/regparker' onsubmit='return Validate(event);' name='truckregister' method='POST')
         .form-group
           label(for='firstname') First Name
           input#firstname.form-control(type='text' placeholder="Enter driver's first name" name='firstname')
@@ -74,10 +75,19 @@ head
           input#email.form-control(type='email' name='email')
           span#emailerror
         br
-        .form-group
-          label(for='model') Model
-          input#model.form-control(type='text' name='model')
-          span#modelerror
+        select#model.form-select(aria-label='Default select example' name='model')
+          option(value='') Select Automobile model
+          option(value='hactchback') Hatch Back
+          option(value='sedan') Sedan
+          option(value='suv') SUV
+          option(value='coupe') Coupe
+          option(value='convertible') Convertible
+          option(value='sportscar') Sports Car
+          option(value='minivan') Mini Van
+          option(value='stationwagon') Station Wagon
+          option(value='crossover') Cross Over
+          option(value='pickuptruck') Pickup Truck
+        span#modelerror
         br
         .form-group
           label(for='timeofarrival') Time of Arrival
@@ -105,15 +115,19 @@ head
         br
         select.form-select(aria-label='Default select example' name='park')
           option(value='') Select time for parking
-          option(value='3000') Day
-          option(value='5000') Night
-          option(value='2000') Less than three hours
+          option(value='day') Day
+          option(value='night') Night
+          option(value='lessthanthreehours') Less than three hours
         span#parkerror
         br
         .form-group
           label(for='receiptnumber') ReceiptNumber
           input#receiptnumber.form-control(type='text' name='receiptnumber')
           span#receiptnumbererror
+        .form-group
+          label(for='total') 
+          input#totalinput.form-control(type='number' name='total' style="display: none;")
+        // <p id="total" name="total"></p>
         br
         button#btn-color.btn.form-width(type='submit' name='submit') Print Receipt
     #footer.container-fluid

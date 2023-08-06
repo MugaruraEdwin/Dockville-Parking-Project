@@ -25,28 +25,28 @@
                 <p>Let's get started with your 30 day free trial</p>
                 <form name="signup_form" id="signup_form" action="#" method="POST" onsubmit="return Validate(event)">
                     <div class="form-group">
-                        <label for="firstname">First Name</label>
-                        <input type="text" class="form-control" id="firstname"  placeholder="Enter First Name" name="firtname">
+                        <label for="firstname">First Name<span class="red">*</span></label>
+                        <input type="text" class="form-control" id="firstname"  placeholder="Enter First Name" name="firstname">
                       </div>
                       <span id="firstnameerror"></span>
                     <div class="form-group">
-                        <label for="lastname">Last Name</label>
+                        <label for="lastname">Last Name<span class="red">*</span></label>
                         <input type="text" class="form-control" id="lastname"  placeholder="Enter Last Name" name="lastname">
                     </div>
                     <span id="lastnameerror"></span>
                     <div class="form-group">
-                      <label for="email">Email address</label>
+                      <label for="email">Email address<span class="red">*</span></label>
                       <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" name="email">
                       <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                     </div>
                     <span id="emailerror"></span>
                     <div class="form-group">
-                      <label for="password">Password</label>
+                      <label for="password">Password<span class="red">*</span></label>
                       <input type="password" class="form-control" id="password" placeholder="Password" name="password">
                     </div>
                     <span id="passworderror"></span>
                     <div class="form-group">
-                        <label for="confirmpassword">Confirm Password</label>
+                        <label for="confirmpassword">Confirm Password<span>*</span></label>
                         <input type="password" class="form-control" id="confirmpassword" placeholder="Retype Password" name="confirmpassword">
                       </div>
                       <span id="confirmpassworderror"></span>

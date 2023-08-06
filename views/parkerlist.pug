@@ -1,0 +1,42 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Parkers
+  link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9' crossorigin='anonymous')
+table.table
+  thead.table-dark 
+
+    tr
+      th(scope='col') First Name
+      th(scope='col') Last Name
+      th(scope='col') Number Plate
+      th(scope='col') Color
+      th(scope='col') Email
+      th(scope='col') Automobile model
+      th(scope='col') Time of Arrival
+      th(scope='col') Automobile type
+      th(scope='col') Date
+      th(scope='col') Phone Number
+      th(scope='col') Parking Duration
+      th(scope='col') Receipt Number
+      th(scope='col') Total
+  tbody
+  if parkers.length
+    each parker in parkers
+      tr
+        th #{parker.firstname}
+        td  #{parker.lastname}
+        td  #{parker.numberplate}
+        td  #{parker.color}
+        td  #{parker.email}  
+        th #{parker.model}
+        td  #{parker.time}
+        td  #{parker.type}
+        td  #{parker.date}
+        td  #{parker.phonenumber}  
+        th #{parker.park}
+        td  #{parker.receiptnumber}  
+        th #{parker.total}
+  else 
+    p There are no parkers in the database

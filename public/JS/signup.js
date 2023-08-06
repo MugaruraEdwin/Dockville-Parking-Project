@@ -84,6 +84,7 @@ const Validate = (event) => {
         password.focus();
     }
 
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#\$%\^&\*]).{8,}$/;
     if(password.value == ""){
         password.style.border = "2px solid red";
         passwordError.textContent = "Password is required";
@@ -92,7 +93,16 @@ const Validate = (event) => {
         //focus cursor
         password.focus();
         error++;
-    }else{
+    }else if(!passwordRegex.test(password.value)){
+        password.style.border = "2px solid red";
+        passwordError.textContent = "Password is weak. Please follow the NIST guidelines for password security.";
+        //styling error
+        passwordError.style = "color: red; font-size:11px; font-family: Helevetica,Arial;";
+        //focus cursor
+        password.focus();
+        error++;
+    }
+    else{
         password.style.border = "2px solid green";
         passwordError.textContent = "";
         //focus cursor

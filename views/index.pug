@@ -9,32 +9,34 @@ head
   link(rel='stylesheet' href='../css/index.css')
   link(rel='stylesheet' href='../libs/css/bootstrap.css')
   title Dockville Night and Day Parking
-
-.design
-  #carouselExampleCaptions.carousel.slide.carousel-fade(data-bs-ride='carousel')
-
-    .carousel-inner
-      .carousel-item.active(data-bs-interval='5000')
-        img#imageheight.d-block.w-100(src='../images/park.jpg' alt='...')
-        .carousel-caption.d-none.d-md-block
-          h2 Dockville Night and Day Parking
-          h3 Parking Services
-          button.login(onclick="location.href='login'") Login
-          button.signup(onclick="location.href='signup'") SignUp
-      .carousel-item(data-bs-interval='5000')
-        img#imageheight_2.d-block.w-100(src='/images/battery.jpg' alt='...')
-        .carousel-caption.d-none.d-md-block
-          h2 Dockville Night and Day Parking
-          h3 Battery Services
-          button.login(onclick="location.href='login'") Login
-          button.signup(onclick="location.href='signup'") SignUp
-      .carousel-item(data-bs-interval='5000')
-        img#imageheight_3.d-block.w-100(src='../images/tyre.jpg' alt='...')
-        .carousel-caption.d-none.d-md-block
-          h2 Dockville Night and Day Parking
-          h3 Car Tyre Clinic
-          button.login(onclick="location.href='login'") Login
-          button.signup(onclick="location.href='signup'") SignUp
-  
-
+#all.container
+  .main
+    img(src='../images/DockVille Day and Night Parking -logos_white.png' alt='')
+  .design
+    #carouselExampleCaptions.carousel.slide.carousel-fade(data-bs-ride='carousel')
+      .carousel-inner
+        .carousel-item.active(data-bs-interval='5000')
+          img#imageheight.d-block.w-100(src='../images/park1.jpg' alt='...')
+          .carousel-caption.d-none.d-md-block
+            h3 Parking Services
+            button.login(onclick="location.href='login'")
+              | Login
+            button.signup(onclick="location.href='signup'")
+              | SignUp
+        .carousel-item(data-bs-interval='5000')
+          img#imageheight_2.d-block.w-100(src='../images/battery.jpg' alt='...')
+          .carousel-caption.d-none.d-md-block
+            h3 Battery Services
+            button.login(onclick="location.href='login'")
+              | Login
+            button.signup(onclick="location.href='signup'")
+              | SignUp
+        .carousel-item(data-bs-interval='5000')
+          img#imageheight_3.d-block.w-100(src='../images/cartyre.jpg' alt='...')
+          .carousel-caption.d-none.d-md-block
+            h3 Car Tyre Clinic
+            button.login(onclick="location.href='login'")
+              | Login
+            button.signup(onclick="location.href='signup'")
+              | SignUp
 script(src='../libs/js/bootstrap.bundle.min.js')

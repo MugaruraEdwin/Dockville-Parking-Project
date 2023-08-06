@@ -19,11 +19,8 @@
       <ul class="list">
         <li id="head">Dockville Parking</li>
         <hr>
-        <li class="nav-item ">
-          <a class="nav-link " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dashboard
-          </a>
-        </li>
+        <li id="dash"><span id="position"><a class="dropdown-item" href="dashboard.html">Dashboard</a></span></li>
+        <!-- <li class="dark">Parking</li> -->
         <li id="dashboard"><span id="position" class="nav-item ">
           <a class="nav-link " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Park Register
@@ -89,11 +86,20 @@
               <span id="emailerror"></span>
             </div>
             <br>
-            <div class="form-group">
-              <label for="model">Model</label>
-              <input type="text" class="form-control" id="model" name="model" >
-              <span id="modelerror"></span>
-            </div>
+            <select class="form-select" aria-label="Default select example" name="model" id="model">
+              <option value="" >Select Automobile model</option>
+              <option value="hactchback">Hatch Back</option>
+              <option value="sedan">Sedan</option>
+              <option value="suv">SUV</option>
+              <option value="coupe">Coupe</option>
+              <option value="convertible">Convertible</option>
+              <option value="sportscar">Sports Car</option>
+              <option value="minivan">Mini Van</option>
+              <option value="stationwagon">Station Wagon</option>
+              <option value="crossover">Cross Over</option>
+              <option value="pickuptruck">Pickup Truck</option>
+            </select>
+            <span id="modelerror"></span>
             <br>
             <div class="form-group">
               <label for="timeofarrival">Time of Arrival</label>
@@ -125,9 +131,9 @@
             <br>
             <select class="form-select" aria-label="Default select example" name="park">
                 <option value="" >Select time for parking</option>
-                <option value="3000">Day</option>
-                <option value="5000">Night</option>
-                <option value="2000">Less than three hours</option>
+                <option value="day">Day</option>
+                <option value="night">Night</option>
+                <option value="lessthanthreehours">Less than three hours</option>
               </select>
               <span id="parkerror"></span>
               <br>
@@ -136,6 +142,12 @@
                 <input type="text" class="form-control" id="receiptnumber" name="receiptnumber" >
                 <span id="receiptnumbererror"></span>
               </div>
+              <div class="form-group">
+                <label for="total">Total</label>
+                <input type="number" class="form-control" id="totalinput" name="total" >
+              </div>
+
+              <!-- <p id="total" name="total"></p> -->
               <br>
             <button type="submit" class="btn form-width" name="submit" id="btn-color">Print Receipt</button>
           </form>

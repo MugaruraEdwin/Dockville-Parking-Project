@@ -1,5 +1,6 @@
   body{
     font-family: 'Fraunces', serif !important;
+        background-color: #D8D9DA;
     
 }
 
@@ -16,13 +17,6 @@
 #imageheight{
     height: 100vh !important;
     background-size: cover;
-}
-h2{
-    margin-bottom: 580px !important;
-    font-size: 60px !important;
-    color :#21a6e8  !important;
-    text-align: left !important;
-    margin-right: 80px;
 }
 #imageheight_2{
     height: 100vh !important;
@@ -47,9 +41,12 @@ h2{
     border-radius: 10px;
     color: white;
     border: 1px solid #21a6e8;
+    margin-left:5px !important;
 }
 .design{
-    height: 600px !important;
+    /* height: 00px !important; */
+    width: 50%;
+    height: 500px;
 }
 
 .signup:hover{
@@ -58,4 +55,29 @@ h2{
 
 .login:hover{
     background-color: #70c1e9;
+}
+.main{
+    width: 50%;
+    background-color: #4682A9;
+    height: 700px;
+}
+.main img{
+    height:700px ;
+    width: 100%;
+}
+#all{
+    margin-top: 40px;
+    height: 700px !important;
+    display: flex;
+    /* margin-left: 30px; */
+   margin-left: 75px;
+ 
+}
+.carousel-item{
+    height: 700px !important;
+    width:100%;
+    
+}
+.carousel-item img{
+    
 }

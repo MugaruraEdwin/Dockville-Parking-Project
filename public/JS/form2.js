@@ -2,6 +2,7 @@ const Validate = (event) =>{
     // for whole validation
     // event called up here is for submission
     let error = 0;
+    let price = 0;
     //Picking input fields with their names
     // access document then name 
     let firstName = document.truckregister.firstname;
@@ -30,6 +31,7 @@ const Validate = (event) =>{
     let carModelError = document.getElementById("modelerror");
     let dateError = document.getElementById("dateerror");
     let receiptNumberError = document.getElementById("receiptnumbererror");
+    let totalInput = document.getElementById("totalinput");
 
 
     //Validating name input
@@ -205,7 +207,7 @@ const Validate = (event) =>{
         carmodel.focus();
         // return false;
         error++;
-    }else{
+     } else{
         carmodel.style.border = "2px solid green";
         carModelError.textContent = "";
         //focus cursor
@@ -291,9 +293,45 @@ const Validate = (event) =>{
         parkOption.focus();
         // return false;
         error++;
+    }else{
+        parkOption.style.border = "2px solid green";
+        parkError.textContent = "";
     }
 
-    const uniqueNumberRegex = /^BB-([0-9]{3})+$/;
+    if(parkOption.value == "day" && (carType.value =="truck" || carType.value =="personalcar" || carType.value =="taxi")){
+        price += 3000;
+        totalInput.value = price;
+    }else if(parkOption.value == "day" && carType.value =="coaster"){
+        price += 4000;
+        price = total;
+        totalInput.value = price;
+    } else if(parkOption.value == "day" && carType.value =="bodaboda"){
+        price += 2000;
+        price = price;
+        totalInput.value = price;
+    } else if(parkOption.value == "night" && (carType.value =="coaster" || carType.value =="personalcar" || carType.value =="taxi" || carType.value =="bodaboda")){
+        price += 2000;
+        price = price;
+        totalInput.value = price;
+    }else if(parkOption.value == "night" && carType.value =="truck"){
+        price += 5000;
+        price = price;
+        totalInput.value = price;
+    }else if(parkOption.value == "lessthanthreehours" && (carType.value =="truck" || carType.value =="personalcar" || carType.value =="taxi")){
+        price += 2000;
+        price = price;
+        totalInput.value = price;
+    }else if(parkOption.value == "lessthanthreehours" && carType.value =="coaster"){
+        price += 3000;
+        price = price;
+        totalInput.value = price;
+    }else if(parkOption.value == "lessthanthreehours" && carType.value =="bodaboda"){
+        price += 1000;
+        price = price;
+        totalInput.value = price;
+    }
+
+    const bodaRegex = /^BB-([0-9]{3})+$/;
     const personalCarRegex = /^PC-([0-9]{3})+$/;
     const truckCarRegex = /^TC-([0-9]{3})+$/;
     const coasterCarRegex = /^CC-([0-9]{3})+$/;
@@ -308,46 +346,98 @@ const Validate = (event) =>{
         receiptNumber.focus();
         // return false;
         error++;
-    }else if(!(receiptNumber.value.match(uniqueNumberRegex) || receiptNumber.value.match(personalCarRegex) || receiptNumber.value.match(truckCarRegex) || receiptNumber.value.match(coasterCarRegex) || receiptNumber.value.match(taxiCarRegex))){
-        receiptNumber.style.border = "2px solid red";
-        receiptNumberError.textContent = "Correct format: TC-000 for trucks / PC-000 for personalcars / TAX1-000 for taxis / CC-000 for coasters / BB-000 for bodas";
-        //styling error
-        receiptNumberError.style = "color: red; font-size:11px; font-family: Helevetica,Arial;";
-        //focus cursor
-        receiptNumber.focus();
-        // return false;
-        error++;
-    }
-    // else if(!(taxiCarRegex.test(receiptNumber.value) && carType.value == "taxi")){
+    // }else if(!(receiptNumber.value.match(uniqueNumberRegex) || receiptNumber.value.match(personalCarRegex) || receiptNumber.value.match(truckCarRegex) || receiptNumber.value.match(coasterCarRegex) || receiptNumber.value.match(taxiCarRegex))){
     //     receiptNumber.style.border = "2px solid red";
-    //     receiptNumberError.textContent = "Enter a receipt number in format TAXI-000";
+    //     receiptNumberError.textContent = "Correct format: TC-000 for trucks / PC-000 for personalcars / TAX1-000 for taxis / CC-000 for coasters / BB-000 for bodas";
     //     //styling error
     //     receiptNumberError.style = "color: red; font-size:11px; font-family: Helevetica,Arial;";
     //     //focus cursor
     //     receiptNumber.focus();
     //     // return false;
     //     error++;
-    //  }
-    // }else if(carType.value == "personalcar" ){
-    //     !personalCarRegex.test(receiptNumber.value)
-    //     receiptNumber.style.border = "2px solid red";
-    //     receiptNumberError.textContent = "Enter a receipt number in format PC-000";
-    //     //styling error
-    //     receiptNumberError.style = "color: red; font-size:11px; font-family: Helevetica,Arial;";
-    //     //focus cursor
-    //     receiptNumber.focus();
-    //     // return false;
-    //     error++;
-    // }else if(carType.value == "coaster" ){
-    //     !coasterCarRegex.test(receiptNumber.value)
-    //     receiptNumber.style.border = "2px solid red";
-    //     receiptNumberError.textContent = "Enter a receipt number in format CC-000";
-    //     //styling error
-    //     receiptNumberError.style = "color: red; font-size:11px; font-family: Helevetica,Arial;";
-    //     //focus cursor
-    //     receiptNumber.focus();
-    //     // return false;
-    //     error++;
+    // }
+    }else if (carType.value == "taxi") {
+        if(!taxiCarRegex.test(receiptNumber.value)){
+            receiptNumber.style.border = "2px solid red";
+            receiptNumberError.textContent = "Enter a receipt number in format TAXI-000";
+            //styling error
+            receiptNumberError.style.color = "red";
+            receiptNumberError.style.fontSize = "11px";
+            receiptNumberError.style.fontFamily = "Helvetica, Arial";
+            //focus cursor
+            receiptNumber.focus();
+            // return false;
+            error++;
+        }else{
+            receiptNumber.style.border = "2px solid green";
+            receiptNumberError.textContent = "";
+        }
+      } else if (carType.value == "personalcar") {
+        if (!personalCarRegex.test(receiptNumber.value)) {
+          receiptNumber.style.border = "2px solid red";
+          receiptNumberError.textContent = "Enter a receipt number in format PC-000";
+          //styling error
+          receiptNumberError.style.color = "red";
+          receiptNumberError.style.fontSize = "11px";
+          receiptNumberError.style.fontFamily = "Helvetica, Arial";
+          //focus cursor
+          receiptNumber.focus();
+          // return false;
+          error++;
+        }else{
+            receiptNumber.style.border = "2px solid green";
+            receiptNumberError.textContent = "";
+        }
+      } else if (carType.value == "coaster") {
+        if (!coasterCarRegex.test(receiptNumber.value)) {
+          receiptNumber.style.border = "2px solid red";
+          receiptNumberError.textContent = "Enter a receipt number in format CC-000";
+          //styling error
+          receiptNumberError.style.color = "red";
+          receiptNumberError.style.fontSize = "11px";
+          receiptNumberError.style.fontFamily = "Helvetica, Arial";
+          //focus cursor
+          receiptNumber.focus();
+          // return false;
+          error++;
+        }else{
+            receiptNumber.style.border = "2px solid green";
+            receiptNumberError.textContent = "";
+        }
+      }else if (carType.value == "truck") {
+        if (!truckCarRegex.test(receiptNumber.value)) {
+          receiptNumber.style.border = "2px solid red";
+          receiptNumberError.textContent = "Enter a receipt number in format TC-000";
+          //styling error
+          receiptNumberError.style.color = "red";
+          receiptNumberError.style.fontSize = "11px";
+          receiptNumberError.style.fontFamily = "Helvetica, Arial";
+          //focus cursor
+          receiptNumber.focus();
+          // return false;
+          error++;
+        }else{
+            receiptNumber.style.border = "2px solid green";
+            receiptNumberError.textContent = "";
+        }
+      }else if (carType.value == "bodaboda") {
+        if (!bodaRegex.test(receiptNumber.value)) {
+          receiptNumber.style.border = "2px solid red";
+          receiptNumberError.textContent = "Enter a receipt number in format BB-000";
+          //styling error
+          receiptNumberError.style.color = "red";
+          receiptNumberError.style.fontSize = "11px";
+          receiptNumberError.style.fontFamily = "Helvetica, Arial";
+          //focus cursor
+          receiptNumber.focus();
+          // return false;
+          error++;
+        }else{
+            receiptNumber.style.border = "2px solid green";
+            receiptNumberError.textContent = "";
+        }
+      }
+      
     else{
         receiptNumber.style.border = "2px solid green";
         receiptNumberError.textContent = "";
@@ -373,6 +463,9 @@ const Validate = (event) =>{
     // }
 
     // All errors showing at the same time
+
+
+
 
     if(error > 0){
         event.preventDefault();// if the error is greater than zero please prevent default submit, don't submit
