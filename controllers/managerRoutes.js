@@ -1,5 +1,5 @@
 const express = require('express');
-const Manager = require('../models/managersignupModel');
+const Manager = require('../models/managerModel');
 const router = express.Router();
 
 // get employee signup route
@@ -34,6 +34,31 @@ router.get('/list', async (req,res) => {
     catch(error){
         console.log(error);
         return res.status(400).send({message: "Sorry, couldn't retrieve any manager"});
+    }
+})
+
+// delete route 
+
+router.post('/manager/delete', async (req,res) => {
+    try{
+        await Manager.deleteOne({_id:req.body.id});
+        res.redirect('back');
+    }
+    catch(error){
+        res.status(400).send("Unable to delete manager from database")
+    }
+})
+ 
+// update route
+
+// first get form 
+
+router.get('/manager/edit', async (req,res) => {
+    try{
+        const manage = await Manager.findOne({_id: req.params.id});
+    }
+    catch(error){
+
     }
 })
 

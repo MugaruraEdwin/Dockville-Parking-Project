@@ -1,11 +1,24 @@
 const express = require('express');
 const router = express.Router();
+const session = require('express-session');
+
+// Use the session middleware
+router.use(session({
+  secret: '123', // Replace with your own secret key
+  resave: false,
+  saveUninitialized: true
+}));
 
 
-
-router.get('/dashboard',(req,res) => {
-    res.render('dashboard.pug');
-});
+// router.get('/dashboard', async (req,res, next) => {
+//     try{
+//         const totalRevenue = req.session.totalRevenue;
+//         res.render('dashboard.pug',{totalRevenue});
+//     }
+//     catch(error){
+//         next(error);
+//     }
+// });
 
 router.get('/parking',(req,res) => {
     res.render('parking.pug');
@@ -31,17 +44,18 @@ router.get('/',(req,res) => {
     res.render('index.pug');
 });
 
-router.get('/batteryservices',(req,res) => {
-    res.render('batterysection.pug');
+router.get('/batteryreceipt',(req,res) => {
+    res.render('batteryreceipt.pug');
 });
 
 router.get('/batterysignout',(req,res) => {
     res.render('batterysignout.pug');
 });
 
-router.get('/tyreclinic',(req,res) => {
-    res.render('tyre-clinic.pug');
+router.get('/tyrereceipt',(req,res) => {
+    res.render('batteryreceipt.pug');
 });
+
 
 router.get('/tyreservices',(req,res) => {
     res.render('tyre-services.pug');

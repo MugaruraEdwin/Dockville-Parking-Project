@@ -4,7 +4,7 @@ const Validate = (event) => {
 
     let firstName = document.tyreclinicform.firstname;
     let lastName = document.tyreclinicform.lastname;
-    let tireSize = document.tyreclinicform.tiresize;
+    let tyreSize = document.tyreclinicform.tyresize;
     let carType = document.tyreclinicform.type;
     let carModel = document.tyreclinicform.carmodel;
     let date = document.tyreclinicform.date;
@@ -14,14 +14,14 @@ const Validate = (event) => {
 
     let firstNameError = document.getElementById("firstnameerror");
     let lastNameError = document.getElementById("lastnameerror");
-    let tireError = document.getElementById('tiresizeerror');
+    let tyreError = document.getElementById('tyresizeerror');
     let carMakeError = document.getElementById('typeerror');
     let carModelError = document.getElementById('carmodelerror');
     let phoneNumberError = document.getElementById("phonenumbererror");
     let emailError = document.getElementById("emailerror");
     let dateError = document.getElementById("dateerror");
     let receiptNumberError = document.getElementById("receiptnumbererror");
-    let total = document.getElementById('total');
+    let totalInput = document.getElementById('totalinput');
 
 
     
@@ -177,11 +177,7 @@ const Validate = (event) => {
 
     // validating select for emptiness
 
-    const uniqueNumberRegex = /^BB-([0-9]{3})+$/;
-    const personalCarRegex = /^PC-([0-9]{3})+$/;
-    const truckCarRegex = /^TC-([0-9]{3})+$/;
-    const coasterCarRegex = /^CC-([0-9]{3})+$/;
-    const taxiCarRegex = /^TAXI-([0-9]{3})+$/;
+    const tyreRegex = /^TR-(\d{3})$/;
 
     if(receiptNumber.value == ""){
         receiptNumber.style.border = "2px solid red";
@@ -192,9 +188,9 @@ const Validate = (event) => {
         receiptNumber.focus();
         // return false;
         error++;
-    }else if(!(receiptNumber.value.match(uniqueNumberRegex) || receiptNumber.value.match(personalCarRegex) || receiptNumber.value.match(truckCarRegex) || receiptNumber.value.match(coasterCarRegex) || receiptNumber.value.match(taxiCarRegex))){
+    }else if(!receiptNumber.value.match(tyreRegex)){
         receiptNumber.style.border = "2px solid red";
-        receiptNumberError.textContent = "Correct format: TC-000 for trucks / PC-000 for personalcars / TAX1-000 for taxis / CC-000 for coasters / BB-000 for bodas";
+        receiptNumberError.textContent = "Enter Correct format: TR-000";
         //styling error
         receiptNumberError.style = "color: red; font-size:11px; font-family: Helevetica,Arial;";
         //focus cursor
@@ -206,43 +202,43 @@ const Validate = (event) => {
         receiptNumber.style.border = "2px solid green";
         receiptNumberError.textContent = "";
         //focus cursor
-        tireSize.focus();
+        tyreSize.focus();
     }
 
 
 
-    const tireSizeRegex = /\b\d{2,3}(?:\/\d{2,3})?\s?[A-Z]\d{2,3}\b/g;
-    if(tireSize.value == ""){
-        tireSize.style.border = "2px solid red";
-        tireError.textContent = "Tire Size is required";
+    const tyreSizeRegex = /\b\d{2,3}(?:\/\d{2,3})?\s?[A-Z]\d{2,3}\b/g;
+    if(tyreSize.value == ""){
+        tyreSize.style.border = "2px solid red";
+        tyreError.textContent = "Tire Size is required";
         //styling error
-        tireError.style = "color: red; font-size:11px; font-family: Helevetica,Arial;";
+        tyreError.style = "color: red; font-size:11px; font-family: Helevetica,Arial;";
         //focus cursor
-        tireSize.focus();
+        tyreSize.focus();
         // return false;
         error++;
     }
-    else if(!tireSizeRegex.test(tireSize.value)){
-        tireSize.style.border = "2px solid red";
-        tireError.textContent = "Tire Size is invalid, correct format i.e: 195/50R15";
+    else if(!tyreSizeRegex.test(tyreSize.value)){
+        tyreSize.style.border = "2px solid red";
+        tyreError.textContent = "Tire Size is invalid, correct format i.e: 195/50R15";
         //styling error
-        tireError.style = "color: red; font-size:11px; font-family: Helevetica,Arial;";
+        tyreError.style = "color: red; font-size:11px; font-family: Helevetica,Arial;";
         //focus cursor
-        tireSize.focus();
+        tyreSize.focus();
         // return false;
         error++;
     }
 
-    let newTireSize = Number(tireSize.value[7] + tireSize.value[8]);
-    if (newTireSize <= 20){
+    let newTyreSize = Number(tyreSize.value[7] + tyreSize.value[8]);
+    if (newTyreSize <= 20){
         price += 50000;
-        tireSize.style.border = "2px solid green";
-        tireError.textContent = "";
+        tyreSize.style.border = "2px solid green";
+        tyreError.textContent = "";
     }
-    else if(newTireSize <= 40){
+    else if(newTyreSize <= 40){
         price += 100000;
-        tireSize.style.border = "2px solid green";
-        tireError.textContent = "";
+        tyreSize.style.border = "2px solid green";
+        tyreError.textContent = "";
     }
 
     if(carType.value == ""){
@@ -336,10 +332,10 @@ const Validate = (event) => {
     }
 
 
-    if(!carType.value == "" && !newTireSize == "" ){
-        total.innerHTML = "Total cost is "+ price +" for "+ newTireSize + " inch " + carType.value + " tyre";
-    }else if(!carType.value == "" && !tireSizeRegex.test(tireSize.value)){
-        total.innerHTML ="Correct car tyre size to right format"
+    if(!carType.value == "" && !newTyreSize == "" && !carModel == "" ){
+        totalInput.value = price;
+    }else if(!carType.value == "" && !tyreSizeRegex.test(tyreSize.value)){
+        preventDefault();
     }
 
 

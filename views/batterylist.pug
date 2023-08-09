@@ -1,0 +1,52 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Parkers
+  link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9' crossorigin='anonymous')
+  h2 Battery List 
+//-   h1 The total revenue is: #{amount}
+table.table
+
+  thead.table-dark 
+
+    tr
+      th(scope='col') First Name
+      th(scope='col') Last Name
+      th(scope='col') Phone Number
+      th(scope='col') Time of Hire
+      th(scope='col') Date
+      th(scope='col') Gender
+      th(scope='col') NIN Number
+      th(scope='col') Battery Size
+      th(scope='col') Hire Time
+      th(scope='col') Receipt Number
+      th(scope='col') Total
+  tbody
+  if hires.length
+    each hire in hires
+      tr
+        td #{hire.firstname}
+        td  #{hire.lastname}
+        td  #{hire.phonenumber}
+        td  #{hire.time}
+        td  #{hire.date}  
+        td #{hire.gender}
+        td  #{hire.nin}
+        td  #{hire.batterysize}
+        td  #{hire.hire}
+        td  #{hire.receiptnumber}  
+        td #{hire.total}
+        //- td 
+        //-   form(action="/api/parker/delete" method="POST")
+        //-     input(type="hidden" name="id" value = parker._id)  
+        //-     button.btn.btn-danger(type='submit' onclick='return Confirm(event)') Delete  
+        //- td 
+        -   //a.btn.btn-warning(href="/api/parker/edit/"+parker._id) Edit 
+        td
+            a.btn.btn-warning(href="/api/battery/receipt/"+hire._id) Generate Receipt 
+
+  else 
+    p There are no batteries hired in the database
+
+//- script(src='../js/delete.js')

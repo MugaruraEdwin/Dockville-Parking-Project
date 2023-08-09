@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 // Managersignup schema
 
-const ManagersignupSchema = new mongoose.Schema({
+const SignupSchema = new mongoose.Schema({
     firstname:{
         type:String,
         required:true,
@@ -30,4 +30,4 @@ const ManagersignupSchema = new mongoose.Schema({
 
 })
 
-module.exports = mongoose.model('Manager', ManagersignupSchema)
+module.exports = mongoose.model('Manager', SignupSchema)

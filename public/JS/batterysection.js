@@ -1,6 +1,6 @@
 const Validate = (event) => {
     let error = 0;
-    let sum = 0;
+    let price = 0;
 
     let firstName = document.batterysection.firstname;
     let lastName = document.batterysection.lastname;
@@ -23,7 +23,8 @@ const Validate = (event) => {
     let batterySizeError = document.getElementById("batterysizeerror");
     let receiptNumberError = document.getElementById("receiptnumbererror");
     let hireTimeError = document.getElementById("hireerror");
-    let total = document.getElementById("total")
+    let totalInput = document.getElementById("totalinput");
+
 
     let nameRegex = /^[A-Z][a-zA-Z]*$/;
 
@@ -236,44 +237,98 @@ const Validate = (event) => {
         let newSize = batterySize.value[0] + batterySize.value[1];
 
         if(newSize < 50 && hireTime.value == "week" ){
-            sum += 50000;
-            total.textContent = `Total is ${sum}`;
+           price += 50000;
+           price = price;
+           totalInput.value = price;
         }else if(newSize < 50 && hireTime.value == "fortnight"){
-            sum += 70000;
-            total.textContent = `Total is ${sum}`;
+           price += 70000;
+           price = price;
+           totalInput.value = price;
         }else if(newSize < 50 && hireTime.value == "month"){
-            sum += 90000;
-            total.textContent = `Total is ${sum}`;   
-        }else if(newSize < 100){
-            sum += 100000;
-            total.textContent = `Total is ${sum}`;
+           price += 90000;
+           price = price;
+           totalInput.value = price;
+        }else if(newSize < 100 && hireTime.value == "week"){
+           price += 100000;
+           price = price;
+           totalInput.value = price;
+        }else if(newSize < 100 && hireTime.value == "fortnight"){
+           price += 120000;
+           price = price;
+           totalInput.value = price;
+        }else if(newSize < 100 && hireTime.value == "month"){
+           price += 150000;
+           price = price;
+           totalInput.value = price;
         }
     }else if(batterySize.value.length = 4){
         let newSize = batterySize.value[0] + batterySize.value[1] + batterySize.value[2];
 
-        if(newSize < 150){
-            sum += 150000;
-            total.textContent = `Total is ${sum}`;
-        }else if(newSize < 300){
-            sum += 300000;
-            total.textContent = `Total is ${sum}`;
-        }else if(newSize < 400){
-            sum += 400000;
-            total.textContent = `Total is ${sum}`;
-        }else if(newSize < 500){
-            sum += 500000;
-            total.textContent = `Total is ${sum}`;
-        }else if(newSize < 600){
-            sum += 600000;
-            total.textContent = `Total is ${sum}`;
+        if(newSize < 200 && hireTime.value == 'week'){
+           price += 180000;
+           price = price;
+           totalInput.value = price;
+        }else if(newSize < 200 && hireTime.value == 'fortnight'){
+           price += 190000;
+           price = price;
+           totalInput.value = price;
+        }else if(newSize < 200 && hireTime.value =='month'){
+           price += 200000;
+           price = price;
+           totalInput.value = price;
+        }else if(newSize < 400 && hireTime.value == 'week'){
+           price += 300000;
+           price = price;
+           totalInput.value = price;
+        }else if(newSize < 400 && hireTime.value=='fortnight'){
+           price += 350000;
+           price = price;
+           totalInput.value = price;
+        }else if(newSize < 400 && hireTime.value=='month'){
+           price += 400000;
+           price = price;
+           totalInput.value = price;
+        }else if(newSize < 600 && hireTime.value == 'week'){
+           price += 500000;
+           price = price;
+           totalInput.value = price;
+        }else if(newSize < 600 && hireTime.value=='fortnight'){
+           price += 550000;
+           price = price;
+           totalInput.value = price;
+        }else if(newSize < 600 && hireTime.value=='month'){
+           price += 600000;
+           price = price;
+           totalInput.value = price;
+        }else if(newSize < 800 && hireTime.value == 'week'){
+           price += 700000;
+           price = price;
+           totalInput.value = price;
+        }else if(newSize < 800 && hireTime.value=='fortnight'){
+           price += 750000;
+           price = price;
+           totalInput.value = price;
+        }else if(newSize < 800 && hireTime.value=='month'){
+           price += 800000;
+           price = price;
+           totalInput.value = price;
+        }else if(newSize < 1000 && hireTime.value == 'week'){
+           price += 900000;
+           price = price;
+           totalInput.value = price;
+        }else if(newSize < 1000 && hireTime.value=='fortnight'){
+           price += 950000;
+           price = price;
+           totalInput.value = price;
+        }else if(newSize < 1000 && hireTime.value=='month'){
+           price += 1000000;
+           price = price;
+           totalInput.value = price;
         }
     }
 
-    const uniqueNumberRegex = /^BB-([0-9]{3})+$/;
-    const personalCarRegex = /^PC-([0-9]{3})+$/;
-    const truckCarRegex = /^TC-([0-9]{3})+$/;
-    const coasterCarRegex = /^CC-([0-9]{3})+$/;
-    const taxiCarRegex = /^TAXI-([0-9]{3})+$/;
+    
+    const batteryRegex = /^BAT-(\d{3})$/;
 
     if(receiptNumber.value == ""){
         receiptNumber.style.border = "2px solid red";
@@ -284,9 +339,9 @@ const Validate = (event) => {
         receiptNumber.focus();
         // return false;
         error++;
-    }else if(!(receiptNumber.value.match(uniqueNumberRegex) || receiptNumber.value.match(personalCarRegex) || receiptNumber.value.match(truckCarRegex) || receiptNumber.value.match(coasterCarRegex) || receiptNumber.value.match(taxiCarRegex))){
+    }else if(!receiptNumber.value.match(batteryRegex)){
         receiptNumber.style.border = "2px solid red";
-        receiptNumberError.textContent = "Correct format: TC-000 for trucks / PC-000 for personalcars / TAX1-000 for taxis / CC-000 for coasters / BB-000 for bodas";
+        receiptNumberError.textContent = "Enter Correct format: BAT-000";
         //styling error
         receiptNumberError.style = "color: red; font-size:11px; font-family: Helevetica,Arial;";
         //focus cursor
@@ -298,11 +353,9 @@ const Validate = (event) => {
         receiptNumber.style.border = "2px solid green";
         receiptNumberError.textContent = "";
         //focus cursor
-        tireSize.focus();
+        // tireSize.focus();
     }
 
-
-   
 
     if(error > 0){
         event.preventDefault();

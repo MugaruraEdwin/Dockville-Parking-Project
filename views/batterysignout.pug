@@ -11,6 +11,7 @@ head
   link(rel='stylesheet' href='../libs/css/bootstrap.css')
   link(rel='stylesheet' href='../css/register.css')
   title Battery SignOut
+ 
 .divides
   .dashboard(style='height: 106vh;')
     ul.list
@@ -47,6 +48,7 @@ head
   .divider2
     #register.container-fluid
       h3 SignOut Battery Here
+      h1 The total revenue is: #{parkRevenue}
       form#batterysignout(name='batterysignout' method='POST' action='#' onsubmit='return Validate(event)')
         .form-group
           label(for='firstname') First Name

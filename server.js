@@ -9,7 +9,11 @@ const app = express();
 const systemRoutes = require('./controllers/systemRoutes')
 const managerRoutes = require('./controllers/managerRoutes')
 const parkerRoutes = require('./controllers/parkerRoutes')
+const batteryRoutes = require('./controllers/batteryRoutes')
+const tyreRoutes = require('./controllers/tyreRoutes')
+// const receiptRoutes = require('./controllers/receiptRoutes')
 
+app.locals.amount = 0;
 app.use(express.urlencoded({extended:false}));
 app.use(express.json());
 
@@ -24,6 +28,10 @@ app.use(express.static(path.join(__dirname,'public')));
 app.use('/api', systemRoutes)
 app.use('/api', managerRoutes)
 app.use('/api', parkerRoutes)
+app.use('/api', batteryRoutes)
+app.use('/api', tyreRoutes)
+// app.use('/api', receiptRoutes)
+
 
 
 app.listen(port,() => {

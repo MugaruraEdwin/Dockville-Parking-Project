@@ -4,9 +4,9 @@ head
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
   title Managers
   link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9' crossorigin='anonymous')
+  h2 Manager List 
 table.table
   thead.table-dark 
-
     tr
       th(scope='col') First Name
       th(scope='col') Last Name
@@ -21,7 +21,12 @@ table.table
         td  #{manager.lastname}
         td  #{manager.email}
         td  #{manager.password}
-        td  #{manager.confirmpassword}      
+        td  #{manager.confirmpassword}  
+        td 
+          form(action="/api/manager/delete" method="POST")
+            input(type="hidden" name="id" value = manager._id)  
+            button.btn.btn-danger(type='submit' onclick='return Confirm(event)') Delete  
   else 
     p There are no employees in the database
 
+script(src="../js/delete.js") 

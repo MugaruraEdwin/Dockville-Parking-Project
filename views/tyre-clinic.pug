@@ -49,7 +49,7 @@ head
       h4.action Determine Tyre Price
     #register.container-fluid
       h4 Enter details to determine Car Tyre Price 
-      form#tyreclinicform(name='tyreclinicform' method='POST' action='#' onsubmit='return Validate(event);')
+      form#tyreclinicform(name='tyreclinicform' method='POST' action='/api/regtyre' onsubmit='return Validate(event);')
         .form-group
           label(for='firstname') First Name
           input#firstname.form-control(type='text' placeholder="Enter driver's first name" name='firstname')
@@ -83,9 +83,9 @@ head
           span#receiptnumbererror
         br
         .form-group
-          label(for='name')  TireSize
-          input#tiresize.form-control(type='text' name='tiresize' placeholder='Enter car tire size')
-        span#tiresizeerror
+          label(for='name')  TyreSize
+          input#tyresize.form-control(type='text' name='tyresize' placeholder='Enter car tyre size')
+        span#tyresizeerror
         br
         select#type.form-select(aria-label='Default select example' name='type')
           option(value='') Select Automobile make
@@ -109,8 +109,10 @@ head
           option(value='crossover') Cross Over
           option(value='pickuptruck') Pickup Truck
         span#carmodelerror
-        br
-        p#total
+        .form-group
+          label(for='total') 
+          input#totalinput.form-control(type='number' name='total' style="display: none;")
+        // <p id="total" name="total"></p>
         br
         button#submit.btn.btn-primary.form-width(type='submit' name='submit') Print Receipt
     #footer.container-fluid
