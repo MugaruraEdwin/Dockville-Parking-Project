@@ -209,13 +209,16 @@ const Validate = (event) => {
         price +=10000;
         totalInput.value = price; 
     }else  if(pressure.checked == true && (puncture.checked == false && valves.checked == false) ){
+      
         price +=500;
         totalInput.value = price;
     }
     else if(puncture.checked && (pressure.checked == false && valves.checked == false)){
+   
        price +=5000;
        totalInput.value = price;
     }else if(valves.checked && (puncture.checked == false && pressure.checked == false)){
+       
         price +=5000;
         totalInput.value = price;
      }else{
@@ -225,7 +228,11 @@ const Validate = (event) => {
 
     
 
-    
+     
+
+
+
+
 
 
     if(error > 0){

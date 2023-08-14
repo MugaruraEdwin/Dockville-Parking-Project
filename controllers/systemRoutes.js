@@ -57,8 +57,4 @@ router.get('/tyrereceipt',(req,res) => {
 });
 
 
-router.get('/tyreservices',(req,res) => {
-    res.render('tyre-services.pug');
-});
-
 module.exports = router

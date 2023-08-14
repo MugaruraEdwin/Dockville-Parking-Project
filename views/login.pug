@@ -24,22 +24,23 @@ head
         span#l l
         span#e e
       p -----------------------------  or -----------------------------
-      .form-group
-        label(for='email') Email address
-        input#exampleInputEmail1.form-control(type='email' aria-describedby='emailHelp' placeholder='Enter email')
-        small#emailHelp.form-text.text-muted We&apos;ll never share your email with anyone else.
-      .form-group
-        label(for='password') Password
-        input#password.form-control(type='password' placeholder='Password')
-      .flex
-        .form-check.val
-          input#remember.form-check-input(type='checkbox')
-          label.form-check-label(for='remember') Remember me 
-        a.password(href='#') Forgot password
-      p.account
-        | New user? 
-        a(href='signup') Sign Up
-      button.btn.btn-primary.form-width.more(type='submit' onclick="location.href='dashboard'") Login
+      form(action='/api/login' name='loginform' method='POST')
+        .form-group
+          label(for='email') Email address
+          input#exampleInputEmail1.form-control(type='email' aria-describedby='emailHelp' placeholder='Enter email' name="email")
+          small#emailHelp.form-text.text-muted We&apos;ll never share your email with anyone else.
+        .form-group
+          label(for='password') Password
+          input#password.form-control(type='password' placeholder='Password' name="password")
+        .flex
+          .form-check.val
+            input#remember.form-check-input(type='checkbox')
+            label.form-check-label(for='remember') Remember me 
+          a.password(href='#') Forgot password
+        p.account
+          | New user? 
+          a(href='signup') Sign Up
+        button.btn.btn-primary.form-width.more(type='submit' onclick="location.href='dashboard'") Login
     .col-md-7.welcome
       p
         | We move 10X faster than our peers and stay consistent. While they&apos;re bogged down with design debt, we&apos;re releasing new features.

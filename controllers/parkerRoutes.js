@@ -1,14 +1,16 @@
 const express = require('express');
 const Parker = require('../models/parkerModel');
 const router = express.Router();
-const session = require('express-session');
+const { ensureLoggedIn } = require('connect-ensure-login');
+
+// const session = require('express-session');
 
 // Use the session middleware
-router.use(session({
-  secret: '123', // Replace with your own secret key
-  resave: false,
-  saveUninitialized: true
-}));
+// router.use(session({
+//   secret: '123', // Replace with your own secret key
+//   resave: false,
+//   saveUninitialized: true
+// }));
 
 // get parker register route
 
@@ -23,7 +25,7 @@ router.post('/regparker', async (req,res) => {
         const parkersignup = new Parker(req.body);
         await parkersignup.save();
         console.log(req.body);
-        res.redirect('/api/parkreceipt');
+        res.redirect('/api/parkerlist');
 
     }
     catch(error){
@@ -60,46 +62,92 @@ router.get('/parkerlist', async (req,res) => {
 // }) 
 
 
-router.get('/dashboard', async (req,res, next) => {
+router.get('/dashboard', ensureLoggedIn('/api/login'), async (req,res, next) => {
     try{
-        let day = await Parker.aggregate([
-            // grouping by id, can also be grouped by name / category or otherwise
-            {$match: { 
-                park : 'day'
-            }},
-            {
-                $group: {
-                _id: '$all',
-                revenue: { $sum: '$total'}
-                // dayparkers: {$sum: 1}
+        let currentday = new Date().toISOString().split('T')[0];
+        let current = await Parker.find({date: currentday})
+        // number of cuurent day parkers
+        let numberOfDocuments = current.length;
+        // total revenue from current day parkers
+        let dRevenue = current.reduce((total, parker) => total + parker.total, 0);
 
-            }
-            }
-            // let ages =  group{totalAge{sum}}
-            // If I create another array, then thats when I would move to array index[1], basing on which the groups
-             ])
+        let documentsWithDay = current.filter(parker => parker.park === 'day');
 
-        let totalRevenue = await Parker.aggregate([
-            {
-                $group:{
-                    _id: '$all',
-                    totalRevenue:{$sum:'$total'},
-                    totalcars:{$sum: 1}
+        // let numberOfDocumentsWithDay = documentsWithDay.length;
 
-                }
-            }
-        ])
-        let amount = totalRevenue[0].totalRevenue;
-        let totalCars = totalRevenue[0].totalcars;
-        let dayRevenue = day[0].revenue
-        console.log(dayRevenue);
-        res.render('dashboard.pug',{amount,totalCars,dayRevenue});
+        // Filter documents with the specific day
+        // let documentsWithDay = current.filter(parker => parker.park === 'day');
+
+        // Calculate the sum of 'total' values for the filtered documents
+        let totalForDay = documentsWithDay.reduce((total, parker) => total + parker.total, 0);
+
+        // let day = await Parker.aggregate([
+        //     // grouping by id, can also be grouped by name / category or otherwise
+        //     {$match: { 
+        //         park : 'day'
+        //     }},
+        //     {
+        //         $group: {
+        //         _id: '$all',
+        //         revenue: { $sum: '$total'}
+        //         // dayparkers: {$sum: 1}
+
+        //     }
+        //     }
+        //     // let ages =  group{totalAge{sum}}
+        //     // If I create another array, then thats when I would move to array index[1], basing on which the groups
+        //      ])
+
+        // let totalRevenue = await Parker.aggregate([
+        //     {
+        //         $group:{
+        //             _id: '$all',
+        //             totalRevenue:{$sum:'$total'},
+        //             totalcars:{$sum: 1}
+
+        //         }
+        //     }
+        // ])
+        
+
+        // let amount = totalRevenue[0].totalRevenue;
+        // let totalCars = totalRevenue[0].totalcars;
+        // let dayRevenue = day[0].revenue;
+        console.log(dRevenue);
+        res.render('dashboard.pug',{totalForDay,numberOfDocuments,dRevenue});
     }
     catch(error){
         console.log(error);
         return res.status(400).send({message: "Sorry, couldn't retrieve any amounts"});
     }
 });
+
+// current day revenue
+
+router.get('/currentrevenue', async(req,res) => {
+    try{
+        // const startDate = new Date();
+        // startDate.setHours(0, 0, 0, 0); // Set time to midnight
+
+        // // Create a date object for the end of the target date
+        // const endDate = new Date();
+        // endDate.setHours(23, 59, 59, 999);
+
+
+        let currentday = new Date().toISOString().split('T')[0];
+        let current = await Parker.find({date: currentday})
+ 
+        let dRevenue = current.reduce((total, parker) => total + parker.total, 0);
+
+        console.log(current)
+        res.render('currentparkrevenue.pug', {parkers: current, dRevenue})
+    }
+    catch(error){
+        res.status(400).send({message: 'Can not find parkers for that specific date'})
+        console.log(error)
+    }
+    
+})
 
 // delete route
 
@@ -138,6 +186,19 @@ router.post('/parker/edit', async (req,res) => {
     }
     catch(error){
         res.status(400).send('Could not edit Parker data');
+        console.log(error);
+    }
+})
+
+
+// receipt route
+router.get('/parker/receipt/:id', async (req,res) => {
+    try{
+        const receipt = await Parker.findOne({_id: req.params.id});
+        res.render('parkerreceipt.pug', {invoice:receipt})
+    }
+    catch(error){
+        res.status(400).send('Could not generate any receipts from the database');
         console.log(error);
     }
 })

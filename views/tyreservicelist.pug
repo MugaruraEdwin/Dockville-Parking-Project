@@ -1,0 +1,46 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Tyre Service
+  link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9' crossorigin='anonymous')
+  h2 Tyre Service List 
+table.table
+  thead.table-dark 
+    tr
+      th(scope='col') First Name
+      th(scope='col') Last Name
+      th(scope='col') Email
+      th(scope='col') Date
+      th(scope='col') Phone Number
+      th(scope='col') Receipt Number
+      th(scope='col') Tyre Pressure
+      th(scope='col') Tyre Puncture
+      th(scope='col') Tyre Valves
+      th(scope='col') Total
+      th(scope='col') Delete
+
+  tbody
+  if services.length
+    each service in services
+      tr
+        th #{service.firstname}
+        td  #{service.lastname}
+        td  #{service.email}
+        td  #{service.date}
+        td  #{service.phonenumber}  
+        td  #{service.receiptnumber} 
+        td  #{service.pressure === 'on' ? 'Picked' : 'Not picked'}
+        td  #{service.puncture === 'on' ? 'Picked' : 'Not picked'}
+        td  #{service.valves === 'on' ? 'Picked' : 'Not picked'}
+        td  #{service.total}  
+        td 
+          form(action="/api/tyreservice/delete" method="POST")
+            input(type="hidden" name="id" value = service._id)  
+            button.btn.btn-danger(type='submit' onclick='return Confirm(event)') Delete  
+        td
+          a.btn.btn-warning(href="/api/tyreservice/edit/"+service._id) Edit
+  else 
+    p There are no tyres service in the database
+
+script(src="../js/delete.js") 

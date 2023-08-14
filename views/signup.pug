@@ -40,6 +40,13 @@ head
           input#email.form-control(type='email' aria-describedby='emailHelp' placeholder='Enter email' name='email')
           small#emailHelp.form-text.text-muted We&apos;ll never share your email with anyone else.
         span#emailerror
+        select#role.form-select(aria-label='Role' name='role')
+          option(value='') Pick Manager Role
+          option(value='parking') Parking Section 
+          option(value='tyre') Tyre Clinic 
+          option(value='battery') Battery Section
+        span#roleerror
+        br
         .form-group
           label(for='password')
             | Password

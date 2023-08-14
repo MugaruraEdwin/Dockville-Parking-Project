@@ -7,12 +7,14 @@ const Validate = (event) => {
     let email = document.signup_form.email;
     let password = document.signup_form.password;
     let confirmPassword = document.signup_form.confirmpassword;
+    let role = document.signup_form.role;
 
     let firstNameError = document.getElementById("firstnameerror");
     let lastNameError = document.getElementById('lastnameerror');
     let emailError = document.getElementById("emailerror");
     let passwordError =document.getElementById("passworderror");
     let confirmPasswordError = document.getElementById("confirmpassworderror");
+    let roleError = document.getElementById('roleerror');
 
 
     if(firstName.value == ""){
@@ -59,6 +61,24 @@ const Validate = (event) => {
         //focus cursor
         lastName.focus();
         error++;
+    }else if(lastName.value.length < 2){
+        lastName.style.border = "2px solid red";
+        lastNameError.textContent = "First name must be atleast 2 characters";
+        //styling error
+        lastNameError.style = "color: red; font-size:11px; font-family: Helevetica,Arial;";
+        //focus cursor
+        lastName.focus();
+        // return false;
+        error++;
+    }else if(lastName.value.length > 15){
+        lastName.style.border = "2px solid red";
+        lastNameError.textContent = "First name must be less than or equal to 15";
+        //styling error
+        lastNameError.style = "color: red; font-size:11px; font-family: Helevetica,Arial;";
+        //focus cursor
+        lastName.focus();
+        // return false;
+        error++;
     }else{
         lastName.style.border = "2px solid green";
         lastNameError.textContent = "";
@@ -81,8 +101,25 @@ const Validate = (event) => {
         email.style.border = "2px solid green";
         emailError.textContent = "";
         //focus cursor
-        password.focus();
+        role.focus();
     }
+
+    if(role.value == ""){
+        role.style.border = "2px solid red";
+        roleError.textContent = "Manager role is required";
+        //styling error
+        roleError.style = "color: red; font-size:11px; font-family: Helevetica,Arial;";
+        //focus cursor
+        role.focus();
+        error++;
+    }else{
+        role.style.border = "2px solid green";
+        roleError.textContent = "";
+        //focus cursor
+        password.focus();
+        // return false; // stops form submission until you collect the input before - only for errors
+    }
+
 
     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#\$%\^&\*]).{8,}$/;
     if(password.value == ""){

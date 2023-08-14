@@ -9,7 +9,7 @@ head
   script(src='https://kit.fontawesome.com/aff02a4ba3.js' crossorigin='anonymous')
   link(rel='stylesheet' href='/libs/css/bootstrap.css')
   link(rel='stylesheet' href='/css/tyre-services.css')
-  title Tyre Clinic
+  title Tyre Services Update
 .divides
   .dashboard
     ul.list
@@ -49,58 +49,59 @@ head
       h4.action Select Service
     #register.container-fluid
       h4 Check tyre service needed 
-      form#servicesform(name='servicesform' method='POST' action='/api/regtyreservice' onsubmit='return Validate(event)')
+      form#servicesform(name='servicesform' method='POST' action='/api/tyreservice/edit?id='+service._id onsubmit='return Validate(event)')
         .form-group
           label(for='firstname') First Name
-          input#firstname.form-control(type='text' placeholder="Enter driver's first name" name='firstname')
+          input#firstname.form-control(type='text' placeholder="Enter driver's first name" name='firstname' value=service.firstname)
           // first name error
           span#firstnameerror
         br
         .form-group
-          label(for='lastname') Last Name
-          input#lastname.form-control(type='text' placeholder="Enter driver's last name" name='lastname')
+          label(for='lastname') Last Name 
+          input#lastname.form-control(type='text' placeholder="Enter driver's last name" name='lastname' value=service.lastname)
           // last name error
           span#lastnameerror
         br
         .form-group
           label(for='email') Email
-          input#email.form-control(type='email' name='email')
+          input#email.form-control(type='email' name='email' value=service.email)
           span#emailerror
         br
         .form-group
           label(for='Date') Date
-          input#date.form-control(type='date' name='date')
+          input#date.form-control(type='date' name='date' value=service.date)
         span#dateerror
         br
         .form-group
           label(for='phonenumber') Phone Number
-          input#phonenumber.form-control(type='tel' name='phonenumber')
+          input#phonenumber.form-control(type='tel' name='phonenumber' value=service.phonenumber)
           span#phonenumbererror
         br
         .form-group
           label(for='receiptnumber') ReceiptNumber
-          input#receiptnumber.form-control(type='text' name='receiptnumber')
+          input#receiptnumber.form-control(type='text' name='receiptnumber' value=service.receiptnumber)
           span#receiptnumbererror
-        br
+        
+  
         label(for='tyreservice-select') Select Tyre Service
         .form-check
-          input#pressure.form-check-input(type='checkbox' name='pressure')
+          input#pressure.form-check-input(type='checkbox' name='pressure' value='on' checked=(service.pressure === 'on'))
           label.form-check-label(for='pressure') Tire Pressure
         br
         .form-check
-          input#puncture.form-check-input(type='checkbox' name='puncture')
+          input#puncture.form-check-input(type='checkbox' name='puncture' value='on' checked=(service.puncture === 'on'))
           label.form-check-label(for='puncture') Puncture fixing
         br
         .form-check
-          input#valves.form-check-input(type='checkbox' name='valves' )
+          input#valves.form-check-input(type='checkbox' name='valves' value='on' checked=(service.valves === 'on'))
           label.form-check-label(for='valves') Valves
         br
         .form-group
           label(for='total') 
-          input#totalinput.form-control(type='number' name='total' style="display: none;")
+          input#totalinput.form-control(type='number' name='total' style="display: none;" value=service.total)
         // <p id="total" name="total"></p>
         br
-        button#submit.btn.btn-primary.form-width(type='submit' name='submit') Register Tyre Service
+        button#submit.btn.btn-primary.form-width(type='submit' name='submit') Update
     #footer.container-fluid
       .row
         #foot-left.col-md-4.col-sm-12

@@ -1,5 +1,6 @@
 const express = require('express');
 const Manager = require('../models/managerModel');
+const passport = require('passport');
 const router = express.Router();
 
 // get employee signup route
@@ -13,16 +14,36 @@ router.get('/signup',(req,res) => {
 router.post('/regmanager', async (req,res) => {
     try{
         const managersignup = new Manager(req.body);
-        await managersignup.save();
         console.log(req.body);
-        res.redirect('/api/thankyou');
+
+        await Manager.register(managersignup,req.body.password);
+        res.redirect('/api/login');
 
     }
     catch(error){
-        res.status(400).render('signup.pug');
+        res.status(400).send({message: 'Failed to register Manager'});
         console.log(error);
     }
 });
+
+// get route for login page 
+
+router.get('/login',(req,res) => {
+    res.render('login.pug');
+});
+
+// post route to check for authentication
+
+router.post('/login', passport.authenticate('local', 
+{failureRedirect:'/api/login'}),
+(req,res) => {
+    req.session.user= req.user
+    let loggedinUser = req.session.user.firstname;
+    console.log(loggedinUser)
+    res.redirect('/api/dashboard'); // if a variable being parsed in and the one being parsed into are the same we can remove the full colon (if they are different we put a full colon)
+}
+)
+
 
 // returning manager data from db in table format
 
