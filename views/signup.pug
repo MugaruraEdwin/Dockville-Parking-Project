@@ -48,6 +48,13 @@ head
         span#roleerror
         br
         .form-group
+          label(for='picture')
+            | Take / Choose a Picture of your face:
+            span.red *
+          input#picture.form-control(type='file' name='picture' accept='image/*' capture='user')
+        span#pictureerror
+        br
+        .form-group
           label(for='password')
             | Password
             span.red *

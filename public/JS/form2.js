@@ -34,6 +34,7 @@ const Validate = (event) =>{
     let totalInput = document.getElementById("totalinput");
 
 
+
     //Validating name input
     //Validating for emptiness
 

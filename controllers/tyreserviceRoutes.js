@@ -26,6 +26,7 @@ router.post('/regtyreservice', async (req,res) => {
 router.get('/tyreservicelist', async (req,res) => {
     try{
         let items = await Service.find();
+        console.log(items)
         res.render('tyreservicelist.pug',{services: items});
     }
     catch(error){

@@ -8,6 +8,7 @@ head
   link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
   link(href='https://fonts.googleapis.com/css2?family=Fraunces:wght@100;300;400;700&family=Montserrat:wght@100;500;700&display=swap' rel='stylesheet')
   script(src='https://kit.fontawesome.com/aff02a4ba3.js' crossorigin='anonymous')
+  script(src='https://cdn.plot.ly/plotly-latest.min.js')
   link(rel='stylesheet' href='../libs/css/bootstrap.css')
   link(rel='stylesheet' href='../css/dashboard.css')
 .divides
@@ -42,19 +43,20 @@ head
             a.dropdown-item(href='batteryservices') Hire Battery
           li
             a.dropdown-item(href='batterysignout') SignOut Battery
+      a.btn(style='margin-left: 15px; margin-top: 20px; background-color: #ED7B7B; color:#4682A9; font-size:14.5px; font-weight:bold;}'  href="/api/logout" onclick='return Confirm(event)') Logout
   .divider2
     #welcome.container-fluid
       .row
         #left.col-sm-6
           h4 Welcome back Manager!
         #right.col-sm-6
-          img.profile-image(src='../images/Cv picture.jpeg' alt='profile picture')
-          h4.top Manager Name
+          i#user.fa-solid.fa-user
+          h4.top Manager #{inUser}
     #report.container-fluid
-      h4.report-h4 General Weekly Report
+      h4.report-h4 Parker Weekly Report
       p.report-p Track the system statitics
-      button.report-button
-        a(href='#') View
+      //- button.report-button
+      a.report-button(href='/api/weeklyrevenue') View
     #mid-low.container-fluid
       .row
         .col-md-4.col-sm-12.card1
@@ -69,29 +71,7 @@ head
           ii#car-icon.fa-solid.fa-car
           h3.card-h3 Revenue from Day option Parkers 
           p #{totalForDay}
-    .mid-part
-      p.mid-p Important to remember during registration
-      p.mid-p2
-        | The system provides functionality that enables great book keeping, greater security based of two factor authentication logins and it just keeps getting better.
-    #before-footer.container-fluid
-      .row
-        .col-md-4.col-sm-12.card4
-          h3.card-h4 Key Parking metrics
-          p  Name of the driver
-          p Color 
-          p Time of the arrival
-          p Model
-          p Date
-          p Phone number
-        .col-md-4.col-sm-12.card5
-          h3.card-h4 Key Parking Battery metrics
-          p Tyre sizes
-          p make
-          p Intended car model
-        .col-md-4.col-sm-12.card6
-          h3.card-h4 Key Car Clinic metrics
-          p Size 
-          p Price determined by section manager
+    //- .mid-part
     #footer.container-fluid
       .row
         #foot-left.col-md-4.col-sm-12
@@ -103,25 +83,19 @@ head
           h4 Menu
           a(href='') About
           br
-          a(href='')  Recent Products 
-          br
-          a(href='') Featured Products
-          br
-          a(href='') Testimonials
-          br
-          a(href='') Product Galleries
+          a(href='') Park Galleries
           br
           p.copyright All rights reserved to IosApps
         #foot-right.col-md-4.col-sm-12
           h4 Company
-          a(href='') FAQ
-          br
           a(href='') Terms and Conditions
           br
           a(href='') Privacy and Policies
           br
-          a(href='') Support
+          a(href='') System Support
           p#website
             a(href='')
               | info@iosapps.com
 script(src='../libs/js/bootstrap.bundle.min.js')
+script(src='../js/logout.js')
+//- script(src='/JS/graph.js')

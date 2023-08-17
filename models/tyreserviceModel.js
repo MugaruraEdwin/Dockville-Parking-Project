@@ -35,15 +35,9 @@ const TyreserviceSchema = new mongoose.Schema({
         trim:true,
         unique:true
     },
-    pressure:{
-        type:String,
-    },
-    puncture:{
-        type:String,
-    },
-    valves:{
-        type:String,
-    },
+
+    tyreservice:[ {type:String} ],
+
     total:{
         type:Number,
         required:true,

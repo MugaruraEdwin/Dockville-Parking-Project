@@ -8,6 +8,8 @@ const Validate = (event) => {
     let password = document.signup_form.password;
     let confirmPassword = document.signup_form.confirmpassword;
     let role = document.signup_form.role;
+    let picture = document.signup_form.picture;
+
 
     let firstNameError = document.getElementById("firstnameerror");
     let lastNameError = document.getElementById('lastnameerror');
@@ -15,6 +17,7 @@ const Validate = (event) => {
     let passwordError =document.getElementById("passworderror");
     let confirmPasswordError = document.getElementById("confirmpassworderror");
     let roleError = document.getElementById('roleerror');
+    let pictureError = document.getElementById('pictureerror');
 
 
     if(firstName.value == ""){
@@ -116,9 +119,26 @@ const Validate = (event) => {
         role.style.border = "2px solid green";
         roleError.textContent = "";
         //focus cursor
-        password.focus();
+        picture.focus();
         // return false; // stops form submission until you collect the input before - only for errors
     }
+
+    if(picture.value == ""){
+        picture.style.border = "2px solid red";
+        pictureError.textContent = "Your picture is required";
+        //styling error
+        pictureError.style = "color: red; font-size:11px; font-family: Helevetica,Arial;";
+        //focus cursor
+        picture.focus();
+        // return false;
+        error++;
+    }else{
+        picture.style.border = "2px solid green";
+        pictureError.textContent = "";
+        //focus cursor
+        password.focus();
+    }
+
 
 
     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#\$%\^&\*]).{8,}$/;

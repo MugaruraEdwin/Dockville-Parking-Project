@@ -64,6 +64,10 @@ router.get('/parkerlist', async (req,res) => {
 
 router.get('/dashboard', ensureLoggedIn('/api/login'), async (req,res, next) => {
     try{
+        req.session.user = req.user;
+        let loggedinUser = req.session.user.firstname;
+        let loggedinUserPicture = req.session.user.picture;
+        // const base64String = loggedinUserPicture.toString('base64');
         let currentday = new Date().toISOString().split('T')[0];
         let current = await Parker.find({date: currentday})
         // number of cuurent day parkers
@@ -73,6 +77,7 @@ router.get('/dashboard', ensureLoggedIn('/api/login'), async (req,res, next) => 
 
         let documentsWithDay = current.filter(parker => parker.park === 'day');
 
+        
         // let numberOfDocumentsWithDay = documentsWithDay.length;
 
         // Filter documents with the specific day
@@ -81,6 +86,9 @@ router.get('/dashboard', ensureLoggedIn('/api/login'), async (req,res, next) => 
         // Calculate the sum of 'total' values for the filtered documents
         let totalForDay = documentsWithDay.reduce((total, parker) => total + parker.total, 0);
 
+        // Assuming current contains the data from the Parker.find query
+
+      
         // let day = await Parker.aggregate([
         //     // grouping by id, can also be grouped by name / category or otherwise
         //     {$match: { 
@@ -114,13 +122,45 @@ router.get('/dashboard', ensureLoggedIn('/api/login'), async (req,res, next) => 
         // let totalCars = totalRevenue[0].totalcars;
         // let dayRevenue = day[0].revenue;
         console.log(dRevenue);
-        res.render('dashboard.pug',{totalForDay,numberOfDocuments,dRevenue});
+        res.render('dashboard.pug',{totalForDay,numberOfDocuments,dRevenue,inUser:loggedinUser,inPic:loggedinUserPicture});
     }
     catch(error){
         console.log(error);
         return res.status(400).send({message: "Sorry, couldn't retrieve any amounts"});
     }
 });
+
+// weekly revenue
+
+router.get('/weeklyrevenue', async(req,res) => {
+  const currentDay = new Date();
+  const dayOfWeek = currentDay.getDay(); // 0: Sunday, 1: Monday, ..., 6: Saturday
+
+  const daysToSubtract = dayOfWeek >= 5 ? 7 + 1 : dayOfWeek + 1;
+  const startDate = new Date(currentDay);
+  startDate.setDate(startDate.getDate() - daysToSubtract);
+
+  const queryPromises = [];
+
+  for (let i = 0; i < 5; i++) {
+    const currentDate = new Date(startDate);
+    currentDate.setDate(currentDate.getDate() + i);
+    const formattedDate = currentDate.toISOString().split('T')[0];
+
+    queryPromises.push(Parker.find({ date: formattedDate }));
+  }
+
+  try {
+    const results = await Promise.all(queryPromises);
+    const usersForPastWeek = results.flat(); // Merge the arrays of users
+    console.log(usersForPastWeek);
+    let dRevenue = usersForPastWeek.reduce((total, parker) => total + parker.total, 0);
+    res.render('weekly.pug',{parkers:usersForPastWeek,dRevenue});
+  } catch (error) {
+    console.error("Error fetching data:", error);
+  }
+}
+)
 
 // current day revenue
 

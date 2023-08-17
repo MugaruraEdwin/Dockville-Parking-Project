@@ -34,7 +34,7 @@ body{
     padding-right: 10px;
 }
 .dashboard{
-    height: 188.5vh;
+    height: 130.5vh;
     width: 20%;
     border: 1px solid;
     border-radius: 0px;
@@ -173,8 +173,9 @@ a{
     margin-left: 100px;
     height: 50px;
     width: 150px;
+    padding:10px ;
     border: 1px groove;
-    border-radius: 10px;
+    border-radius: 5px;
     background-color: #4682A9;
 }
 #mid-low{
@@ -396,4 +397,12 @@ a{
 }
 .dock{
     color: #fff;;
+}
+#user{
+    border:1px solid white;
+    padding: 7px;
+    border-radius: 50%;
+}
+.btn:hover{
+    color: #fff !important;
 }

@@ -14,9 +14,9 @@ table.table
       th(scope='col') Date
       th(scope='col') Phone Number
       th(scope='col') Receipt Number
-      th(scope='col') Tyre Pressure
-      th(scope='col') Tyre Puncture
-      th(scope='col') Tyre Valves
+      th(scope='col') Pressure
+      th(scope='col') Puncture
+      th(scope='col') Valves
       th(scope='col') Total
       th(scope='col') Delete
 
@@ -30,9 +30,9 @@ table.table
         td  #{service.date}
         td  #{service.phonenumber}  
         td  #{service.receiptnumber} 
-        td  #{service.pressure === 'on' ? 'Picked' : 'Not picked'}
-        td  #{service.puncture === 'on' ? 'Picked' : 'Not picked'}
-        td  #{service.valves === 'on' ? 'Picked' : 'Not picked'}
+        td  #{service.tyreservice.includes('pressure') ? '500' : 'Not Picked'}
+        td  #{service.tyreservice.includes('puncture') ? '5000' : 'Not Picked'}
+        td  #{service.tyreservice.includes('valves') ? '5000' : 'Not Picked'}
         td  #{service.total}  
         td 
           form(action="/api/tyreservice/delete" method="POST")
@@ -41,6 +41,6 @@ table.table
         td
           a.btn.btn-warning(href="/api/tyreservice/edit/"+service._id) Edit
   else 
-    p There are no tyres service in the database
+    p There are no tyre services in the database
 
 script(src="../js/delete.js") 

@@ -232,13 +232,13 @@ const Validate = (event) => {
     let newTyreSize = Number(tyreSize.value[7] + tyreSize.value[8]);
     if (newTyreSize <= 20){
         price += 50000;
-        tyreSize.style.border = "2px solid green";
-        tyreError.textContent = "";
+        // tyreSize.style.border = "2px solid green";
+        // tyreError.textContent = "";
     }
     else if(newTyreSize <= 40){
         price += 100000;
-        tyreSize.style.border = "2px solid green";
-        tyreError.textContent = "";
+        // tyreSize.style.border = "2px solid green";
+        // tyreError.textContent = "";
     }
 
     if(carType.value == ""){
@@ -334,8 +334,6 @@ const Validate = (event) => {
 
     if(!carType.value == "" && !newTyreSize == "" && !carModel == "" ){
         totalInput.value = price;
-    }else if(!carType.value == "" && !tyreSizeRegex.test(tyreSize.value)){
-        preventDefault();
     }
 
 

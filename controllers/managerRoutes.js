@@ -39,10 +39,30 @@ router.post('/login', passport.authenticate('local',
 (req,res) => {
     req.session.user= req.user
     let loggedinUser = req.session.user.firstname;
+    let loggedinUserPicture = req.session.user.picture;
+    // const base64String = loggedinUserPicture.toString('base64');
     console.log(loggedinUser)
+    // console.log(base64String)
+    // res.render('dashboard.pug', {inUser:loggedinUser})
+    // if(req.session.user.role === 'director'){
+    //     res.render('dashboard.pug');
+    // }
+    // }else if(req.session.user.role === 'manager'){
+    //     res.render('manager_.pug',{inUser:loggedinUser});
+    // }else if(req.session.user.role === 'salesagent'){
+    //     res.render('salesagent_.pug');
+    // }
     res.redirect('/api/dashboard'); // if a variable being parsed in and the one being parsed into are the same we can remove the full colon (if they are different we put a full colon)
 }
 )
+
+// logout
+
+router.get('/logout', (req,res) => {
+    req.session.destroy(
+        () => {res.redirect('/api/')}
+    )
+});
 
 
 // returning manager data from db in table format

@@ -38,6 +38,55 @@ router.get('/tyrelist', async (req,res) => {
 
 // delete route 
 
+router.post('/tyre/delete', async (req,res) => {
+    try{
+        await Tyre.deleteOne({_id:req.body.id});
+        res.redirect('back');
+    }
+    catch(error){
+        res.status(400).send("Unable to delete tyre from database")
+    }
+})
 
+// editing route 
+
+// first get form 
+
+router.get('/tyre/edit/:id', async (req,res) => {
+    try{
+        const tire= await Tyre.findOne({_id: req.params.id});
+        res.render('tyreedit.pug', {tyre:tire})
+    }
+    catch(error){
+        res.status(400).send('Could not find tyre in the database');
+        console.log(error);
+    }
+})
+
+// edit it rather post back the data 
+
+router.post('/tyre/edit', async (req,res) => {
+    try{
+        await Tyre.findOneAndUpdate({_id: req.query.id},req.body);
+        res.redirect('/api/tyrelist')
+    }
+    catch(error){
+        res.status(400).send('Could not edit Tyre data');
+        console.log(error);
+    }
+})
+
+
+// receipt route
+router.get('/tyre/receipt/:id', async (req,res) => {
+    try{
+        const receipt = await Tyre.findOne({_id: req.params.id});
+        res.render('tyresizereceipt.pug', {invoice:receipt})
+    }
+    catch(error){
+        res.status(400).send('Could not generate any receipts from the database');
+        console.log(error);
+    }
+})
 
 module.exports = router
