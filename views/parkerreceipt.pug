@@ -36,7 +36,7 @@ head
           .invoice-head-bottom-left
             ul
               li.text-bold Invoiced To:
-              li  #{invoice.firstname + invoice.lastname}
+              li  #{invoice.firstname +' '+ invoice.lastname}
               li #{invoice.phonenumber}
               li #{invoice.email}
               li Uganda
@@ -68,15 +68,15 @@ head
             .invoice-body-info-item.border-bottom
               .info-item-td.text-end.text-bold
                 | SubTotal:
-              .info-item-td.text-end #{invoice.total}
+              .info-item-td.text-end #{invoice.total -(invoice.total * 0.1)}
             .invoice-body-info-item.border-bottom
               .info-item-td.text-end.text-bold
                 | Tax:
-              .info-item-td.text-end 0
+              .info-item-td.text-end #{invoice.total * 0.1}
             .invoice-body-info-item
               .info-item-td.text-end.text-bold
                 | SubTotal:
-              .info-item-td.text-end #{invoice.total}
+              .info-item-td.text-end #{invoice.total }
       .invoice-foot.text-center
         p
           span.text-bold.text-center NOTE:&nbsp;

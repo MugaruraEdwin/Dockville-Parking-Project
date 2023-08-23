@@ -30,7 +30,7 @@ const Validate = (event) =>{
     let colorError  = document.getElementById("colorerror")
     let carModelError = document.getElementById("modelerror");
     let dateError = document.getElementById("dateerror");
-    let receiptNumberError = document.getElementById("receiptnumbererror");
+    // let receiptNumberError = document.getElementById("receiptnumbererror");
     let totalInput = document.getElementById("totalinput");
 
 
@@ -332,21 +332,52 @@ const Validate = (event) =>{
         totalInput.value = price;
     }
 
-    const bodaRegex = /^BB-([0-9]{3})+$/;
-    const personalCarRegex = /^PC-([0-9]{3})+$/;
-    const truckCarRegex = /^TC-([0-9]{3})+$/;
-    const coasterCarRegex = /^CC-([0-9]{3})+$/;
-    const taxiCarRegex = /^TAXI-([0-9]{3})+$/;
+    // const bodaRegex = /^BB-([0-9]{3})+$/;
+    // const personalCarRegex = /^PC-([0-9]{3})+$/;
+    // const truckCarRegex = /^TC-([0-9]{3})+$/;
+    // const coasterCarRegex = /^CC-([0-9]{3})+$/;
+    // const taxiCarRegex = /^TAXI-([0-9]{3})+$/;
 
-    if(receiptNumber.value == ""){
-        receiptNumber.style.border = "2px solid red";
-        receiptNumberError.textContent = "Receipt numeber is required";
-        //styling error
-        receiptNumberError.style = "color: red; font-size:11px; font-family: Helevetica,Arial;";
-        //focus cursor
-        receiptNumber.focus();
-        // return false;
-        error++;
+        // Get the current date
+    const currentDate = new Date();
+
+    // Get day, month, and year components
+    const day = String(currentDate.getDate()).padStart(2, '0');
+    const month = String(currentDate.getMonth() + 1).padStart(2, '0'); // Months are 0-based
+    const year = currentDate.getFullYear();
+
+    // Format the date as DD/MM/YYYY
+    const formattedDate = `${day}${month}`;
+
+    console.log(formattedDate);
+
+
+    // Get the current date
+    const currentTime = new Date();
+
+    // Get hour, minute, and second components
+    const hours = String(currentTime.getHours()).padStart(2, '0');
+    const minutes = String(currentTime.getMinutes()).padStart(2, '0');
+    // const seconds = String(currentTime.getSeconds()).padStart(2, '0');
+
+    // Format the time as HRS/MINS/SECONDS
+    const formattedTime = `${hours}${minutes}`;
+
+    console.log(formattedTime);
+
+    const randomNumber = Math.floor(Math.random() * 100) + 1;
+
+    let combinedReg = formattedDate + formattedTime + randomNumber;
+
+    // if(receiptNumber.value == ""){
+    //     receiptNumber.style.border = "2px solid red";
+    //     receiptNumberError.textContent = "Receipt numeber is required";
+    //     //styling error
+    //     receiptNumberError.style = "color: red; font-size:11px; font-family: Helevetica,Arial;";
+    //     //focus cursor
+    //     receiptNumber.focus();
+    //     // return false;
+    //     error++;
     // }else if(!(receiptNumber.value.match(uniqueNumberRegex) || receiptNumber.value.match(personalCarRegex) || receiptNumber.value.match(truckCarRegex) || receiptNumber.value.match(coasterCarRegex) || receiptNumber.value.match(taxiCarRegex))){
     //     receiptNumber.style.border = "2px solid red";
     //     receiptNumberError.textContent = "Correct format: TC-000 for trucks / PC-000 for personalcars / TAX1-000 for taxis / CC-000 for coasters / BB-000 for bodas";
@@ -357,96 +388,106 @@ const Validate = (event) =>{
     //     // return false;
     //     error++;
     // }
-    }else if (carType.value == "taxi") {
-        if(!taxiCarRegex.test(receiptNumber.value)){
-            receiptNumber.style.border = "2px solid red";
-            receiptNumberError.textContent = "Enter a receipt number in format TAXI-000";
-            //styling error
-            receiptNumberError.style.color = "red";
-            receiptNumberError.style.fontSize = "11px";
-            receiptNumberError.style.fontFamily = "Helvetica, Arial";
-            //focus cursor
-            receiptNumber.focus();
-            // return false;
-            error++;
-        }else{
-            receiptNumber.style.border = "2px solid green";
-            receiptNumberError.textContent = "";
-        }
-      } else if (carType.value == "personalcar") {
-        if (!personalCarRegex.test(receiptNumber.value)) {
-          receiptNumber.style.border = "2px solid red";
-          receiptNumberError.textContent = "Enter a receipt number in format PC-000";
-          //styling error
-          receiptNumberError.style.color = "red";
-          receiptNumberError.style.fontSize = "11px";
-          receiptNumberError.style.fontFamily = "Helvetica, Arial";
-          //focus cursor
-          receiptNumber.focus();
-          // return false;
-          error++;
-        }else{
-            receiptNumber.style.border = "2px solid green";
-            receiptNumberError.textContent = "";
-        }
-      } else if (carType.value == "coaster") {
-        if (!coasterCarRegex.test(receiptNumber.value)) {
-          receiptNumber.style.border = "2px solid red";
-          receiptNumberError.textContent = "Enter a receipt number in format CC-000";
-          //styling error
-          receiptNumberError.style.color = "red";
-          receiptNumberError.style.fontSize = "11px";
-          receiptNumberError.style.fontFamily = "Helvetica, Arial";
-          //focus cursor
-          receiptNumber.focus();
-          // return false;
-          error++;
-        }else{
-            receiptNumber.style.border = "2px solid green";
-            receiptNumberError.textContent = "";
-        }
-      }else if (carType.value == "truck") {
-        if (!truckCarRegex.test(receiptNumber.value)) {
-          receiptNumber.style.border = "2px solid red";
-          receiptNumberError.textContent = "Enter a receipt number in format TC-000";
-          //styling error
-          receiptNumberError.style.color = "red";
-          receiptNumberError.style.fontSize = "11px";
-          receiptNumberError.style.fontFamily = "Helvetica, Arial";
-          //focus cursor
-          receiptNumber.focus();
-          // return false;
-          error++;
-        }else{
-            receiptNumber.style.border = "2px solid green";
-            receiptNumberError.textContent = "";
-        }
-      }else if (carType.value == "bodaboda") {
-        if (!bodaRegex.test(receiptNumber.value)) {
-          receiptNumber.style.border = "2px solid red";
-          receiptNumberError.textContent = "Enter a receipt number in format BB-000";
-          //styling error
-          receiptNumberError.style.color = "red";
-          receiptNumberError.style.fontSize = "11px";
-          receiptNumberError.style.fontFamily = "Helvetica, Arial";
-          //focus cursor
-          receiptNumber.focus();
-          // return false;
-          error++;
-        }else{
-            receiptNumber.style.border = "2px solid green";
-            receiptNumberError.textContent = "";
-        }
-      }
+    // }else if (carType.value == "taxi") {
+    //     if(!taxiCarRegex.test(receiptNumber.value)){
+    //         receiptNumber.style.border = "2px solid red";
+    //         receiptNumberError.textContent = "Enter a receipt number in format TAXI-000";
+    //         //styling error
+    //         receiptNumberError.style.color = "red";
+    //         receiptNumberError.style.fontSize = "11px";
+    //         receiptNumberError.style.fontFamily = "Helvetica, Arial";
+    //         //focus cursor
+    //         receiptNumber.focus();
+    //         // return false;
+    //         error++;
+    //     }else{
+    //         receiptNumber.style.border = "2px solid green";
+    //         receiptNumberError.textContent = "";
+    //     }
+    //   } else if (carType.value == "personalcar") {
+    //     if (!personalCarRegex.test(receiptNumber.value)) {
+    //       receiptNumber.style.border = "2px solid red";
+    //       receiptNumberError.textContent = "Enter a receipt number in format PC-000";
+    //       //styling error
+    //       receiptNumberError.style.color = "red";
+    //       receiptNumberError.style.fontSize = "11px";
+    //       receiptNumberError.style.fontFamily = "Helvetica, Arial";
+    //       //focus cursor
+    //       receiptNumber.focus();
+    //       // return false;
+    //       error++;
+    //     }else{
+    //         receiptNumber.style.border = "2px solid green";
+    //         receiptNumberError.textContent = "";
+    //     }
+    //   } else if (carType.value == "coaster") {
+    //     if (!coasterCarRegex.test(receiptNumber.value)) {
+    //       receiptNumber.style.border = "2px solid red";
+    //       receiptNumberError.textContent = "Enter a receipt number in format CC-000";
+    //       //styling error
+    //       receiptNumberError.style.color = "red";
+    //       receiptNumberError.style.fontSize = "11px";
+    //       receiptNumberError.style.fontFamily = "Helvetica, Arial";
+    //       //focus cursor
+    //       receiptNumber.focus();
+    //       // return false;
+    //       error++;
+    //     }else{
+    //         receiptNumber.style.border = "2px solid green";
+    //         receiptNumberError.textContent = "";
+    //     }
+    //   }else if (carType.value == "truck") {
+    //     if (!truckCarRegex.test(receiptNumber.value)) {
+    //       receiptNumber.style.border = "2px solid red";
+    //       receiptNumberError.textContent = "Enter a receipt number in format TC-000";
+    //       //styling error
+    //       receiptNumberError.style.color = "red";
+    //       receiptNumberError.style.fontSize = "11px";
+    //       receiptNumberError.style.fontFamily = "Helvetica, Arial";
+    //       //focus cursor
+    //       receiptNumber.focus();
+    //       // return false;
+    //       error++;
+    //     }else{
+    //         receiptNumber.style.border = "2px solid green";
+    //         receiptNumberError.textContent = "";
+    //     }
+    //   }else if (carType.value == "bodaboda") {
+    //     if (!bodaRegex.test(receiptNumber.value)) {
+    //       receiptNumber.style.border = "2px solid red";
+    //       receiptNumberError.textContent = "Enter a receipt number in format BB-000";
+    //       //styling error
+    //       receiptNumberError.style.color = "red";
+    //       receiptNumberError.style.fontSize = "11px";
+    //       receiptNumberError.style.fontFamily = "Helvetica, Arial";
+    //       //focus cursor
+    //       receiptNumber.focus();
+    //       // return false;
+    //       error++;
+    //     }else{
+    //         receiptNumber.style.border = "2px solid green";
+    //         receiptNumberError.textContent = "";
+    //     }
+    //   }
       
-    else{
-        receiptNumber.style.border = "2px solid green";
-        receiptNumberError.textContent = "";
-        //focus cursor
-        // parkOption.focus();
-    }
+    // else{
+    //     receiptNumber.style.border = "2px solid green";
+    //     receiptNumberError.textContent = "";
+    //     //focus cursor
+    //     // parkOption.focus();
+    // }
 
-    
+     if(carType.value == "personalcar"){
+        receiptNumber.value = `PC-${combinedReg}`
+    }else if(carType.value == "taxi"){
+        receiptNumber.value = `TAXI-${combinedReg}`
+    }else if(carType.value == "truck"){
+        receiptNumber.value = `TC-${combinedReg}`
+    }else if(carType.value == "bodaboda"){
+        receiptNumber.value = `BB-${combinedReg}`
+    }else if(carType.value == "coaster"){
+        receiptNumber.value = `CC-${combinedReg}`
+    }
   
     //e.g. BB-001, BB-002
     

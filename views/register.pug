@@ -13,33 +13,57 @@ head
   title Automobile registeration
 .divides
   .dashboard
-    ul.list
-      li#head Dockville Parking
-      hr
-      li#dash
-        span#position
-          a.dropdown-item(href='dashboard.html') Dashboard
-      // <li class="dark">Parking</li>
-      li#dashboard
-        span#position.nav-item
-          a.nav-link(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false')
-            | Park Register
-      li.nav-item.dropdown
-        a.nav-link.dropdown-toggle(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false')
-          | Tyre Clinic
-        ul.dropdown-menu
-          li
-            a.dropdown-item(href='tyre-clinic.html') Tyre Price
-          li
-            a.dropdown-item(href='tyre-services.html') Tyre Services
-      li.nav-item.dropdown
-        a.nav-link.dropdown-toggle(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false')
-          | Battery Section
-        ul.dropdown-menu
-          li
-            a.dropdown-item(href='battery-section.html') Hire Battery
-          li
-            a.dropdown-item(href='batterysignout.html ') SignOut Battery
+    .menu-btn
+      i.fas.fa-bars
+    .side-bar
+      header
+        .close-btn
+          i.fas.fa-times
+        //- img(src='/images/Cv picture.jpeg' alt='')
+        h1 Dockville Parking
+      .menu
+        .item
+          a(href='dashboard')
+            i.fas.fa-desktop
+            | Dashboard
+        .item
+          a.sub-btn
+            i.fas.fa-table
+            | Battery Section
+            // Dropdown
+            // Dropdwon arrow
+            i.fas.fa-angle-right.dropdown
+          .sub-menu
+            a.sub-item(href='batteryservices') Battery Hire
+            a.sub-item(href='batterysignout') Battery Signout
+            // <a href="" class="sub-item"></a>
+        .item
+          a.sub-btn
+            i.fas.fa-th
+            | Parking
+            // Dropdown
+            // Dropdwon arrow
+            i.fas.fa-angle-right.dropdown
+          .sub-menu
+            a.sub-item(href='register') Park Register
+            a.sub-item(href='signout') Park Signout
+            a.sub-item(href='')
+        .item
+          a.sub-btn
+            i.fas.fa-cog
+            | Tyre Section
+            // Dropdown
+            // Dropdwon arrow
+            i.fas.fa-angle-right.dropdown
+          .sub-menu
+            a.sub-item(href='tyreclinic') Tyre Clinic
+            a.sub-item(href='tyreservices') Tyre Services
+            a.sub-item(href='')
+        .item
+          a(href='')
+            i.fas.fa-info-circle
+            | About
+
   .divider2
     #register.container-fluid
       h3#begin Register Automobile 
@@ -121,9 +145,9 @@ head
         span#parkerror
         br
         .form-group
-          label(for='receiptnumber') ReceiptNumber
-          input#receiptnumber.form-control(type='text' name='receiptnumber')
-          span#receiptnumbererror
+          label(for='receiptnumber')
+          input#receiptnumber.form-control(type='text' name='receiptnumber' style="display: none;")
+          //- span#receiptnumbererror
         .form-group
           label(for='total') 
           input#totalinput.form-control(type='number' name='total' style="display: none;")
@@ -159,5 +183,9 @@ head
           p#website
             a(href='')
               | info@iosapps.com
+
 script(src='../JS/form2.js')
 script(src='../libs/js/bootstrap.bundle.min.js')
+script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js')
+script(src='/js/scripts.js')
+

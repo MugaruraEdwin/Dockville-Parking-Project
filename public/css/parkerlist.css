@@ -6,7 +6,8 @@ table{
 }
 
 body{
-    font-family: 'Poppins' sans-serif !important;
+    /* font-family: 'Poppins', sans-serif; */
+    font-family: 'Work Sans', sans-serif;
 }
 .container{
     margin-left: 5px !important;
@@ -25,4 +26,10 @@ input{
     font-family:inherit ;
     border: 1px solid rgba(0, 0, 0, 0.1);
     cursor: pointer;
+}
+table{
+    font-size: 14px;
+}
+h2{
+     font-family: 'Poppins', sans-serif;
 }
