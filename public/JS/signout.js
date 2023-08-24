@@ -74,11 +74,11 @@ const Validate = (event) =>{
         // return false; // stops form submission until you collect the input before - only for errors
     }
 
-    const uniqueNumberRegex = /^BB-([0-9]{3})+$/;
-    const personalCarRegex = /^PC-([0-9]{3})+$/;
-    const truckCarRegex = /^TC-([0-9]{3})+$/;
-    const coasterCarRegex = /^CC-([0-9]{3})+$/;
-    const taxiCarRegex = /^TAXI-([0-9]{3})+$/;
+    const uniqueNumberRegex = /^BB-([0-9]{8,9})+$/;
+    const personalCarRegex = /^PC-([0-9]{8,9})+$/;
+    const truckCarRegex = /^TC-([0-9]{8,9})+$/;
+    const coasterCarRegex = /^CC-([0-9]{8,9})+$/;
+    const taxiCarRegex = /^TAXI-([0-9]{8,9})+$/;
 
     if(receiptNumber.value == ""){
         receiptNumber.style.border = "2px solid red";

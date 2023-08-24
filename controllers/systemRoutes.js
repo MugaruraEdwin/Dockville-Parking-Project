@@ -24,10 +24,6 @@ router.get('/parking',(req,res) => {
     res.render('parking.pug');
 });
 
-router.get('/signout',(req,res) => {
-    res.render('signout.pug');
-});
-
 router.get('/login',(req,res) => {
     res.render('login.pug');
 });
