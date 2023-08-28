@@ -327,34 +327,65 @@ const Validate = (event) => {
         }
     }
 
-    
-    const batteryRegex = /^BAT-(\d{3})$/;
+    const currentDate = new Date();
 
-    if(receiptNumber.value == ""){
-        receiptNumber.style.border = "2px solid red";
-        receiptNumberError.textContent = "Receipt numeber is required";
-        //styling error
-        receiptNumberError.style = "color: red; font-size:11px; font-family: Helevetica,Arial;";
-        //focus cursor
-        receiptNumber.focus();
-        // return false;
-        error++;
-    }else if(!receiptNumber.value.match(batteryRegex)){
-        receiptNumber.style.border = "2px solid red";
-        receiptNumberError.textContent = "Enter Correct format: BAT-000";
-        //styling error
-        receiptNumberError.style = "color: red; font-size:11px; font-family: Helevetica,Arial;";
-        //focus cursor
-        receiptNumber.focus();
-        // return false;
-        error++;
-    }
-    else{
-        receiptNumber.style.border = "2px solid green";
-        receiptNumberError.textContent = "";
-        //focus cursor
-        // tireSize.focus();
-    }
+    // Get day, month, and year components
+    const day = String(currentDate.getDate()).padStart(2, '0');
+    const month = String(currentDate.getMonth() + 1).padStart(2, '0'); // Months are 0-based
+    const year = currentDate.getFullYear();
+
+    // Format the date as DD/MM/YYYY
+    const formattedDate = `${day}${month}`;
+
+    console.log(formattedDate);
+
+
+    // Get the current date
+    const currentTime = new Date();
+
+    // Get hour, minute, and second components
+    const hours = String(currentTime.getHours()).padStart(2, '0');
+    const minutes = String(currentTime.getMinutes()).padStart(2, '0');
+    // const seconds = String(currentTime.getSeconds()).padStart(2, '0');
+
+    // Format the time as HRS/MINS/SECONDS
+    const formattedTime = `${hours}${minutes}`;
+
+    console.log(formattedTime);
+
+    const randomNumber = Math.floor(Math.random() * 100) + 1;
+
+    let combinedReg = formattedDate + formattedTime + randomNumber;
+    
+    // const batteryRegex = /^BAT-(\d{3})$/;
+
+    receiptNumber.value = `BAT-${combinedReg}`
+
+    // if(receiptNumber.value == ""){
+    //     receiptNumber.style.border = "2px solid red";
+    //     receiptNumberError.textContent = "Receipt numeber is required";
+    //     //styling error
+    //     receiptNumberError.style = "color: red; font-size:11px; font-family: Helevetica,Arial;";
+    //     //focus cursor
+    //     receiptNumber.focus();
+    //     // return false;
+    //     error++;
+    // }else if(!receiptNumber.value.match(batteryRegex)){
+    //     receiptNumber.style.border = "2px solid red";
+    //     receiptNumberError.textContent = "Enter Correct format: BAT-000";
+    //     //styling error
+    //     receiptNumberError.style = "color: red; font-size:11px; font-family: Helevetica,Arial;";
+    //     //focus cursor
+    //     receiptNumber.focus();
+    //     // return false;
+    //     error++;
+    // }
+    // else{
+    //     receiptNumber.style.border = "2px solid green";
+    //     receiptNumberError.textContent = "";
+    //     //focus cursor
+    //     // tireSize.focus();
+    // }
 
 
     if(error > 0){

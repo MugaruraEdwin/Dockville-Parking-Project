@@ -117,7 +117,7 @@ body{
     padding-top: 30px;
     font-family: 'fraunces', serif;  
     color: #fff;
-    position: fixed;
+    /* position: fixed; */
 }
 #footer a{
     text-decoration: none;

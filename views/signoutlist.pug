@@ -28,8 +28,8 @@ html
             th(scope='col') Date
             th(scope='col') Gender
             th(scope='col') Nin Number
-            //- th(scope='col') Delete
-            //- th(scope='col') Edit
+            th(scope='col') Delete
+            th(scope='col') Edit
             //- th(scope='col') Receipt
         tbody
           if parkers.length
@@ -43,14 +43,12 @@ html
                 td #{parker.date}
                 td #{parker.gender}
                 td #{parker.nin}
-                //- td
-                //-   form(action="/api/parker/delete" method="POST")
-                //-     input(type="hidden" name="id" value=parker._id)
-                //-     button.btn.btn-danger(type='submit' onclick='return Confirm(event)') Delete
-                //- td
-                //-   a.btn.btn-warning(href="/api/parker/edit/"+parker._id) Edit
-                //- td
-                //-    a.btn.btn-primary(href="/api/parker/receipt/"+parker._id) Receipt 
+                td
+                  form(action="/api/parkersignout/delete" method="POST")
+                    input(type="hidden" name="id" value=parker._id)
+                    button.btn.btn-danger(type='submit' onclick='return Confirm(event)') Delete
+                td
+                  a.btn.btn-warning(href="/api/parkersignout/edit/"+parker._id) Edit
           else
             tr
               td(colspan='16' class='text-center') There are no parkers in the database

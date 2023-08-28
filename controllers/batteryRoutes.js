@@ -16,7 +16,7 @@ router.post('/regbattery', async (req,res) => {
         const batteryhire = new Hire(req.body);
         await batteryhire.save();
         console.log(req.body);
-        res.redirect('/api/batteryreceipt');
+        res.redirect('/api/batterylist');
 
     }
     catch(error){
@@ -44,20 +44,46 @@ router.get('/batterylist', async (req,res) => {
 // })
 
 
-// router.get('/receipt/:receiptId', async (req, res) => {
-//     try {
-//         const receipt = await Receipt.findById(req.params.receiptId);
-//         if (!receipt) {
-//             return res.status(404).send('Receipt not found');
-//         }
-//         const hires = await Hire.find(); // Fetch data from Hire schema
-//         console.log(hires);
-//         res.render('batteryreceipt', { receipt, hires }); // Pass both receipt and hires data
-//     } catch (error) {
-//         console.error(error);
-//         res.status(500).send('An error occurred');
-//     }
-// });
+// delete battery hire route
+
+router.post('/hire/delete', async (req,res) => {
+    try{
+        await Hire.deleteOne({_id:req.body.id});
+        res.redirect('back');
+    }
+    catch(error){
+        res.status(400).send("Unable to delete battery hire from database")
+    }
+})
+
+// Edit battery hire
+
+// first get form 
+
+router.get('/hire/edit/:id', async (req,res) => {
+    try{
+        const hired = await Hire.findOne({_id: req.params.id});
+        res.render('hireedit.pug', {hire:hired})
+    }
+    catch(error){
+        res.status(400).send('Could not find any hired batteries in the database');
+        console.log(error);
+    }
+})
+
+// edit it rather post back the data 
+
+router.post('/hire/edit', async (req,res) => {
+    try{
+        await Hire.findOneAndUpdate({_id: req.query.id},req.body);
+        res.redirect('/api/batterylist')
+    }
+    catch(error){
+        res.status(400).send('Could not edit Battery hire data');
+        console.log(error);
+    }
+})
+
 
 // receipt route
 router.get('/battery/receipt/:id', async (req,res) => {

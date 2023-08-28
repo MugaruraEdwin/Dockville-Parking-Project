@@ -69,8 +69,12 @@ router.get('/dashboard', ensureLoggedIn('/api/login'), async (req,res, next) => 
         let loggedinUserPicture = req.session.user.picture;
         // const base64String = loggedinUserPicture.toString('base64');
         let currentday = new Date().toISOString().split('T')[0];
+        // let currentday = new Date().toISOString();
+
+       
         let current = await Parker.find({date: currentday})
         // number of cuurent day parkers
+        console.log(current)
         let numberOfDocuments = current.length;
         // total revenue from current day parkers
         let dRevenue = current.reduce((total, parker) => total + parker.total, 0);

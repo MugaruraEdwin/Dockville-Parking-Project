@@ -7,8 +7,8 @@ head
   link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
   link(href='https://fonts.googleapis.com/css2?family=Fraunces:wght@100;400;700&family=Montserrat:wght@100;500;700&display=swap' rel='stylesheet')
   script(src='https://kit.fontawesome.com/aff02a4ba3.js' crossorigin='anonymous')
-  link(rel='stylesheet' href='../libs/css/bootstrap.css')
-  link(rel='stylesheet' href='../css/tyre-services.css')
+  link(rel='stylesheet' href='/libs/css/bootstrap.css')
+  link(rel='stylesheet' href='/css/tyre-services.css')
   title Battery Section
 .divides
   .dashboard
@@ -70,68 +70,68 @@ head
       h4.action Determine Battery hire Price
     #register.container-fluid
       h4 Enter details to confirm Battery hire 
-      form#batterysection(name='batterysection' action='/api/regbattery' method='POST' onsubmit='return Validate(event)')
+      form#batterysection(name='batterysection' action='/api/hire/edit?id='+hire._id  method='POST' onsubmit='return Validate(event)')
         .form-group
           label(for='firstname') First Name
-          input#firstname.form-control(type='text' placeholder="Enter receiver's first name" name='firstname')
+          input#firstname.form-control(type='text' placeholder="Enter receiver's first name" name='firstname' value=hire.firstname)
           // first name error
           span#firstnameerror
         br
         .form-group
           label(for='lastname') Last Name
-          input#lastname.form-control(type='text' placeholder="Enter receiver's last name" name='lastname')
+          input#lastname.form-control(type='text' placeholder="Enter receiver's last name" name='lastname' value=hire.lastname)
           // last name error
           span#lastnameerror
         br
         .form-group
           label(for='phonenumber') Phone Number
-          input#phonenumber.form-control(type='tel' name='phonenumber')
+          input#phonenumber.form-control(type='tel' name='phonenumber' value=hire.phonenumber)
         span#phonenumbererror
         br
         .form-group
           label(for='time') Time 
-          input#time.form-control(type='time' name="time")
+          input#time.form-control(type='time' name="time" value=hire.time)
         span#timeerror
         br
         .form-group
           label(for='Date') Date
-          input#date.form-control(type='date' name='date')
+          input#date.form-control(type='date' name='date' value=hire.date)
         span#dateerror
         br
-        select#gender.form-select(aria-label='Gender' name='gender')
+        select#gender.form-select(aria-label='Gender' name='gender' )
           option(value='') Gender
-          option(value='male') Male
-          option(value='female') Female
+          option(value='male' selected=(hire.gender === 'male')) Male
+          option(value='female' selected=(hire.gender === 'female')) Female
         span#gendererror
         br
         .form-group
           label(for='nin') NIN Number
-          input#nin.form-control(type='text' placeholder='Enter NIN number' name='nin')
+          input#nin.form-control(type='text' placeholder='Enter NIN number' name='nin' value=hire.nin)
         span#ninerror
         br
         .form-group
           label(for='name')  Battery Size
-          input#batterysize.form-control(type='text' name='batterysize' placeholder='Enter battery size')
+          input#batterysize.form-control(type='text' name='batterysize' placeholder='Enter battery size' value=hire.batterysize)
         span#batterysizeerror
         br
         select.form-select(aria-label='Default select example' name='hire')
           option(value='') Select time for hire
-          option(value='week') 7 days
-          option(value='fortnight') 14 days
-          option(value='month') One month
+          option(value='week' selected=(hire.hire === 'week')) 7 days
+          option(value='fortnight' selected=(hire.hire === 'fortnight')) 14 days
+          option(value='month' selected=(hire.hire === 'month')) One month
         span#hireerror
         br
         .form-group
-          label(for='receiptnumber') 
-          input#receiptnumber.form-control(type='text' name='receiptnumber' style="display: none;")
+          label(for='receiptnumber') ReceiptNumber
+          input#receiptnumber.form-control(type='text' name='receiptnumber' value=hire.receiptnumber)
           span#receiptnumbererror
         br
         .form-group
           label(for='total') 
-          input#totalinput.form-control(type='number' name='total' style="display: none;")
+          input#totalinput.form-control(type='number' name='total' style="display: none;" value=hire.total)
         // <p id="total" name="total"></p>
         br
-        button.btn.btn-primary.form-width(type='submit' name='submit') Print Receipt
+        button.btn.btn-primary.form-width(type='submit' name='submit') Update
     #footer.container-fluid
       .row
         #foot-left.col-md-4.col-sm-12
@@ -165,7 +165,7 @@ head
           p#website
             a(href='')
               | info@iosapps.com
-script(src='../JS/batterysection.js')
-script(src='../libs/js/bootstrap.bundle.min.js')
+script(src='/JS/batterysection.js')
+script(src='/libs/js/bootstrap.bundle.min.js')
 script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js')
 script(src='/js/scripts.js')

@@ -76,6 +76,16 @@ router.post('/tyreservice/edit', async (req,res) => {
     }
 })
 
-
+// receipt route
+router.get('/tyreservice/receipt/:id', async (req,res) => {
+    try{
+        const receipt = await Service.findOne({_id: req.params.id});
+        res.render('tyreservicereceipt.pug', {invoice:receipt})
+    }
+    catch(error){
+        res.status(400).send('Could not generate any receipts from the database');
+        console.log(error);
+    }
+})
 
 module.exports = router

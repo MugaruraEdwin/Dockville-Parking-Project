@@ -51,4 +51,45 @@ router.get('/signoutlist', async (req,res) => {
     }
 })
 
+// delete route
+
+
+router.post('/parkersignout/delete', async (req,res) => {
+    try{
+        await Signout.deleteOne({_id:req.body.id});
+        res.redirect('back');
+    }
+    catch(error){
+        res.status(400).send("Unable to delete parker from database")
+    }
+})
+
+
+//Updating data for signout
+
+router.get('/parkersignout/edit/:id', async (req,res) => {
+    try{
+        const park = await Signout.findOne({_id: req.params.id});
+        res.render('parkersignoutedit.pug', {parker:park})
+    }
+    catch(error){
+        res.status(400).send('Could not find parker in the database');
+        console.log(error);
+    }
+})
+
+// edit it rather post back the data 
+
+router.post('/parkersignout/edit', async (req,res) => {
+    try{
+        await Signout.findOneAndUpdate({_id: req.query.id},req.body);
+        res.redirect('/api/signoutlist')
+    }
+    catch(error){
+        res.status(400).send('Could not edit Parker signout data');
+        console.log(error);
+    }
+})
+
+
 module.exports = router

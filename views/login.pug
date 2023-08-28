@@ -34,8 +34,8 @@ head
           input#password.form-control(type='password' placeholder='Password' name="password")
         .flex
           .form-check.val
-            input#remember.form-check-input(type='checkbox')
-            label.form-check-label(for='remember') Remember me 
+            input#remember.form-check-input(type='checkbox' name='check' onclick='return View()')
+            label.form-check-label(for='viewpassword') View Password
           a.password(href='#') Forgot password
         p.account
           | New user? 
@@ -48,3 +48,4 @@ head
       p Founder, Iosed Apps
       p Development Agency
 script(src='/libs/js/bootstrap.bundle.min.js')
+script(src="/js/viewpassword.js") 
