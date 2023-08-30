@@ -1,3 +1,62 @@
+@media (min-width:1051px) and (max-width:1600px){
+    /* body{
+        background-color: palegreen !important;
+    } */
+}
+@media (min-width:681px) and (max-width:1050px){
+    /* body{
+        background-color: mediumslateblue !important;
+       
+    } */
+    #begin{
+        font-size: 25px ;
+    }
+    label{
+        font-size: 14px ; 
+    }
+    #register{
+        width: 480px !important;
+        /* margin-left: 10px !important; */
+    }
+}
+@media (min-width:481px) and (max-width:680px){
+    /* body{
+        background-color: burlywood !important;
+       
+    } */
+    #begin{
+        font-size: 25px ;
+    }
+    label{
+        font-size: 14px ; 
+    }
+    #register{
+        width: 380px !important;
+        /* margin-left: 0px !important; */
+    }
+}
+@media (max-width:480px){
+    /* body{
+        background-color: darkcyan !important;
+    } */
+    #begin{
+        font-size: 20px ;
+    }
+    label{
+        font-size: 12px ; 
+    }
+    #register{
+        width: 320px !important;
+        /* margin-left: 0px !important; */
+    }
+    .menu-btn{
+        font-size: 25px !important;
+    }
+    .dashboard{
+        width:50px;
+    }
+}
+
 #nav{
     background-color: #749BC2 ;
     font-family: 'fraunces', serif;
@@ -32,22 +91,24 @@
 }
 .dashboard{
     height: 171vh;
-    width: 250px;
+    width: 70px;
     border: 1px solid;
     border-radius: 0px;
     margin-right: 5px;
     background-color: #4682A9;
+    position: fixed;
 }
 hr{
     padding-left: 0px;
     width: 100%;
     color: #fff;
 }
-body{
+/* body{
     margin: 0px;
     padding: 0px;
     color: grey;
-}
+    /* background-color: red; */
+/*  */
 #head{
     font-family: serif;
     font-size: 25px;
@@ -76,7 +137,8 @@ body{
 }
 
 .divider2{
-    width: 83%;
+    width: 100%;
+    margin-left: 60px;
 }
 
 /*drop down menu */
@@ -100,17 +162,13 @@ body{
     padding: 20px;
     color: #000;
     border-radius: 10px;
-    position: relative;
+    /* position: relative; */
 }
 .h3{
     color: #fff;
 }
 
-body{
-    font-family: 'Fraunces', serif;
-    background-color:#D8D9DA;
-    
-}
+
 #footer{
     background-color: #4682A9;
     margin-top: 50px;
@@ -183,7 +241,8 @@ body{
     color: #fff;
     background-size: cover;
     background-position: center;
-
+    font-family: 'Fraunces', serif;
+    background-color:#D8D9DA;  
 }
 
 .side-bar{

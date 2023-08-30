@@ -1,3 +1,89 @@
+@media (min-width:1601px){
+    #foot-left{
+        margin-left: 150px !important;
+        
+       
+    }
+    #foot-mid{
+        margin-left: 150px !important;
+        
+    
+    }
+    #foot-right{
+        margin-left:150px !important;
+     
+    }
+}
+@media (min-width:1051px) and (max-width:1600px){
+    /* body{
+        background-color: palegreen !important;
+    } */
+}
+@media (min-width:681px) and (max-width:1050px){
+    /* body{
+        background-color: mediumslateblue !important;
+       
+    } */
+    #begin{
+        font-size: 25px ;
+    }
+    label{
+        font-size: 14px ; 
+    }
+    #register{
+        width: 480px !important;
+        /* margin-left: 10px !important; */
+    }
+}
+@media (min-width:481px) and (max-width:680px){
+    /* body{
+        background-color: burlywood !important;
+       
+    } */
+    #begin{
+        font-size: 25px ;
+    }
+    label{
+        font-size: 14px ; 
+    }
+    #register{
+        width: 380px !important;
+        /* margin-left: 0px !important; */
+    }
+    .action{
+        font-size: 20px !important;
+        margin-left: 10px !important;
+    }
+    .top{
+        font-size: 25px !important;
+    }
+}
+@media (max-width:480px){
+    /* body{
+        background-color: darkcyan !important;
+    } */
+    #begin{
+        font-size: 15px ;
+    }
+    label{
+        font-size: 12px ; 
+    }
+    #register{
+        width: 320px !important;
+        /* margin-left: 0px !important; */
+    }
+    .menu-btn{
+        font-size: 25px !important;
+    }
+    .dashboard{
+        width:50px;
+    }
+    .action{
+        font-size: 20px !important;
+        margin-left: 10px !important;
+    }
+    
+}
 #nav{
     background-color: #749BC2 ;
     font-family: 'fraunces', serif;
@@ -35,12 +121,13 @@
 }
 .dashboard{
     height: 165.5vh;
-    width: 250px;
+    width: 70px;
     border: 1px solid;
     border-radius: 0px;
     margin-right: 5px;
     background-color: #4682A9;
     color: white;
+    position: fixed;
 }
 hr{
     padding-left: 0px;
@@ -79,7 +166,9 @@ body{
 }
 
 .divider2{
-    width: 83%;
+    width: 100%;
+    height: 100vh;
+    margin-left: 60px;
 }
 
 /*drop down menu */

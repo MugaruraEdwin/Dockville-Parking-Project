@@ -1,32 +1,186 @@
-/* @media (min-width:901px) and (max-width:1200px){
+@media (min-width:1356px){
+    /* body{
+        background-color: gray !important;
+    } */
     .card3{
-        margin-top:10px;
-       }
-}
-@media (min-width:701px) and (max-width:900px){
-  body{
-    font-size: 13px;
-   }
-   .card3{
-    margin-top:10px !important;
-   }
-}
-/* @media (min-width:576px) and (min-width:768px){
-    .card3{
-        margin-top:20px ;
-        margin-left: 22px !important;
+        /* margin-top:10px; */
+        margin-left: 100px !important;
+        
        }
     .card2{
-        margin-left:60px !important ;
+        margin-left: 100px !important;
     }
     .card1{
-        margin-left:20px !important ;
+        margin-left: 100px !important;
     }
-    #right{
+    #foot-left{
+        margin-left: 150px !important;
+        
+       
+    }
+    #foot-mid{
+        margin-left: 150px !important;
+        
+    
+    }
+    #foot-right{
+        margin-left:150px !important;
+     
+    }
+}
+@media (min-width:1196px) and (max-width:1355px){
+    /* body{
+        background-color: brown !important;
+    } */
+    .card3{
+        /* margin-top:10px; */
+        height: 250px !important;
+        width: 300px !important;
+        
+       }
+    .card2{
+        height: 250px !important;
+        width: 300px !important;
+    }
+    .card1{
+        height: 250px !important;
+        width: 300px !important;
+    }
+
+}
+@media (min-width:976px) and (max-width:1195px){
+    /* body{
+        background-color: blueviolet !important;
+    } */
+    .card3{
+       
+        height: 250px !important;
+        width: 300px !important;
+        
+       }
+    .card2{
+        height: 250px !important;
+        width: 300px !important;
+    }
+    .card1{
+        height: 250px !important;
+        width: 300px !important;
+    }
+}
+@media (min-width: 861px) and (max-width:975px){
+    /* body{
+        background-color: orange !important;
+    } */
+    .card3{
+        margin-top:10px;
+        height: 250px !important;
+        width: 300px !important;
+        
+       }
+    .card2{
+        height: 250px !important;
+        width: 300px !important;
+    }
+    .card1{
+        height: 250px !important;
+        width: 300px !important;
+    }
+}
+@media (min-width:765px) and (max-width:860px){
+  body{
+    font-size: 13px;
+    /* background-color: greenyellow !important; */
+   }
+   
+   .card3{
+    margin-top:10px;
+    height: 250px !important;
+    width: 300px !important;
+    
+   }
+.card2{
+    height: 250px !important;
+    width: 300px !important;
+    margin-top:10px;
+}
+.card1{
+    height: 250px !important;
+    width: 300px !important;
+    margin-left: 10px !important;
+}
+}
+/*Being applied on the largest size on laptop*/
+@media (min-width:576px) and (max-width:768px){
+    /* body{
+        background-color: aquamarine !important;
+    } */
+    .card3{
+        margin-top:10px;
+        height: 250px !important;
+        width: 300px !important;
+        
+       }
+    .card2{
+        height: 250px !important;
+        width: 300px !important;
+        margin-top:10px;
+    }
+    .card1{
+        height: 250px !important;
+        width: 300px !important;
+    }
+    #foot{
         
     }
-} */
-@media (min-width:481px) and (max-width:700px){
+}
+/*Being applied on the phone sizes*/
+@media (min-width:481px) and (max-width:575px){
+    /* body{
+        background-color: red !important;
+    } */
+    h4{
+        font-size: 20px !important;
+    }
+    p{
+        font-size: 15px !important;
+    }
+    h3{
+        font-size: 15px !important;
+    }
+    .card3{
+        margin-top:10px;
+        height: 250px !important;
+        width: 300px !important;
+        
+       }
+    .card2{
+        height: 250px !important;
+        width: 300px !important;
+        margin-top:10px;
+    }
+    .card1{
+        height: 250px !important;
+        width: 300px !important;
+    }
+    #foot h4{
+        font-size: 10px  !important;
+    }
+    #dockpara{
+        font-size: 10px  !important;
+        width: 300px;
+    }
+    .shrink{
+        font-size: 15px !important;
+    }
+    .links{
+        font-size: 10px !important;
+    }
+    .top{
+        font-size: 16px !important;
+        font-weight: 300 !important;
+    }
+}
+/* @media (min-width:481px) and (max-width:700px){
     body{
      font-size: 10px;
     }
@@ -36,20 +190,67 @@
     .card3{
         margin-top:10px ;
        }
-    }
+    } */
 
 @media (max-width:480px){
-    body{
-        
+    /* body{
+        background-color: red !important;
+    } */
+    h4{
+        font-size: 18px !important;
     }
-    #dashboard{
-        padding: 2px;
-        border-radius: 2px;
+    p{
+        font-size: 14px !important;
+    }
+    h3{
+        font-size: 14px !important;
     }
     .card3{
-        margin-top:10px ;
+        margin-top:10px;
+        height: 250px !important;
+        width: 300px !important;
+        
        }
-} */
+    .card2{
+        height: 250px !important;
+        width: 300px !important;
+        margin-top:10px;
+    }
+    .card1{
+        height: 250px !important;
+        width: 300px !important;
+    }
+    #foot h4{
+        font-size: 10px  !important;
+    }
+    #dockpara{
+        font-size: 10px  !important;
+        width: 200px;
+    }
+    .shrink{
+        font-size: 15px !important;
+    }
+    .links{
+        font-size: 10px !important;
+    }
+    .header h1{
+        font-size: 10px !important;
+    }
+    .menu .item a{
+        font-size: 10px !important;
+    }
+    .menu-btn{
+        font-size: 20px;
+    }
+    .top{
+        font-size: 16px !important;
+        font-weight: 300 !important;
+    }
+    #stat{
+        font-size: 11.5px !important;
+    }
+
+}
 
 
 body{
@@ -92,11 +293,13 @@ body{
 }
 .dashboard{
     height: 130.5vh;
-    width: 250px;
+    width: 70px;
     border: 1px solid;
     border-radius: 0px;
     margin-right: 0px;
     background-color: #4682A9;
+    position: fixed;
+
 }
 hr{
     padding-left: 0px;
@@ -136,7 +339,9 @@ body{
 }
 
 .divider2{
-    width: 83%;
+    width: 100%;
+    margin-left: 60px;
+    
 }
 
 /*drop down menu */
