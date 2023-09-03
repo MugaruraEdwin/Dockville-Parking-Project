@@ -1,5 +1,7 @@
 body{
     background-color: #DDE6ED;
+    background-color: #D8D8D8;
+    /* background-color: #1E2E37; */
 }
 .design{
     list-style-type: none;
@@ -9,25 +11,27 @@ body{
     margin-top: -25px;
 }
 .container{
-    margin-top: 100px;
+    margin-top: 180px;
     font-family: 'Fraunces', serif;
     font-family: 'Work Sans', sans-serif;
 }
 .info{
     background-color: white;
+    /* background-color: #395464; */
+    /* color: white; */
     padding: 30px;
     border-bottom-left-radius: 10px;
     border-top-left-radius: 10px;
 }
 .welcome{
-    background-image: url(../images/customer3.jpeg);
+    background-image: url(../images/logimage.png);
     padding: 30px;
     border-bottom-right-radius: 10px;
     border-top-right-radius: 10px;
     padding-top: 300px;
     font-weight: 700;
     color: #21a6e8;
-
+    color: #D8D8D8;
 }
 .flex{
     display: inline-flex;
@@ -44,9 +48,13 @@ body{
     margin-bottom: 20px;
 }
 .account{
-    font-size: 10px;
+    font-size: 12px;
     text-align: center;
     margin-top: 10px;
+}
+p a{
+    text-decoration: none;
+    color: #8fcbf3;
 }
 #g-1{
     color: #4285F4;

@@ -16,6 +16,7 @@ const Validate = (event) =>{
     let color = document.truckregister.color;
     let carmodel = document.truckregister.model;
     let date = document.truckregister.date;
+    let key = document.truckregister.securitykey;
     let receiptNumber = document.truckregister.receiptnumber;
 
     //Picking the error fields
@@ -30,7 +31,7 @@ const Validate = (event) =>{
     let colorError  = document.getElementById("colorerror")
     let carModelError = document.getElementById("modelerror");
     let dateError = document.getElementById("dateerror");
-    // let receiptNumberError = document.getElementById("receiptnumbererror");
+    let keyError = document.getElementById("securitykeyerror");
     let totalInput = document.getElementById("totalinput");
 
 
@@ -229,6 +230,22 @@ const Validate = (event) =>{
         timeError.textContent = "";
         //focus cursor
         carType.focus();
+    }
+
+    if(key.value == ""){
+        key.style.border = "2px solid red";
+        keyError.textContent = "Security key is required";
+        //styling error
+        keyError.style = "color: red; font-size:11px; font-family: Helevetica,Arial;";
+        //focus cursor
+        key.focus();
+        // return false;
+        error++;
+     } else{
+        key.style.border = "2px solid green";
+        keyError.textContent = "";
+        //focus cursor
+        time.focus();
     }
 
     if(carType.value == ""){

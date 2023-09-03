@@ -97,11 +97,6 @@ head
           input#phonenumber.form-control(type='tel' name='phonenumber')
           span#phonenumbererror
         br
-        .form-group
-          label(for='receiptnumber') ReceiptNumber
-          input#receiptnumber.form-control(type='text' name='receiptnumber')
-          span#receiptnumbererror
-        br
         label(for='tyreservice-select') Select Tyre Service
         .form-check
           input#pressure.form-check-input(type='checkbox' name='tyreservice' value='pressure')
@@ -114,6 +109,11 @@ head
         .form-check
           input#valves.form-check-input(type='checkbox' name='tyreservice' value='valves' )
           label.form-check-label(for='valves') Valves
+        br
+        .form-group
+          label(for='receiptnumber')
+          input#receiptnumber.form-control(type='text' name='receiptnumber' style="display: none;" )
+          span#receiptnumbererror
         br
         .form-group
           label(for='total') 

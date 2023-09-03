@@ -76,13 +76,6 @@ head
           label(for='phonenumber') Phone Number
           input#phonenumber.form-control(type='tel' name='phonenumber' value=service.phonenumber)
           span#phonenumbererror
-        br
-        .form-group
-          label(for='receiptnumber') ReceiptNumber
-          input#receiptnumber.form-control(type='text' name='receiptnumber' value=service.receiptnumber)
-          span#receiptnumbererror
-        
-  
         label(for='tyreservice-select') Select Tyre Service
         .form-check
           input#pressure.form-check-input(type='checkbox' name='tyreservice' value='pressure' checked=(service.tyreservice.includes('pressure')))

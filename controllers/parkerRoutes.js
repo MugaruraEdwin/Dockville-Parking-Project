@@ -40,13 +40,17 @@ router.get('/parkerlist', async (req,res) => {
     try{
         let items = await Parker.find();
         // Revenue from cars parked
+        totalParked = items.length
+
+        let revenue = items.reduce((total, parker) => total + parker.total, 0);
 
        
         // req.session.totalRevenue = amount;
         // Update the app.locals.amount with the calculated amount
         // res.locals.amount = amount;
         // res.render('dashboard.pug',{parkRevenue:revenue[0].totalRevenue})
-        res.render('parkerlist.pug',{parkers: items});
+        console.log(totalParked)
+        res.render('parkerlist.pug',{parkers: items, total:totalParked, revenue});
     }
     catch(error){
         console.log(error);

@@ -3,7 +3,7 @@ html
   head
     meta(charset='UTF-8')
     meta(name='viewport' content='width=device-width, initial-scale=1.0')
-    title BatteryHire
+    title Parkers
     link(rel='preconnect' href='https://fonts.googleapis.com')
     link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
     link(href='https://fonts.googleapis.com/css2?family=Fraunces:wght@100;400;700&family=Montserrat:wght@100;500;700&display=swap' rel='stylesheet')
@@ -12,7 +12,7 @@ html
     link(rel='stylesheet' href='../css/parkerlist.css')
     script(src='https://kit.fontawesome.com/aff02a4ba3.js' crossorigin='anonymous')
     
-    h2.p-3.mb-3.text-white(style='background-color:#395464') Hired Batteries List
+    h2.p-3.mb-3.text-white(style='background-color:#395464') Signed Out Parker List by Other
     
   body
     .container
@@ -20,46 +20,38 @@ html
       table#myTable.table.table-bordered.table-hover
         thead.table-secondary
           tr.header
-              th(scope='col') First Name
-              th(scope='col') Last Name
-              th(scope='col') Phone Number
-              th(scope='col') Time of Hire
-              th(scope='col') Date
-              th(scope='col') Gender
-              th(scope='col') NIN Number
-              th(scope='col') Battery Size
-              th(scope='col') Hire Time
-              th(scope='col') Receipt Number
-              th(scope='col') Total
-              th(scope='col') Delete
-              th(scope='col') Edit
-              th(scope='col') Receipt
+            th(scope='col') First Name
+            th(scope='col') Last Name
+            th(scope='col') Security Key
+            th(scope='col') Phone Number
+            th(scope='col') Time
+            th(scope='col') Date
+            th(scope='col') Gender
+            th(scope='col') Nin Number
+            th(scope='col') Delete
+            th(scope='col') Edit
+            //- th(scope='col') Receipt
         tbody
-          if hires.length
-            each hire in hires
+          if parkers.length
+            each parker in parkers
               tr
-                td #{hire.firstname}
-                td  #{hire.lastname}
-                td  #{hire.phonenumber}
-                td  #{hire.time}
-                td  #{hire.date}  
-                td #{hire.gender}
-                td  #{hire.nin}
-                td  #{hire.batterysize}
-                td  #{hire.hire}
-                td  #{hire.receiptnumber}  
-                td #{hire.total}
+                td #{parker.firstname}
+                td #{parker.lastname}
+                td #{parker.securitykey}
+                td #{parker.phonenumber}
+                td #{parker.time}
+                td #{parker.date}
+                td #{parker.gender}
+                td #{parker.nin}
                 td
-                  form(action="/api/hire/delete" method="POST")
-                    input(type="hidden" name="id" value=hire._id)
+                  form(action="/api/othersignout/delete" method="POST")
+                    input(type="hidden" name="id" value=parker._id)
                     button.btn.btn-danger(type='submit' onclick='return Confirm(event)') Delete
                 td
-                  a.btn.btn-warning(href="/api/hire/edit/"+hire._id) Edit
-                td
-                   a.btn.btn-primary(href="/api/battery/receipt/"+hire._id) Receipt 
+                  a.btn.btn-warning(href="/api/othersignout/edit/"+parker._id) Edit
           else
             tr
-              td(colspan='16' class='text-center') There are no batetries hired in the database
+              td(colspan='16' class='text-center') There are no parkers in the database
       .invoice-btns
         button.invoice-btn(type='button' onclick='printInvoice()')
           span

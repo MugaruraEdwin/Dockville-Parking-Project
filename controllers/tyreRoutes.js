@@ -14,7 +14,7 @@ router.post('/regtyre', async (req,res) => {
         const tyresignup = new Tyre(req.body);
         await tyresignup.save();
         console.log(req.body);
-        res.redirect('/api/tyrereceipt');
+        res.redirect('/api/tyrelist');
 
     }
     catch(error){
@@ -34,6 +34,27 @@ router.get('/tyrelist', async (req,res) => {
         console.log(error);
         return res.status(400).send({message: "Sorry, couldn't retrieve any tyre"});
     }
+})
+
+
+// current day revenue
+
+router.get('/currenttyrerevenue', async(req,res) => {
+    try{
+      
+        let currentday = new Date().toISOString().split('T')[0];
+        let current = await Tyre.find({date: currentday})
+ 
+        let dRevenue = current.reduce((total, tyre) => total + tyre.total, 0);
+
+        console.log(current)
+        res.render('dailycarclinicrevenue.pug', {tyres: current, dRevenue})
+    }
+    catch(error){
+        res.status(400).send({message: 'Can not find tyres for that specific date'})
+        console.log(error)
+    }
+    
 })
 
 // delete route 

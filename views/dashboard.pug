@@ -67,7 +67,7 @@ head
             i.fa-regular.fa-user(style='border: 1px solid; padding:5px; border-radius:50%;')
             h4.top(style='font-weight:bold;') Manager #{inUser}
         .item
-          a#police(href='/api/logout', style='font-weight:bold; color:white; font-size:21px;' onclick='return Confirm(event)') Logout
+          a#police.bg-primary(href='/api/logout', style='font-weight:bold; color:white; font-size:18px; border: 1px groove; margin-left:20px; margin-right:130px; padding-left:10px; padding-top:0px; padding-bottom:0px; border-radius:5px;' onclick='return Confirm(event)') Logout
 
 
   .divider2
@@ -83,7 +83,7 @@ head
         p.report-p Track the system statitics
         //- button.report-button
         //- a.report-button(href='/api/weeklyrevenue') View
-        a#stat.btn(style='margin-left: 100px; margin-top: 10px; background-color: #4682A9; color:#fff; font-size:16px; font-weight:bold;'  href="/api/weeklyrevenue") View Statistics
+        a#stat.btn.btn-primary(style='margin-left: 100px; margin-top: 10px; background-color:; color:#fff; font-size:16px; font-weight:bold;'  href="/api/weeklyrevenue") View Statistics
       #mid-low.container-fluid
         .row
           .col-md-4.col-sm-12.card1

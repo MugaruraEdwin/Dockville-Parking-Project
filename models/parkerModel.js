@@ -46,6 +46,10 @@ const ParkersignupSchema = new mongoose.Schema({
         type:String,
         required:true
     },
+    securitykey:{
+        type:String,
+        required:true
+    },
     phonenumber:{
         type:String,
         required:true,

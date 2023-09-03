@@ -3,9 +3,9 @@ html
   head
     meta(charset='UTF-8')
     meta(name='viewport' content='width=device-width, initial-scale=1.0')
-    title Parkers Daily Revenue
+    title Tyre Services Daily Revenue
     link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9' crossorigin='anonymous')
-    h2.p-3.mb-3.text-white(style='background-color:#395464') Daily Revenue From Parker side
+    h2.p-3.mb-3.text-white(style='background-color:#395464') Daily Revenue From Tyre Services
     link(rel='preconnect' href='https://fonts.googleapis.com')
     link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
     link(href='https://fonts.googleapis.com/css2?family=Fraunces:wght@100;400;700&family=Montserrat:wght@100;500;700&display=swap' rel='stylesheet')
@@ -20,41 +20,36 @@ html
         thead.table-secondary
           tr.header
            
-            th(scope='col') Receipt Number
             th(scope='col') First Name
             th(scope='col') Last Name
-            th(scope='col') Number Plate
-            th(scope='col') Color
             th(scope='col') Email
-            th(scope='col') Automobile model
-            th(scope='col') Time of Arrival
-            th(scope='col') Automobile type
-            th(scope='col') Phone Number
-            th(scope='col') Parking Duration
             th(scope='col') Date
+            th(scope='col') Phone Number
+            th(scope='col') Receipt Number
+            th(scope='col') Pressure
+            th(scope='col') Puncture
+            th(scope='col') Valves
             th(scope='col') Total
+
         tbody
-          if parkers.length
-            each parker in parkers
+          if services.length
+            each service in services
               tr
                
-                td #{parker.receiptnumber}
-                td #{parker.firstname}
-                td #{parker.lastname}
-                td #{parker.numberplate}
-                td #{parker.color}
-                td #{parker.email}
-                td #{parker.model}
-                td #{parker.time}
-                td #{parker.type}
-                td #{parker.phonenumber}
-                td #{parker.park}
-                td #{parker.date}
-                td #{parker.total}
+                th #{service.firstname}
+                td  #{service.lastname}
+                td  #{service.email}
+                td  #{service.date}
+                td  #{service.phonenumber}  
+                td  #{service.receiptnumber} 
+                td  #{service.tyreservice.includes('pressure') ? '500' : 'Not Picked'}
+                td  #{service.tyreservice.includes('puncture') ? '5000' : 'Not Picked'}
+                td  #{service.tyreservice.includes('valves') ? '5000' : 'Not Picked'}
+                td  #{service.total} 
           
 
           else 
-            p There are no parkers in the database as yet today 
+            p There are no services used in the database as yet today 
       table#myTable.table.table-bordered.table-hover
         thead.table-secondary
           tr.header

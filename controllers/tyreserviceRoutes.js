@@ -35,6 +35,26 @@ router.get('/tyreservicelist', async (req,res) => {
     }
 })
 
+// current day revenue
+
+router.get('/currenttyreservicesrevenue', async(req,res) => {
+    try{
+      
+        let currentday = new Date().toISOString().split('T')[0];
+        let current = await Service.find({date: currentday})
+ 
+        let dRevenue = current.reduce((total, service) => total + service.total, 0);
+
+        console.log(current)
+        res.render('dailytyreservicesrevenue.pug', {services: current, dRevenue})
+    }
+    catch(error){
+        res.status(400).send({message: 'Can not find tyre services for that specific date'})
+        console.log(error)
+    }
+    
+})
+
 // deleting a service 
 
 router.post('/tyreservice/delete', async (req,res) => {

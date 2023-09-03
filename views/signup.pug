@@ -23,47 +23,48 @@ head
       form#signup_form(name='signup_form' action='/api/regmanager' method='POST' onsubmit='return Validate(event)')
         .form-group
           label(for='firstname')
-            | First Name
-            span.red *
+            | First Name 
+            span.red   *
           input#firstname.form-control(type='text' placeholder='Enter First Name' name='firstname')
         span#firstnameerror
         .form-group
           label(for='lastname')
             | Last Name
-            span.red *
+            span.red   *
           input#lastname.form-control(type='text' placeholder='Enter Last Name' name='lastname')
         span#lastnameerror
         .form-group
           label(for='email')
             | Email address
-            span.red *
+            span.red   *
           input#email.form-control(type='email' aria-describedby='emailHelp' placeholder='Enter email' name='email')
-          small#emailHelp.form-text.text-muted We&apos;ll never share your email with anyone else.
         span#emailerror
+        br
+        span.red   Required
         select#role.form-select(aria-label='Role' name='role')
-          option(value='') Pick Manager Role
+          option(value='') Pick Manager Role  
           option(value='parking') Parking Section 
           option(value='tyre') Tyre Clinic 
           option(value='battery') Battery Section
         span#roleerror
-        br
-        .form-group
-          label(for='picture')
-            | Take / Choose a Picture of your face:
-            span.red *
-          input#picture.form-control(type='file' name='picture' accept='image/*' capture='user')
-        span#pictureerror
+        //- br
+        //- .form-group
+        //-   label(for='picture')
+        //-     | Take / Choose a Picture of your face:
+        //-     span.red   *
+        //-   input#picture.form-control(type='file' name='picture' accept='image/  *' capture='user')
+        //- span#pictureerror
         br
         .form-group
           label(for='password')
             | Password
-            span.red *
+            span.red   *
           input#password.form-control(type='password' placeholder='Password' name='password')
         span#passworderror
         .form-group
           label(for='confirmpassword')
             | Confirm Password
-            span.red *
+            span.red   *
           input#confirmpassword.form-control(type='password' placeholder='Retype Password' name='confirmpassword')
         span#confirmpassworderror
         button#sumbit.btn.btn-primary.form-width(type='submit' name='submit') Create Account

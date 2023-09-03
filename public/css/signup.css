@@ -4,15 +4,17 @@ body{
 .container{
     margin-top: 30px;
     background-color: #fff;
+    /* background-color: #395464; */
     font-family: 'Fraunces', serif;
     font-family: 'Work Sans', sans-serif;
     border-radius: 15px;
+   
 }
 .margin{
     padding: 20px;
 }
 #back-img{
-    background-image:url(/images/customer3.jpeg) ;
+    background-image:url(/images/logimage.png) ;
     background-repeat: no-repeat;
     background-size: cover;
     color: #8fcbf3;
@@ -29,14 +31,20 @@ body{
 }
 .red{
     color: red;
+    font-style: italic;
+    font-size: 12px;
 }
 .google{
     border: 1px solid;
 }
 .account{
-    font-size: 10px;
+    font-size: 12px;
     text-align: center;
     margin-top: 10px;
+}
+p a{
+    text-decoration: none;
+    color: #8fcbf3;
 }
 #g-1{
     color: #4285F4;

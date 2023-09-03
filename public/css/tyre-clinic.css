@@ -126,6 +126,7 @@
     border-radius: 0px;
     margin-right: 5px;
     background-color: #4682A9;
+    background-color: #395464;
     color: white;
     position: fixed;
 }
@@ -190,21 +191,25 @@ body{
 
 .clinic-top{
     background-color: #91C8E4;
+    background-color: #395464;
     margin-left: 90px;
     padding-bottom: 2px;
     padding-left: 5px;
     margin-top: 2px;
     color: #000;
+    color: #ebecf6;
 
 }
 .top{
     margin-top: 30px;
     background-color:#91C8E4;
+    background-color: #395464;
     font-family: 'Montserrat',serif; 
 }
 .action{
     padding-top: 10px;
     background-color: #91C8E4;
+    background-color: #395464;
     font-family: 'Fraunces', serif;
 }
 #nav{
@@ -215,9 +220,12 @@ body{
 #register{
     width:680px;
     margin: 40px auto;
-    background-color: #91C8E4;;
+    background-color: #91C8E4;
+    background-color: #3a5466;
+    background-color: #395464;
     padding: 20px;
     color: #000;
+    color: #ebecf6;
     border-radius: 10px;
 }
 
@@ -226,7 +234,8 @@ body{
     background-color: #D8D9DA;
 }
 #footer{
-    background-color: #4682A9;;
+    background-color: #4682A9;
+    background-color: #395464;
     margin-top: 50px;
     padding-top: 30px;
     font-family: 'fraunces', serif;  
@@ -289,6 +298,7 @@ body{
 
 .side-bar{
     background-color: #4682A9;
+    background-color: #395464;
     width:250px;
     height:100vh;
     position:fixed;
@@ -300,6 +310,7 @@ body{
 }
 header{
     background: #1c4f71;
+    background:  #1E2E37;
 }
 
 header img{
@@ -356,6 +367,7 @@ header h1{
 }
 .item .sub-menu{
     background: #1c4f71;
+    background: #1E2E37;
     display: none;
 }
 .menu-btn{

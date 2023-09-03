@@ -98,11 +98,6 @@ head
           span#phonenumbererror
         br
         .form-group
-          label(for='receiptnumber') ReceiptNumber
-          input#receiptnumber.form-control(type='text' name='receiptnumber')
-          span#receiptnumbererror
-        br
-        .form-group
           label(for='name')  TyreSize
           input#tyresize.form-control(type='text' name='tyresize' placeholder='Enter car tyre size')
         span#tyresizeerror
@@ -129,6 +124,11 @@ head
           option(value='crossover') Cross Over
           option(value='pickuptruck') Pickup Truck
         span#carmodelerror
+        .form-group
+          label(for='receiptnumber') 
+          input#receiptnumber.form-control(type='text' name='receiptnumber' style="display: none;")
+          span#receiptnumbererror
+        br
         .form-group
           label(for='total') 
           input#totalinput.form-control(type='number' name='total' style="display: none;")

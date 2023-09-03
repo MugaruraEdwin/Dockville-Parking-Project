@@ -29,18 +29,20 @@
 .login{
     height: 40px ;
     width: 100px;
-    background-color: #21a6e8;
+    background-color: #0d6efd;
     border-radius: 10px;
     color: white;
     border: 1px solid #21a6e8;
+    border: 1px solid #0d6efd;
 }
 .signup{
     height: 40px;
     width: 100px;
     background-color: #21a6e8;
+    background-color: #0d6efd;
     border-radius: 10px;
     color: white;
-    border: 1px solid #21a6e8;
+    border: 1px solid #0d6efd;
     margin-left:5px !important;
 }
 .design{
@@ -51,14 +53,19 @@
 
 .signup:hover{
     background-color: #70c1e9;
+    background-color: #395464;
+    border: 1px solid #395464;
 }
 
 .login:hover{
     background-color: #70c1e9;
+    background-color: #395464;
+    border: 1px solid #395464;
 }
 .main{
     width: 50%;
     background-color: #4682A9;
+    background-color:  #395464;;
     height: 700px;
 }
 .main img{
@@ -70,7 +77,7 @@
     height: 700px !important;
     display: flex;
     /* margin-left: 30px; */
-   margin-left: 75px;
+   margin-left: 155px;
  
 }
 .carousel-item{

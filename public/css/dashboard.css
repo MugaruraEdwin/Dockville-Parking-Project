@@ -129,9 +129,6 @@
         height: 250px !important;
         width: 300px !important;
     }
-    #foot{
-        
-    }
 }
 /*Being applied on the phone sizes*/
 @media (min-width:481px) and (max-width:575px){
@@ -298,6 +295,7 @@ body{
     border-radius: 0px;
     margin-right: 0px;
     background-color: #4682A9;
+    background-color: #395464;
     position: fixed;
 
 }
@@ -371,6 +369,7 @@ body{
 #left{
     padding-left: 20px;
     background-color: #4682A9;
+    background-color:#395464;
     font-family: 'fraunces', serif;
     font-family: 'Work Sans', sans-serif;
     width: 400px;
@@ -456,6 +455,8 @@ a{
     /* padding-top: 30px; */
     margin-left: 10px;
     background-color: #4682A9;
+    background-color: #1E2E37;
+    background-color: #395464;
     width:350px;
     text-align: center;
     font-family: 'Work Sans', sans-serif;
@@ -487,6 +488,8 @@ a{
     /* padding-top: 30px; */
     margin-left: 15px;
     background-color:  #4682A9;
+    background-color: #1E2E37;
+    background-color: #395464;
     width:350px;
     text-align: center;
     font-family: 'Work Sans', sans-serif;
@@ -499,6 +502,8 @@ a{
     /* padding-top: 30px; */
     width:350px;
     background-color:  #4682A9;
+    background-color: #1E2E37;
+    background-color: #395464;
     margin-left: 15px;
     text-align: center;
     font-family: 'Work Sans', sans-serif;
@@ -610,7 +615,8 @@ a{
     margin-left: 30px;
 }
 #footer{
-    background-color: #4682A9;;
+    background-color: #4682A9;
+    background-color: #395464;
     margin-top: 50px;
     padding-top: 30px;
     font-family: 'Work Sans', sans-serif;
@@ -677,7 +683,8 @@ a{
     color: #fff;
 }
 .btn:hover{
-    color: #ED7B7B !important;
+     background-color: #395464 !important;
+     border: 1px solid #395464;
 }
 
 *{
@@ -698,6 +705,7 @@ body{
 
 .side-bar{
     background-color: #4682A9;
+    background-color: #395464;
     width:250px;
     height:100vh;
     position:fixed;
@@ -709,6 +717,7 @@ body{
 }
 header{
     background: #1c4f71;
+    background: #1E2E37;;
 }
 
 header img{
@@ -765,6 +774,7 @@ header h1{
 }
 .item .sub-menu{
     background: #1c4f71;
+    background: #1E2E37;;
     display: none;
 }
 .menu-btn{
@@ -787,6 +797,6 @@ header h1{
 .rotate{
     transform: rotate(90deg);
 }
-#police:hover{
-    color: #ED7B7B;
-}
+/* #police:hover{
+    background-color: #395464;
+} */

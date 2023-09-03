@@ -14,11 +14,11 @@ const SignupSchema = new mongoose.Schema({
         required:true,
         trim:true
     },
-    picture: {
-          type: Buffer,
-          contentType:String,
-          required: true,
-    },
+    // picture: {
+    //       type: Buffer,
+    //       contentType:String,
+    //       required: true,
+    // },
     email:{
         type:String,
         unique:true,

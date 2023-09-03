@@ -28,15 +28,17 @@ head
         .form-group
           label(for='email') Email address
           input#exampleInputEmail1.form-control(type='email' aria-describedby='emailHelp' placeholder='Enter email' name="email")
-          small#emailHelp.form-text.text-muted We&apos;ll never share your email with anyone else.
+          //- small#emailHelp.form-text.text-muted.text-white We&apos;ll never share your email with anyone else.
+        br
         .form-group
           label(for='password') Password
           input#password.form-control(type='password' placeholder='Password' name="password")
+        br
         .flex
           .form-check.val
             input#remember.form-check-input(type='checkbox' name='check' onclick='return View()')
             label.form-check-label(for='viewpassword') View Password
-          a.password(href='#') Forgot password
+          //- a.password(href='#') Forgot password
         p.account
           | New user? 
           a(href='signup') Sign Up

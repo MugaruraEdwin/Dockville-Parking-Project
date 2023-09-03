@@ -25,7 +25,7 @@ router.post('/regbattery', async (req,res) => {
     }
 });
 
-// returning manager data from db in table format
+// returning battery data from db in table format
 
 router.get('/batterylist', async (req,res) => {
     try{
@@ -39,9 +39,25 @@ router.get('/batterylist', async (req,res) => {
 })
 
 
-// router.get('/batteryreceipt',(req,res) => {
-//     res.render('batteryreceipt.pug');
-// })
+// current day revenue
+
+router.get('/currentbatteryrevenue', async(req,res) => {
+    try{
+      
+        let currentday = new Date().toISOString().split('T')[0];
+        let current = await Hire.find({date: currentday})
+ 
+        let dRevenue = current.reduce((total, hire) => total + hire.total, 0);
+
+        console.log(current)
+        res.render('dailybatteryrevenue.pug', {hires: current, dRevenue})
+    }
+    catch(error){
+        res.status(400).send({message: 'Can not find battery hires for that specific date'})
+        console.log(error)
+    }
+    
+})
 
 
 // delete battery hire route
