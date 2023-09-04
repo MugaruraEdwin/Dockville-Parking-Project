@@ -8,6 +8,7 @@ table{
 body{
     /* font-family: 'Poppins', sans-serif; */
     font-family: 'Work Sans', sans-serif;
+    /* background-color: #D8D9DA; */
 }
 .container{
     margin-left: 5px !important;
@@ -32,6 +33,18 @@ table{
 }
 h2{
      font-family: 'Poppins', sans-serif;
+}
+
+#registernew{
+    border:1px solid groove;
+    float: right;
+    background-color: #395464;
+    padding: 5px;
+    color: white;
+    text-decoration: none;
+    margin-top: -40px;
+    font-size: 16px;
+    border-radius: 5px;
 }
 
 /* #right{

@@ -17,6 +17,9 @@ html
   body
     .container
       input#myInput(type='text' onkeyup='myFunction()' placeholder='Search for names..' class='form-control mb-3')
+      h5(style='color:#395464; width:300px;') Total Services Offered: #{total}
+      h5#right(style='color:#395464; width:330px;') Total Revenue Collected: #{revenue}
+      a#registernew(href="tyreservices") Register new Tyre Service
       table#myTable.table.table-bordered.table-hover
         thead.table-secondary
           tr.header

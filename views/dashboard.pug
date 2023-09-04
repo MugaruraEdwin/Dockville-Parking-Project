@@ -46,7 +46,7 @@ head
           .sub-menu
             a.sub-item(href='register') Park Register
             a.sub-item(href='signout') Park Signout
-            a.sub-item(href='')
+            a.sub-item(href='othersignout') Other Signout
         .item
           a.sub-btn
             i.fas.fa-cog
@@ -59,9 +59,17 @@ head
             a.sub-item(href='tyreservices') Tyre Services
             a.sub-item(href='')
         .item
-          a(href='')
-            i.fas.fa-info-circle
-            | About
+          a.sub-btn
+            i.fas.fa-th
+            | Lists
+            // Dropdown
+            // Dropdwon arrow
+            i.fas.fa-angle-right.dropdown
+          .sub-menu
+            a.sub-item(href='parkerlist') Parker List
+            a.sub-item(href='batterylist') Battery List
+            a.sub-item(href='tyrelist') TyreClinic List
+            a.sub-item(href='tyreservicelist') TyreServices List
         .item 
           a.sub-btn
             i.fa-regular.fa-user(style='border: 1px solid; padding:5px; border-radius:50%;')
@@ -80,7 +88,7 @@ head
           //-   h4.top(style='font-weight:bold;') Manager #{inUser}
       #report.container-fluid
         h4.report-h4 General Daily System Statistics
-        p.report-p Track the system statitics
+        p.report-p Track the system statistics
         //- button.report-button
         //- a.report-button(href='/api/weeklyrevenue') View
         a#stat.btn.btn-primary(style='margin-left: 100px; margin-top: 10px; background-color:; color:#fff; font-size:16px; font-weight:bold;'  href="systemstatistics") View Statistics

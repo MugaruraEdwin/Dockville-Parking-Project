@@ -39,7 +39,11 @@ router.get('/batterylist', ensureLoggedIn('/api/login'),async (req,res) => {
         req.session.user = req.user;
         if(req.session.user.role === 'battery' || req.session.user.role === 'toplevel' ){
             let items = await Hire.find();
-            res.render('batterylist.pug',{hires: items});
+
+            let totalParked = items.length
+
+            let revenue = items.reduce((total, parker) => total + parker.total, 0);
+            res.render('batterylist.pug',{hires: items,  total:totalParked, revenue});
         }else{
             const message = 'Access restricted to battery section managers'
             res.render('login.pug', {alert:message})

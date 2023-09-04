@@ -32,6 +32,9 @@
     /* body{
         background-color: brown !important;
     } */
+    h3{
+        font-size: 17px !important;
+    }
     .card3{
         /* margin-top:10px; */
         height: 250px !important;
@@ -52,6 +55,9 @@
     /* body{
         background-color: blueviolet !important;
     } */
+    h3{
+        font-size: 15px !important;
+    }
     .card3{
        
         height: 250px !important;
@@ -71,6 +77,9 @@
     /* body{
         background-color: orange !important;
     } */
+    h3{
+        font-size: 15px !important;
+    }
     .card3{
         margin-top:10px;
         height: 250px !important;
@@ -91,6 +100,9 @@
     font-size: 13px;
     /* background-color: greenyellow !important; */
    }
+   h3{
+    font-size: 15px !important;
+    }   
    
    .card3{
     margin-top:10px;
@@ -114,6 +126,9 @@
     /* body{
         background-color: aquamarine !important;
     } */
+    h3{
+        font-size: 15px !important;
+    }
     .card3{
         margin-top:10px;
         height: 250px !important;

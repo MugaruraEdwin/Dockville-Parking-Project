@@ -46,7 +46,7 @@ head
           .sub-menu
             a.sub-item(href='register') Park Register
             a.sub-item(href='signout') Park Signout
-            a.sub-item(href='')
+            a.sub-item(href='othersignout') Other Signout
         .item
           a.sub-btn
             i.fas.fa-cog
@@ -59,9 +59,17 @@ head
             a.sub-item(href='tyreservices') Tyre Services
             a.sub-item(href='')
         .item
-          a(href='')
-            i.fas.fa-info-circle
-            | About
+          a.sub-btn
+            i.fas.fa-th
+            | Lists
+            // Dropdown
+            // Dropdwon arrow
+            i.fas.fa-angle-right.dropdown
+          .sub-menu
+            a.sub-item(href='parkerlist') Parker List
+            a.sub-item(href='batterylist') Battery List
+            a.sub-item(href='tyrelist') TyreClinic List
+            a.sub-item(href='tyreservicelist') TyreServices List
   .divider2
     .clinic-top
       h2.top Tyre Clinic Unit
@@ -98,7 +106,7 @@ head
           span#phonenumbererror
         br
         .form-group
-          label(for='name')  TyreSize
+          label(for='tyresize')  TyreSize
           input#tyresize.form-control(type='text' name='tyresize' placeholder='Enter car tyre size')
         span#tyresizeerror
         br
@@ -128,6 +136,11 @@ head
           label(for='receiptnumber') 
           input#receiptnumber.form-control(type='text' name='receiptnumber' style="display: none;")
           span#receiptnumbererror
+        br
+        .form-group
+          label(for='quantity')  Quantity
+          input#quantity.form-control(type='number' name='quantity' placeholder='Enter tyre quantity')
+        span#quantityerror
         br
         .form-group
           label(for='total') 

@@ -59,6 +59,9 @@ html
   body
     .container
       input#myInput(type='text' onkeyup='myFunction()' placeholder='Search for names..' class='form-control mb-3')
+      h5(style='color:#395464; width:300px;') Total tyres Captured: #{total}
+      h5#right(style='color:#395464; width:330px;') Total Revenue Collected: #{revenue}
+      a#registernew(href="tyreclinic") Register new Tyre sale
       table#myTable.table.table-bordered.table-hover
         thead.table-secondary
           tr.header
@@ -70,6 +73,7 @@ html
             th(scope='col') Phone Number
             th(scope='col') Receipt Number
             th(scope='col') Tyre Size
+            th(scope='col') Tyre Quantity
             th(scope='col') Car Type
             th(scope='col') Car Model
             th(scope='col') Total
@@ -87,6 +91,7 @@ html
                   td  #{tyre.phonenumber}  
                   td  #{tyre.receiptnumber} 
                   td  #{tyre.tyresize}
+                  td  #{tyre.quantity} 
                   td  #{tyre.type}
                   td  #{tyre.carmodel}
                   td  #{tyre.total} 

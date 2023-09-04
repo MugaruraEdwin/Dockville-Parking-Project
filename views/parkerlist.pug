@@ -17,9 +17,9 @@ html
   body
     .container
       input#myInput(type='text' onkeyup='myFunction()' placeholder='Search for names..' class='form-control mb-3')
-      h5.text-white(style='background-color:#395464; width:280px;') Total Parkers/Cars Captured: #{total}
-      h5#right.text-white(style='background-color:#395464; width:300px;') Total Revenue Collected: #{revenue}
-
+      h5(style='color:#395464; width:280px;') Total Parkers/Cars Captured: #{total}
+      h5#right(style='color:#395464; width:300px;') Total Revenue Collected: #{revenue}
+      a#registernew(href="register") Register new Parker
       table#myTable.table.table-bordered.table-hover
         thead.table-secondary
           tr.header

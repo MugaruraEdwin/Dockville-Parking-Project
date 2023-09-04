@@ -83,8 +83,6 @@ router.get('/dashboard', ensureLoggedIn('/api/login'), async (req,res, next) => 
     try{
         req.session.user = req.user;
         let loggedinUser = req.session.user.firstname;
-        // let loggedinUserPicture = req.session.user.picture;
-        // const base64String = loggedinUserPicture.toString('base64');
         let currentday = new Date().toISOString().split('T')[0];
         // let currentday = new Date().toISOString();
 
@@ -99,49 +97,8 @@ router.get('/dashboard', ensureLoggedIn('/api/login'), async (req,res, next) => 
         let documentsWithDay = current.filter(parker => parker.park === 'day');
 
         
-        // let numberOfDocumentsWithDay = documentsWithDay.length;
-
-        // Filter documents with the specific day
-        // let documentsWithDay = current.filter(parker => parker.park === 'day');
-
-        // Calculate the sum of 'total' values for the filtered documents
         let totalForDay = documentsWithDay.reduce((total, parker) => total + parker.total, 0);
 
-        // Assuming current contains the data from the Parker.find query
-
-      
-        // let day = await Parker.aggregate([
-        //     // grouping by id, can also be grouped by name / category or otherwise
-        //     {$match: { 
-        //         park : 'day'
-        //     }},
-        //     {
-        //         $group: {
-        //         _id: '$all',
-        //         revenue: { $sum: '$total'}
-        //         // dayparkers: {$sum: 1}
-
-        //     }
-        //     }
-        //     // let ages =  group{totalAge{sum}}
-        //     // If I create another array, then thats when I would move to array index[1], basing on which the groups
-        //      ])
-
-        // let totalRevenue = await Parker.aggregate([
-        //     {
-        //         $group:{
-        //             _id: '$all',
-        //             totalRevenue:{$sum:'$total'},
-        //             totalcars:{$sum: 1}
-
-        //         }
-        //     }
-        // ])
-        
-
-        // let amount = totalRevenue[0].totalRevenue;
-        // let totalCars = totalRevenue[0].totalcars;
-        // let dayRevenue = day[0].revenue;
         console.log(dRevenue);
         res.render('dashboard.pug',{totalForDay,numberOfDocuments,dRevenue,inUser:loggedinUser});
     }

@@ -37,7 +37,10 @@ router.get('/tyrelist', ensureLoggedIn('/api/login'),async (req,res) => {
         req.session.user = req.user;
         if(req.session.user.role === 'tyre' || req.session.user.role === 'toplevel' ){
             let items = await Tyre.find();
-            res.render('tyrelist.pug',{tyres: items});
+            totalTyres = items.length
+
+            let revenue = items.reduce((total, parker) => total + parker.total, 0);
+            res.render('tyrelist.pug',{tyres: items, total:totalTyres, revenue});
         }else{
             const message = 'Access restricted to tyre section managers'
             res.render('login.pug', {alert:message})

@@ -34,8 +34,12 @@ router.get('/tyreservicelist', ensureLoggedIn('/api/login'),async (req,res) => {
         req.session.user = req.user;
         if(req.session.user.role === 'tyre' || req.session.user.role === 'toplevel' ){
             let items = await Service.find();
+            totalParked = items.length
+
+            let revenue = items.reduce((total, tyre) => total + tyre.total, 0);
+
             console.log(items)
-            res.render('tyreservicelist.pug',{services: items});
+            res.render('tyreservicelist.pug',{services: items, total:totalParked, revenue});
         }else{
             const message = 'Access restricted to tyre section managers'
             res.render('login.pug', {alert:message})

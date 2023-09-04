@@ -11,6 +11,7 @@ const Validate = (event) => {
     let receiptNumber = document.tyreclinicform.receiptnumber;
     let phoneNumber = document.tyreclinicform.phonenumber;
     let email = document.tyreclinicform.email;
+    let quantity = document.tyreclinicform.quantity;
 
     let firstNameError = document.getElementById("firstnameerror");
     let lastNameError = document.getElementById("lastnameerror");
@@ -20,8 +21,9 @@ const Validate = (event) => {
     let phoneNumberError = document.getElementById("phonenumbererror");
     let emailError = document.getElementById("emailerror");
     let dateError = document.getElementById("dateerror");
-    // let receiptNumberError = document.getElementById("receiptnumbererror");
+    let quantityError = document.getElementById('quantityerror');
     let totalInput = document.getElementById('totalinput');
+
 
 
     
@@ -363,9 +365,25 @@ const Validate = (event) => {
         carModelError.textContent = "";
     }
 
+    if(quantity.value == ""){
+        quantity.style.border = "2px solid red";
+        quantityError.textContent = "Tyre quantity is required";
+        //styling error
+        quantityError.style = "color: red; font-size:11px; font-family: Helevetica,Arial;";
+        //focus cursor
+        quantity.focus();
+        // return false;
+        error++;
+    }else{
+        quantity.style.border = "2px solid green";
+        quantityError.textContent = "";
+            //focus cursor
+        date.focus();
+    }
 
-    if(!carType.value == "" && !newTyreSize == "" && !carModel == "" ){
-        totalInput.value = price;
+
+    if(!carType.value == "" && !newTyreSize == "" && !carModel == "" && !quantity.value == "" ){
+        totalInput.value = (price * quantity.value);
     }
 
 

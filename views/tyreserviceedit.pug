@@ -12,36 +12,64 @@ head
   title Tyre Services Update
 .divides
   .dashboard
-    ul.list
-      li#head Dockville Parking
-      hr
-      li#dash
-        span#position Dashboard
-      // <li class="dark">Parking</li>
-      li.nav-item.dropdown
-        a.nav-link.dropdown-toggle(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false')
-          | Parking
-        ul.dropdown-menu
-          li
-            a.dropdown-item(href='parking') Pick vehicle type
-          li
-            a.dropdown-item(href='#') Another action
-      li#dashboard.nav-item.dropdown
-        a.nav-link.dropdown-toggle(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false')
-          | Tyre Clinic
-        ul.dropdown-menu
-          li
-            a.dropdown-item(href='tyre-clinic') Tyre Price
-          li
-            a.dropdown-item(href='tyre-services') Tyre Services
-      li.nav-item.dropdown
-        a.nav-link.dropdown-toggle(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false')
-          | Battery Section
-        ul.dropdown-menu
-          li
-            a.dropdown-item(href='battery-section') Hire Battery
-          li
-            a.dropdown-item(href='batterysignout ') SignOut Battery
+    .menu-btn
+      i.fas.fa-bars
+    .side-bar
+      header
+        .close-btn
+          i.fas.fa-times
+        //- img(src='/images/Cv picture.jpeg' alt='')
+        h1 Dockville Parking
+      .menu
+        .item
+          a(href='dashboard')
+            i.fas.fa-desktop
+            | Dashboard
+        .item
+          a.sub-btn
+            i.fas.fa-table
+            | Battery Section
+            // Dropdown
+            // Dropdwon arrow
+            i.fas.fa-angle-right.dropdown
+          .sub-menu
+            a.sub-item(href='batteryservices') Battery Hire
+            a.sub-item(href='batterysignout') Battery Signout
+            // <a href="" class="sub-item"></a>
+        .item
+          a.sub-btn
+            i.fas.fa-th
+            | Parking
+            // Dropdown
+            // Dropdwon arrow
+            i.fas.fa-angle-right.dropdown
+          .sub-menu
+            a.sub-item(href='register') Park Register
+            a.sub-item(href='signout') Park Signout
+            a.sub-item(href='othersignout') Other Signout
+        .item
+          a.sub-btn
+            i.fas.fa-cog
+            | Tyre Section
+            // Dropdown
+            // Dropdwon arrow
+            i.fas.fa-angle-right.dropdown
+          .sub-menu
+            a.sub-item(href='tyreclinic') Tyre Clinic
+            a.sub-item(href='tyreservices') Tyre Services
+            a.sub-item(href='')
+        .item
+          a.sub-btn
+            i.fas.fa-th
+            | Lists
+            // Dropdown
+            // Dropdwon arrow
+            i.fas.fa-angle-right.dropdown
+          .sub-menu
+            a.sub-item(href='parkerlist') Parker List
+            a.sub-item(href='batterylist') Battery List
+            a.sub-item(href='tyrelist') TyreClinic List
+            a.sub-item(href='tyreservicelist') TyreServices List
   .divider2
     .clinic-top
       h2.top Tyre Services
