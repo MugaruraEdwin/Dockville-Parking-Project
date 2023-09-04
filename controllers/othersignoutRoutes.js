@@ -10,27 +10,34 @@ router.get('/othersignout',(req,res) => {
 // posting car park signouts 
 
 router.post('/othersignouts', async (req,res) => {
-    try{
-        // const receiptnumber = req.body.receiptnumber; // Picking up receipt number being registered for signout
+    try {
+        const receiptnumber = req.body.receiptnumber;
         const securitykey = req.body.securitykey;
-        // Check if the receipt number exists in the Parker model
-        const existingReceipt = await Parker.findOne({ securitykey: securitykey });
+    
+        // Check if either the receipt number or security key exists in the Parker model
+        const existingReceipt = await Parker.findOne({
+          $or: [
+            { securitykey: securitykey },
+            { receiptnumber: receiptnumber }
+          ]
+        });
+    
         if (!existingReceipt) {
-            const errorMessage = 'Security key not found enter correct key';
-            res.status(400).render('othersignout.pug', { error: errorMessage }); // Pass the error message to the template
-            return;
-        }else{
-            const othersignout= new Othersignout(req.body);
-            await othersignout.save();
-            console.log(req.body);
-            res.redirect('/api/othersignoutlist');
+          const errorMessage = 'Security key not found or receipt number not found. Enter correct information.';
+          res.status(400).render('othersignout.pug', { error: errorMessage });
+          return;
+        } else {
+          const othersignout = new Othersignout(req.body);
+          await othersignout.save();
+          console.log(req.body);
+          res.redirect('/api/othersignoutlist');
         }
-    }
-    catch(error){
+      } catch (error) {
         res.status(400).render('othersignout.pug');
         console.log(error);
-    }
-});
+      }
+    });
+    
 
 // returning data from db
 

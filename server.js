@@ -17,6 +17,8 @@ const tyreRoutes = require('./controllers/tyreRoutes')
 const tyreserviceRoutes = require('./controllers/tyreserviceRoutes')
 const parksignoutRoutes = require('./controllers/parksignoutRoutes')
 const othersignoutRoutes = require('./controllers/othersignoutRoutes')
+const batterysignoutRoutes = require('./controllers/batterysignoutRoutes')
+const currentlynotsignedRoutes = require('./controllers/currentlynotsignedRoutes')
 
 // app.locals.amount = 0;
 
@@ -53,6 +55,8 @@ app.use('/api', tyreRoutes)
 app.use('/api', tyreserviceRoutes)
 app.use('/api', parksignoutRoutes)
 app.use('/api', othersignoutRoutes)
+app.use('/api', batterysignoutRoutes)
+app.use('/api', currentlynotsignedRoutes)
 
 
 

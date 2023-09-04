@@ -1,0 +1,45 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title Managers
+    link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css', rel='stylesheet', integrity='sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9', crossorigin='anonymous')
+    style.
+      body {
+        padding: 20px;
+      }
+      h2 {
+        margin-bottom: 20px;
+      }
+      h1 {
+        font-size: 24px;
+      }
+      table {
+        margin-top: 20px;
+      }
+      p {
+        font-size: 18px;
+      }
+  body
+    h2 System Statistics Based on Receipt Numbers and Security Keys
+    h1 Total Receipts Issued: #{total}
+    h1 Signed Out: #{commonReceiptCount}
+    h1 Not Signed Out: #{notSignedout}
+    
+    table.table.table-striped
+      thead.table-dark
+        tr
+          th(scope='col') Receipt Numbers Signed Out
+          th(scope='col') Security keys
+      tbody
+        if commonReceiptNumbers.length
+          each receipt in commonReceiptNumbers
+            tr
+               td= receipt.receiptnumber
+               td= receipt.securitykey
+        else
+          tr
+            td(colspan='1') There are no employees in the database
+
+    script(src='../js/delete.js')

@@ -14,8 +14,14 @@ const { ensureLoggedIn } = require('connect-ensure-login');
 
 // get parker register route
 
-router.get('/register',(req,res) => {
-    res.render('register.pug');
+router.get('/register', ensureLoggedIn('/api/login'),(req,res) => {
+    req.session.user = req.user;
+    if(req.session.user.role === 'parking' || req.session.user.role === 'toplevel' ){
+        res.render('register.pug');
+    }else{
+        const message = 'Access restricted to parking managers'
+        res.render('login.pug', {alert:message})
+    }
 });
 
 // posting data to form
@@ -36,22 +42,29 @@ router.post('/regparker', async (req,res) => {
 
 // returning data from db
 
-router.get('/parkerlist', async (req,res) => {
+router.get('/parkerlist', ensureLoggedIn('/api/login'),async (req,res) => {
     try{
-        let items = await Parker.find();
-        // Revenue from cars parked
-        totalParked = items.length
+        req.session.user = req.user;
+        if(req.session.user.role === 'parking' || req.session.user.role === 'toplevel' ){
+            let items = await Parker.find();
+            // Revenue from cars parked
+            totalParked = items.length
 
-        let revenue = items.reduce((total, parker) => total + parker.total, 0);
+            let revenue = items.reduce((total, parker) => total + parker.total, 0);
 
-       
-        // req.session.totalRevenue = amount;
-        // Update the app.locals.amount with the calculated amount
-        // res.locals.amount = amount;
-        // res.render('dashboard.pug',{parkRevenue:revenue[0].totalRevenue})
-        console.log(totalParked)
-        res.render('parkerlist.pug',{parkers: items, total:totalParked, revenue});
+        
+            // req.session.totalRevenue = amount;
+            // Update the app.locals.amount with the calculated amount
+            // res.locals.amount = amount;
+            // res.render('dashboard.pug',{parkRevenue:revenue[0].totalRevenue})
+            console.log(totalParked)
+            res.render('parkerlist.pug',{parkers: items, total:totalParked, revenue});
+        }else{
+            const message = 'Access restricted to parking managers'
+            res.render('login.pug', {alert:message})
+        }
     }
+
     catch(error){
         console.log(error);
         return res.status(400).send({message: "Sorry, couldn't retrieve any parker"});
@@ -70,7 +83,7 @@ router.get('/dashboard', ensureLoggedIn('/api/login'), async (req,res, next) => 
     try{
         req.session.user = req.user;
         let loggedinUser = req.session.user.firstname;
-        let loggedinUserPicture = req.session.user.picture;
+        // let loggedinUserPicture = req.session.user.picture;
         // const base64String = loggedinUserPicture.toString('base64');
         let currentday = new Date().toISOString().split('T')[0];
         // let currentday = new Date().toISOString();
@@ -130,7 +143,7 @@ router.get('/dashboard', ensureLoggedIn('/api/login'), async (req,res, next) => 
         // let totalCars = totalRevenue[0].totalcars;
         // let dayRevenue = day[0].revenue;
         console.log(dRevenue);
-        res.render('dashboard.pug',{totalForDay,numberOfDocuments,dRevenue,inUser:loggedinUser,inPic:loggedinUserPicture});
+        res.render('dashboard.pug',{totalForDay,numberOfDocuments,dRevenue,inUser:loggedinUser});
     }
     catch(error){
         console.log(error);
@@ -150,7 +163,7 @@ router.get('/weeklyrevenue', async(req,res) => {
 
   const queryPromises = [];
 
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 7; i++) {
     const currentDate = new Date(startDate);
     currentDate.setDate(currentDate.getDate() + i);
     const formattedDate = currentDate.toISOString().split('T')[0];
@@ -184,6 +197,8 @@ router.get('/currentrevenue', async(req,res) => {
 
         let currentday = new Date().toISOString().split('T')[0];
         let current = await Parker.find({date: currentday})
+
+
  
         let dRevenue = current.reduce((total, parker) => total + parker.total, 0);
 

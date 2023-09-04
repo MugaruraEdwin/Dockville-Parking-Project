@@ -220,12 +220,13 @@ body{
 #register{
     width:680px;
     margin: 40px auto;
-    background-color: #91C8E4;
     background-color: #3a5466;
     background-color: #395464;
+    background-color: #fff;
     padding: 20px;
     color: #000;
     color: #ebecf6;
+    color: #395464;
     border-radius: 10px;
 }
 
@@ -289,7 +290,7 @@ body{
 
 body{
     min-height: 100vh;
-    background: #fff;
+    background-color: #D8D9DA;
     color: #fff;
     background-size: cover;
     background-position: center;
@@ -358,6 +359,9 @@ header h1{
     margin-right: 15px;
 
 }
+/* #begin{
+    font-family: 'fraunces', serif;
+} */
 
 .item a .dropdown{
     position: absolute;

@@ -2,9 +2,16 @@ const express = require('express');
 const Signout = require('../models/parkSignout');
 const Parker = require('../models/parkerModel')
 const router = express.Router();
+const { ensureLoggedIn } = require('connect-ensure-login')
 
-router.get('/signout',(req,res) => {
-    res.render('signout.pug');
+router.get('/signout', ensureLoggedIn('/api/login'),(req,res) => {
+    req.session.user = req.user;
+    if(req.session.user.role === 'parking' || req.session.user.role === 'toplevel' ){
+        res.render('signout.pug');
+    }else{
+        const message = 'Access restricted to parking managers'
+        res.render('login.pug', {alert:message})
+    }
 });
 
 // posting car park signouts 
@@ -13,6 +20,7 @@ router.post('/signoutpark', async (req,res) => {
     try{
         const receiptnumber = req.body.receiptnumber; // Picking up receipt number being registered for signout
         // Check if the receipt number exists in the Parker model
+        console.log(receiptnumber)
         const existingReceipt = await Parker.findOne({ receiptnumber: receiptnumber });
         if (!existingReceipt) {
             const errorMessage = 'Receipt number not found enter correct receipt number';
@@ -33,17 +41,21 @@ router.post('/signoutpark', async (req,res) => {
 
 // returning data from db
 
-router.get('/signoutlist', async (req,res) => {
+router.get('/signoutlist', ensureLoggedIn('/api/login'),async (req,res) => {
     try{
-        let items = await Signout.find();
-        // Revenue from cars parked
-
-       
-        // req.session.totalRevenue = amount;
-        // Update the app.locals.amount with the calculated amount
-        // res.locals.amount = amount;
-        // res.render('dashboard.pug',{parkRevenue:revenue[0].totalRevenue})
-        res.render('signoutlist.pug',{parkers: items});
+        req.session.user = req.user;
+        if(req.session.user.role === 'parking' || req.session.user.role === 'toplevel' ){
+            let items = await Signout.find();
+            // Revenue from cars parked
+            // req.session.totalRevenue = amount;
+            // Update the app.locals.amount with the calculated amount
+            // res.locals.amount = amount;
+            // res.render('dashboard.pug',{parkRevenue:revenue[0].totalRevenue})
+            res.render('signoutlist.pug',{parkers: items});
+        }else{
+            const message = 'Access restricted to parking managers'
+            res.render('login.pug', {alert:message})
+        }
     }
     catch(error){
         console.log(error);

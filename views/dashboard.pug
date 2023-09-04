@@ -79,25 +79,38 @@ head
           //-   i#user.fa-solid.fa-user
           //-   h4.top(style='font-weight:bold;') Manager #{inUser}
       #report.container-fluid
-        h4.report-h4 Parker Weekly Report
+        h4.report-h4 General Daily System Statistics
         p.report-p Track the system statitics
         //- button.report-button
         //- a.report-button(href='/api/weeklyrevenue') View
-        a#stat.btn.btn-primary(style='margin-left: 100px; margin-top: 10px; background-color:; color:#fff; font-size:16px; font-weight:bold;'  href="/api/weeklyrevenue") View Statistics
+        a#stat.btn.btn-primary(style='margin-left: 100px; margin-top: 10px; background-color:; color:#fff; font-size:16px; font-weight:bold;'  href="systemstatistics") View Statistics
       #mid-low.container-fluid
         .row
           .col-md-4.col-sm-12.card1
             i#car-icon.fa-solid.fa-car
-            h3.card-h3 Revenue from cars parked today
-            p  #{dRevenue}
+            h3.card-h3 Weekly Parker Revenue
+            a#small.bg-primary(href='/api/weeklyrevenue') Weekly Parker statistics
+            systemstatistics
           .col-md-4.col-sm-12.card2
             i#car-icon.fa-solid.fa-car
-            h3.card-h3 Total Cars Parked today
-            p #{numberOfDocuments}
+            h3.card-h3 View/Print signed out cars today
+            a#small.bg-primary(href='signedoutcars') Today's Signed Out Cars 
           .col-md-4.col-sm-12.card3
-            ii#car-icon.fa-solid.fa-car
-            h3.card-h3 Revenue from Day option Parkers 
-            p #{totalForDay}
+            ii#car-icon.fas.fa-cog
+            h3.card-h3 View/Print revenue from tyre services today
+            a#small.bg-primary(href='currenttyreservicesrevenue') Today's Tyre Services Revenue
+          .col-md-4.col-sm-12.card1
+            i#car-icon.fa-solid.fa-car
+            h3.card-h3 View/Print revenue from cars parked today
+            a#small.bg-primary(href='currentrevenue') Today's Park Revenue
+          .col-md-4.col-sm-12.card2
+            i#car-icon.fa-solid.fa-car-battery
+            h3.card-h3 View/Print revenue from batteries hired today
+            a#small.bg-primary(href='currentbatteryrevenue') Today's Battery Revenue
+          .col-md-4.col-sm-12.card3
+            ii#car-icon.fas.fa-cog
+            h3.card-h3 View/Print revenue from tyre clinic today
+            a#small.bg-primary(href='currenttyrerevenue') Today's Car-Clinic Revenue
       //- .mid-part
       #footer.container-fluid
         .row

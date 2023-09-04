@@ -1,12 +1,19 @@
 const express = require('express');
 const Hire = require('../models/batteryhireModel');
-const Receipt = require('../models/receiptModel')
+// const Receipt = require('../models/receiptModel')
 const router = express.Router();
+const { ensureLoggedIn } = require('connect-ensure-login');
 
 // get battery register route
 
-router.get('/batteryservices',(req,res) => {
-    res.render('batterysection.pug');
+router.get('/batteryservices', ensureLoggedIn('/api/login'),(req,res) => {
+    req.session.user = req.user;
+    if(req.session.user.role === 'battery' || req.session.user.role === 'toplevel' ){
+        res.render('batterysection.pug');
+    }else{
+        const message = 'Access restricted to battery section managers'
+        res.render('login.pug', {alert:message})
+    }
 });
 
 // posting data to form 
@@ -27,10 +34,16 @@ router.post('/regbattery', async (req,res) => {
 
 // returning battery data from db in table format
 
-router.get('/batterylist', async (req,res) => {
+router.get('/batterylist', ensureLoggedIn('/api/login'),async (req,res) => {
     try{
-        let items = await Hire.find();
-        res.render('batterylist.pug',{hires: items});
+        req.session.user = req.user;
+        if(req.session.user.role === 'battery' || req.session.user.role === 'toplevel' ){
+            let items = await Hire.find();
+            res.render('batterylist.pug',{hires: items});
+        }else{
+            const message = 'Access restricted to battery section managers'
+            res.render('login.pug', {alert:message})
+        }
     }
     catch(error){
         console.log(error);

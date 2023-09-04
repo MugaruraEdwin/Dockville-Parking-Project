@@ -67,8 +67,9 @@ head
   .divider2
     #register.container-fluid
       h3 SignOut Battery Here
-      //- h1 The total revenue is: #{parkRevenue}
-      form#batterysignout(name='batterysignout' method='POST' action='#' onsubmit='return Validate(event)')
+       if error
+        p#perror.error= error
+      form#batterysignout(action='/api/signoutbattery' method='POST' name='batterysignout' onsubmit='return Validate(event)')
         .form-group
           label(for='firstname') First Name
           input#firstname.form-control(type='text' placeholder="Enter receiver's first name" name='firstname')
@@ -83,17 +84,17 @@ head
         br
         .form-group
           label(for='receiptnumber') Receipt Number
-          input#receiptnumber.form-control(type='text' placeholder='Enter Receipt Number')
+          input#receiptnumber.form-control(type='text' placeholder='Enter Receipt Number' name='receiptnumber')
         span#receiptnumbererror
         br
         .form-group
           label(for='time') Time 
-          input#time.form-control(type='time')
+          input#time.form-control(type='time' name='time')
         span#timeerror
         br
         .form-group
           label(for='Date') Date
-          input#date.form-control(type='date')
+          input#date.form-control(type='date' name='date')
         span#dateerror
         br
         button.btn.btn-primary.form-width(type='submit' name='submit') Sign Out

@@ -13,6 +13,11 @@ const OthersignoutSchema = new mongoose.Schema({
         required:true,
         trim:true
     },
+    receiptnumber:{
+        type:String,
+        required:true,
+        unique:true
+    },
     securitykey:{
         type:String,
         required:true,

@@ -24,6 +24,8 @@ head
         span#l l
         span#e e
       p -----------------------------  or ---------------------------
+      if alert 
+        p#pcol= alert
       form(action='/api/login' name='loginform' method='POST')
         .form-group
           label(for='email') Email address

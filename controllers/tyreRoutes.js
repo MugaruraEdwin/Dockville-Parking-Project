@@ -1,10 +1,17 @@
 const express = require('express');
 const Tyre = require('../models/tyreModel');
 const router = express.Router();
+const { ensureLoggedIn } = require('connect-ensure-login');
 
 
-router.get('/tyreclinic',(req,res) => {
-    res.render('tyre-clinic.pug');
+router.get('/tyreclinic', ensureLoggedIn('/api/login'),(req,res) => {
+    req.session.user = req.user;
+    if(req.session.user.role === 'tyre' || req.session.user.role === 'toplevel' ){
+        res.render('tyre-clinic.pug');
+    }else{
+        const message = 'Access restricted to tyre section managers'
+        res.render('login.pug', {alert:message})
+    }
 });
 
 // posting data to form
@@ -25,10 +32,16 @@ router.post('/regtyre', async (req,res) => {
 
 // returning tyres register data from db in table format
 
-router.get('/tyrelist', async (req,res) => {
+router.get('/tyrelist', ensureLoggedIn('/api/login'),async (req,res) => {
     try{
-        let items = await Tyre.find();
-        res.render('tyrelist.pug',{tyres: items});
+        req.session.user = req.user;
+        if(req.session.user.role === 'tyre' || req.session.user.role === 'toplevel' ){
+            let items = await Tyre.find();
+            res.render('tyrelist.pug',{tyres: items});
+        }else{
+            const message = 'Access restricted to tyre section managers'
+            res.render('login.pug', {alert:message})
+        }
     }
     catch(error){
         console.log(error);

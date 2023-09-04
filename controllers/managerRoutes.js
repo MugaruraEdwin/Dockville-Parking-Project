@@ -39,7 +39,7 @@ router.post('/login', passport.authenticate('local',
 (req,res) => {
     req.session.user= req.user
     let loggedinUser = req.session.user.firstname;
-    let loggedinUserPicture = req.session.user.picture;
+    // let loggedinUserPicture = req.session.user.picture;
     // const base64String = loggedinUserPicture.toString('base64');
     console.log(loggedinUser)
     // console.log(base64String)

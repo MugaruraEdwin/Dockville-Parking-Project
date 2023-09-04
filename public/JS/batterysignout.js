@@ -103,11 +103,8 @@ const Validate = (event) =>{
         // return false; // stops form submission until you collect the input before - only for errors
     }
 
-    const uniqueNumberRegex = /^BB-([0-9]{3})+$/;
-    const personalCarRegex = /^PC-([0-9]{3})+$/;
-    const truckCarRegex = /^TC-([0-9]{3})+$/;
-    const coasterCarRegex = /^CC-([0-9]{3})+$/;
-    const taxiCarRegex = /^TAXI-([0-9]{3})+$/;
+    const batRegex = /^BAT-([0-9]{9,10})+$/;
+  
 
     if(receiptNumber.value == ""){
         receiptNumber.style.border = "2px solid red";
@@ -118,9 +115,9 @@ const Validate = (event) =>{
         receiptNumber.focus();
         // return false;
         error++;
-    }else if(!(receiptNumber.value.match(uniqueNumberRegex) || receiptNumber.value.match(personalCarRegex) || receiptNumber.value.match(truckCarRegex) || receiptNumber.value.match(coasterCarRegex) || receiptNumber.value.match(taxiCarRegex))){
+    }else if(!(receiptNumber.value.match(batRegex))){
         receiptNumber.style.border = "2px solid red";
-        receiptNumberError.textContent = "Correct format: TC-000 for trucks / PC-000 for personalcars / TAX1-000 for taxis / CC-000 for coasters / BB-000 for bodas";
+        receiptNumberError.textContent = "Enter using correct format for Battery Receipts";
         //styling error
         receiptNumberError.style = "color: red; font-size:11px; font-family: Helevetica,Arial;";
         //focus cursor

@@ -44,10 +44,6 @@ router.get('/batteryreceipt',(req,res) => {
     res.render('batteryreceipt.pug');
 });
 
-router.get('/batterysignout',(req,res) => {
-    res.render('batterysignout.pug');
-});
-
 router.get('/tyrereceipt',(req,res) => {
     res.render('batteryreceipt.pug');
 });

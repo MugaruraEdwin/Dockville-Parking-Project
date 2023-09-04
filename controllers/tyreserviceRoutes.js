@@ -1,10 +1,16 @@
 const express = require('express');
 const Service = require('../models/tyreserviceModel')
 const router = express.Router();
+const { ensureLoggedIn } = require('connect-ensure-login');
 
-
-router.get('/tyreservices',(req,res) => {
-    res.render('tyre-services.pug');
+router.get('/tyreservices', ensureLoggedIn('/api/login'),(req,res) => {
+    req.session.user = req.user;
+    if(req.session.user.role === 'tyre' || req.session.user.role === 'toplevel' ){
+        res.render('tyre-services.pug');
+    }else{
+        const message = 'Access restricted to tyre section managers'
+        res.render('login.pug', {alert:message})
+    } 
 });
 
 router.post('/regtyreservice', async (req,res) => {
@@ -23,11 +29,17 @@ router.post('/regtyreservice', async (req,res) => {
 
 // return services registered from the database 
 
-router.get('/tyreservicelist', async (req,res) => {
+router.get('/tyreservicelist', ensureLoggedIn('/api/login'),async (req,res) => {
     try{
-        let items = await Service.find();
-        console.log(items)
-        res.render('tyreservicelist.pug',{services: items});
+        req.session.user = req.user;
+        if(req.session.user.role === 'tyre' || req.session.user.role === 'toplevel' ){
+            let items = await Service.find();
+            console.log(items)
+            res.render('tyreservicelist.pug',{services: items});
+        }else{
+            const message = 'Access restricted to tyre section managers'
+            res.render('login.pug', {alert:message})
+        }
     }
     catch(error){
         console.log(error);
