@@ -79,47 +79,64 @@ head
       h4 Enter details to determine Car Tyre Price 
       form#tyreclinicform(name='tyreclinicform' method='POST' action='/api/tyre/edit?id='+tyre._id onsubmit='return Validate(event);')
         .form-group
-          label(for='firstname') First Name
+          label(for='firstname') 
+            | First Name
+            span.red   *
           input#firstname.form-control(type='text' placeholder="Enter driver's first name" name='firstname' value=tyre.firstname)
           // first name error
           span#firstnameerror
         br
         .form-group
-          label(for='lastname') Last Name
+          label(for='lastname') 
+            | Last Name
+            span.red   *
           input#lastname.form-control(type='text' placeholder="Enter driver's last name" name='lastname' value=tyre.lastname)
           // last name error
           span#lastnameerror
         br
         .form-group
-          label(for='email') Email
+          label(for='email') 
+            | Email
+            span.red   *
           input#email.form-control(type='email' name='email' value=tyre.email)
           span#emailerror
         br
         .form-group
-          label(for='Date') Date
+          label(for='Date') 
+           | Date
+           span.red   *
           input#date.form-control(type='date' name='date' value=tyre.date)
         span#dateerror
         br
         .form-group
-          label(for='phonenumber') Phone Number
+          label(for='phonenumber') 
+            | Phone Number
+            span.red   *
           input#phonenumber.form-control(type='tel' name='phonenumber' value=tyre.phonenumber)
           span#phonenumbererror
         br
         .form-group
-          label(for='receiptnumber') ReceiptNumber
+          label(for='receiptnumber') 
+            | ReceiptNumber
+            span.red   *
           input#receiptnumber.form-control(type='text' name='receiptnumber' value=tyre.receiptnumber)
           span#receiptnumbererror
         br
         .form-group
-          label(for='quantity')  Quantity
+          label(for='quantity')  
+            | Quantity
+            span.red   *
           input#quantity.form-control(type='number' name='quantity' placeholder='Enter tyre quantity' value=tyre.quantity)
         span#quantityerror
         br
         .form-group
-          label(for='name')  TyreSize
+          label(for='name')  
+            | TyreSize
+            span.red   *
           input#tyresize.form-control(type='text' name='tyresize' placeholder='Enter car tyre size' value=tyre.tyresize)
         span#tyresizeerror
         br
+        span.red   *
         select#type.form-select(aria-label='Default select example' name='type')
           option(value='') Select Automobile make
           option(value='truck' selected=(tyre.type === 'truck')) Truck
@@ -129,6 +146,7 @@ head
           option(value='bodaboda' selected=(tyre.type === 'bodaboda')) BodaBoda
         span#typeerror
         br
+        span.red   *
         select#carmodel.form-select(aria-label='Default select example' name='carmodel')
             option(value='') Select Automobile model
             option(value='hatchback' selected=(tyre.carmodel === 'hatchback')) Hatch Back

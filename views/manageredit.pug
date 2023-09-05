@@ -1,0 +1,85 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='preconnect' href='https://fonts.googleapis.com')
+  link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
+  link(href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700&family=Montserrat:wght@100;500;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet")
+  script(src='https://kit.fontawesome.com/aff02a4ba3.js' crossorigin='anonymous')
+  link(rel='stylesheet' href='/libs/css/bootstrap.css')
+  link(rel='stylesheet' href='/css/signup.css')
+  title Sign Up
+.container
+  .row
+    #back-img.col-sm-8.margin
+      p(is='para-0')
+        span#smart Dockville parking 
+        |  allows you to manage or plan and schedule as we focus on simply delivering quality
+      p#para Mugarura Edwin
+      p#para-1 Development Agency
+    .col-sm-4.margin
+      h2 Create An Account
+      form#signup_form(name='signup_form' action='/api/manager/edit?id='+manager._id method='POST' onsubmit='return Validate(event)')
+        .form-group
+          label(for='firstname')
+            | First Name 
+            span.red   *
+          input#firstname.form-control(type='text' placeholder='Enter First Name' name='firstname' value=manager.firstname)
+        span#firstnameerror
+        .form-group
+          label(for='lastname')
+            | Last Name
+            span.red   *
+          input#lastname.form-control(type='text' placeholder='Enter Last Name' name='lastname' value=manager.lastname)
+        span#lastnameerror
+        .form-group
+          label(for='email')
+            | Email address
+            span.red   *
+          input#email.form-control(type='email' aria-describedby='emailHelp' placeholder='Enter email' name='email' value=manager.email)
+        span#emailerror
+        br
+        span.red   Required
+        select#role.form-select(aria-label='Role' name='role')
+          option(value='') Pick Manager Role  
+          option(value='parking' selected=(manager.role === 'parking')) Parking Section 
+          option(value='tyre' selected=(manager.role === 'tyre')) Tyre Clinic 
+          option(value='battery' selected=(manager.role === 'battery')) Battery Section
+          option(value='toplevel' selected=(manager.role === 'toplevel')) Overall manager
+        span#roleerror
+        //- br
+        //- .form-group
+        //-   label(for='picture')
+        //-     | Take / Choose a Picture of your face:
+        //-     span.red   *
+        //-   input#picture.form-control(type='file' name='picture' accept='image/  *' capture='user')
+        //- span#pictureerror
+        br
+        .form-group
+          label(for='password')
+            | Password
+            span.red   *
+          input#password.form-control(type='password' placeholder='Password' name='password' value=manager.password)
+        span#passworderror
+        .form-group
+          label(for='confirmpassword')
+            | Confirm Password
+            span.red   *
+          input#confirmpassword.form-control(type='password' placeholder='Retype Password' name='confirmpassword' value=manager.password)
+        span#confirmpassworderror
+        button#sumbit.btn.btn-primary.form-width(type='submit' name='submit') Update
+        button.btn.btn-light.form-width.google
+          | Sign Up with 
+          span#g-1 G
+          span#o-1 o
+          span#o-2 o
+          span#g-2 g
+          span#l l
+          span#e e
+        p.account
+          | Already have an account? 
+          a(href='login') Login
+
+script(src='/libs/js/bootstrap.bundle.min.js')
+script(src='../JS/signup.js')

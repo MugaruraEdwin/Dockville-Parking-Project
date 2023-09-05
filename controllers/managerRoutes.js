@@ -2,6 +2,7 @@ const express = require('express');
 const Manager = require('../models/managerModel');
 const passport = require('passport');
 const router = express.Router();
+const { ensureLoggedIn } = require('connect-ensure-login');
 
 // get employee signup route
 
@@ -67,10 +68,16 @@ router.get('/logout', (req,res) => {
 
 // returning manager data from db in table format
 
-router.get('/list', async (req,res) => {
+router.get('/list', ensureLoggedIn('/api/login'), async (req,res) => {
     try{
-        let items = await Manager.find();
-        res.render('managerlist.pug',{managers: items});
+        req.session.user = req.user;
+        if(req.session.user.role === 'toplevel'){
+            let items = await Manager.find();
+            res.render('managerlist.pug',{managers: items});
+        }else{
+            const message = 'Access restricted to top-level managers'
+            res.render('login.pug', {alert:message})
+        }
     }
     catch(error){
         console.log(error);
@@ -94,12 +101,27 @@ router.post('/manager/delete', async (req,res) => {
 
 // first get form 
 
-router.get('/manager/edit', async (req,res) => {
+router.get('/manager/edit/:id', async (req,res) => {
     try{
         const manage = await Manager.findOne({_id: req.params.id});
+        res.render('manageredit.pug', {manager:manage})
     }
     catch(error){
+        res.status(400).send('Could not find manager in the database');
+        console.log(error);
+    }
+})
 
+// edit it rather post back the data 
+
+router.post('/manager/edit', async (req,res) => {
+    try{
+        await Manager.findOneAndUpdate({_id: req.query.id},req.body);
+        res.redirect('/api/list')
+    }
+    catch(error){
+        res.status(400).send('Could not edit Manager data');
+        console.log(error);
     }
 })
 

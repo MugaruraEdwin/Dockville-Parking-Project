@@ -80,32 +80,43 @@ head
       h4#begin Enter details to confirm Battery hire 
       form#batterysection(name='batterysection' action='/api/regbattery' method='POST' onsubmit='return Validate(event)')
         .form-group
-          label(for='firstname') First Name
+          label(for='firstname') 
+            | First Name
+            span.red   *
           input#firstname.form-control(type='text' placeholder="Enter receiver's first name" name='firstname')
           // first name error
           span#firstnameerror
         br
         .form-group
-          label(for='lastname') Last Name
+          label(for='lastname') 
+            | Last Name
+            span.red   *
           input#lastname.form-control(type='text' placeholder="Enter receiver's last name" name='lastname')
           // last name error
           span#lastnameerror
         br
         .form-group
-          label(for='phonenumber') Phone Number
+          label(for='phonenumber') 
+            | Phone Number
+            span.red   *
           input#phonenumber.form-control(type='tel' name='phonenumber')
         span#phonenumbererror
         br
         .form-group
-          label(for='time') Time 
+          label(for='time') 
+            | Time 
+            span.red   *
           input#time.form-control(type='time' name="time")
         span#timeerror
         br
         .form-group
-          label(for='Date') Date
+          label(for='Date') 
+            | Date
+            span.red   *
           input#date.form-control(type='date' name='date')
         span#dateerror
         br
+        span.red   *
         select#gender.form-select(aria-label='Gender' name='gender')
           option(value='') Gender
           option(value='male') Male
@@ -113,15 +124,20 @@ head
         span#gendererror
         br
         .form-group
-          label(for='nin') NIN Number
+          label(for='nin') 
+            | NIN Number
+            span.red   *
           input#nin.form-control(type='text' placeholder='Enter NIN number' name='nin')
         span#ninerror
         br
         .form-group
-          label(for='name')  Battery Size
+          label(for='name')  
+            | Battery Size
+            span.red   *
           input#batterysize.form-control(type='text' name='batterysize' placeholder='Enter battery size')
         span#batterysizeerror
         br
+        span.red   *
         select.form-select(aria-label='Default select example' name='hire')
           option(value='') Select time for hire
           option(value='week') 7 days

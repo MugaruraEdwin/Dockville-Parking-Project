@@ -79,13 +79,17 @@ head
         p#perror.error= error
       form#batterysignout(action='/api/batterysignout/edit?id='+hire._id method='POST' name='batterysignout' onsubmit='return Validate(event)')
         .form-group
-          label(for='firstname') First Name
+          label(for='firstname') 
+            | First Name
+            span.red   *
           input#firstname.form-control(type='text' placeholder="Enter receiver's first name" name='firstname' value=hire.firstname)
           // first name error
           span#firstnameerror
         br
         .form-group
-          label(for='lastname') Last Name
+          label(for='lastname') 
+            | Last Name
+            span.red   *
           input#lastname.form-control(type='text' placeholder="Enter receiver's last name" name='lastname' value=hire.lastname)
           // last name error
           span#lastnameerror
@@ -96,12 +100,16 @@ head
         //- span#receiptnumbererror
         //- br
         .form-group
-          label(for='time') Time 
+          label(for='time') 
+            | Time
+            span.red   * 
           input#time.form-control(type='time' name='time' value=hire.time)
         span#timeerror
         br
         .form-group
-          label(for='Date') Date
+          label(for='Date') 
+            | Date
+            span.red   *
           input#date.form-control(type='date' name='date' value=hire.date)
         span#dateerror
         br

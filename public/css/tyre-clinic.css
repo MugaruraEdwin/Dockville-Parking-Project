@@ -397,3 +397,9 @@ header h1{
 #police:hover{
     color: #ED7B7B;
 }
+
+.red{
+    color: red;
+    font-style: italic;
+    font-size: 14px;
+}

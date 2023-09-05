@@ -407,4 +407,9 @@ header h1{
     color: #ED7B7B;
 }
 
+.red{
+    color: red;
+    font-style: italic;
+    font-size: 16px;
+}
 /* Css from dashboard*/

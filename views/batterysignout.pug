@@ -79,29 +79,37 @@ head
         p#perror.error= error
       form#batterysignout(action='/api/signoutbattery' method='POST' name='batterysignout' onsubmit='return Validate(event)')
         .form-group
-          label(for='firstname') First Name
+          label(for='firstname') 
+            | First Name
           input#firstname.form-control(type='text' placeholder="Enter receiver's first name" name='firstname')
           // first name error
           span#firstnameerror
         br
         .form-group
-          label(for='lastname') Last Name
+          label(for='lastname') 
+            | Last Name
           input#lastname.form-control(type='text' placeholder="Enter receiver's last name" name='lastname')
           // last name error
           span#lastnameerror
         br
         .form-group
-          label(for='receiptnumber') Receipt Number
+          label(for='receiptnumber')  
+            | Receipt Number
+            span.red   *
           input#receiptnumber.form-control(type='text' placeholder='Enter Receipt Number' name='receiptnumber')
         span#receiptnumbererror
         br
         .form-group
-          label(for='time') Time 
+          label(for='time') 
+            | Time 
+            span.red   *
           input#time.form-control(type='time' name='time')
         span#timeerror
         br
         .form-group
-          label(for='Date') Date
+          label(for='Date') 
+            | Date
+            span.red   *
           input#date.form-control(type='date' name='date')
         span#dateerror
         br

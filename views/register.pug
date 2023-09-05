@@ -78,36 +78,52 @@ head
       br
       form#truckregister(action='/api/regparker' onsubmit='return Validate(event);' name='truckregister' method='POST')
         .form-group
-          label(for='firstname') First Name
+          label(for='firstname') 
+            | First Name
+            span.red   *
           input#firstname.form-control(type='text' placeholder="Enter driver's first name" name='firstname')
           // first name error
           span#firstnameerror
         br
         .form-group
-          label(for='lastname') Last Name
+          label(for='lastname') 
+            | Last Name
+            span.red   *
           input#lastname.form-control(type='text' placeholder="Enter driver's last name" name='lastname')
           // last name error
           span#lastnameerror
         br
         .form-group
-          label(for='numberplate') Number Plate
+          label(for='numberplate')
+            | Number Plate
+            span.red   *
           input#numberplate.form-control(type='text' placeholder='Enter Number Plate' name='numberplate')
           // number plate error
           span#numberplateerror
         br
+        span.red   *
         select.form-select(aria-label='Default select example' name='color')
           option(value='') Select car color
           option(value='red') Red
           option(value='yellow') Yellow
-          option(value='red') Red
           option(value='green') Green
+          option(value='blue') Blue
+          option(value='purple') Purple
+          option(value='white') White
+          option(value='orange') Orange
+          option(value='black') Black
+          option(value='brown') Brown
+          option(value='grey') Grey
         span#colorerror
         br
         .form-group
-          label(for='email') Email
+          label(for='email') 
+            | Email
+            span.red   *
           input#email.form-control(type='email' name='email')
           span#emailerror
         br
+        span.red   *
         select#model.form-select(aria-label='Default select example' name='model')
           option(value='') Select Automobile model
           option(value='hactchback') Hatch Back
@@ -123,10 +139,13 @@ head
         span#modelerror
         br
         .form-group
-          label(for='timeofarrival') Time of Arrival
+          label(for='timeofarrival') 
+            | Time of Arrival
+            span.red   *
           input#time.form-control(type='time' name='time')
         span#timeerror
         br
+        span.red   *
         select.form-select(aria-label='Default select example' name='type')
           option(value='') Select Automobile type
           option(value='truck') Truck
@@ -137,21 +156,28 @@ head
         span#typeerror
         br
         .form-group
-          label(for='Date') Date
+          label(for='Date') 
+            | Date
+            span.red   *
           input#date.form-control(type='date' name='date')
         span#dateerror
         br
         .form-group
-          label(for='securitykey') Security Key
+          label(for='securitykey') 
+            | Security Key
+            span.red   *
           input#securitykey.form-control(type='text' placeholder="Enter driver's security key" name='securitykey')
           // security key error
           span#securitykeyerror
         br
         .form-group
-          label(for='phonenumber') Phone Number
+          label(for='phonenumber') 
+            | Phone Number
+            span.red   *
           input#phonenumber.form-control(type='tel' name='phonenumber')
           span#phonenumbererror
         br
+        span.red   *
         select.form-select(aria-label='Default select example' name='park')
           option(value='') Select time for parking
           option(value='day') Day

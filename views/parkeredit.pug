@@ -76,35 +76,54 @@ head
       h3#begin Register Automobile 
       form#truckregister(action='/api/parker/edit?id='+parker._id onsubmit='return Validate(event);' name='truckregister' method='POST')
         .form-group
-          label(for='firstname') First Name
+          label(for='firstname') 
+            | First Name
+            span.red   *
           input#firstname.form-control(type='text' placeholder="Enter driver's first name" name='firstname' value=parker.firstname)
           // first name error
           span#firstnameerror
         br
         .form-group
-          label(for='lastname') Last Name
+          label(for='lastname') 
+          | Last Name
+          span.red   *
           input#lastname.form-control(type='text' placeholder="Enter driver's last name" name='lastname' value=parker.lastname)
           // last name error
           span#lastnameerror
         br
         .form-group
-          label(for='numberplate') Number Plate
+          label(for='numberplate') 
+            | Number Plate
+            span.red   *
           input#numberplate.form-control(type='text' placeholder='Enter Number Plate' name='numberplate' value=parker.numberplate)
           // number plate error
           span#numberplateerror
         br
+        span.red   *
         select.form-select(aria-label='Default select example' name='color')
             option(value='') Select car color
             option(value='red' selected=(parker.color === 'red')) Red
             option(value='yellow' selected=(parker.color === 'yellow')) Yellow
             option(value='green' selected=(parker.color === 'green')) Green
+            option(value='blue' selected=(parker.color === 'blue')) Blue
+            option(value='purple' selected=(parker.color === 'purple')) Purple
+            option(value='white' selected=(parker.color === 'white')) White
+            option(value='orange' selected=(parker.color === 'orange')) Orange
+            option(value='black' selected=(parker.color === 'black')) Black
+            option(value='brown' selected=(parker.color === 'brown')) Brown
+            option(value='grey' selected=(parker.color === 'grey')) Grey
+
+
         span#colorerror
         br
         .form-group
-          label(for='email') Email
+          label(for='email') 
+            | Email
+            span.red   *
           input#email.form-control(type='email' name='email' value=parker.email)
           span#emailerror
         br
+        span.red   *
         select#model.form-select(aria-label='Default select example' name='model')
             option(value='') Select Automobile model
             option(value='hatchback' selected=(parker.model === 'hatchback')) Hatch Back
@@ -120,10 +139,13 @@ head
         span#modelerror
         br
         .form-group
-          label(for='timeofarrival') Time of Arrival
+          label(for='timeofarrival') 
+            | Time of Arrival
+            span.red   *
           input#time.form-control(type='time' name='time' value=parker.time)
         span#timeerror
         br
+        span.red   *
         select.form-select(aria-label='Default select example' name='type')
             option(value='') Select Automobile type
             option(value='truck' selected=(parker.type === 'truck')) Truck
@@ -134,15 +156,20 @@ head
         span#typeerror
         br
         .form-group
-          label(for='Date') Date
+          label(for='Date') 
+            | Date
+            span.red   *
           input#date.form-control(type='date' name='date' value=parker.date)
         span#dateerror
         br
         .form-group
-          label(for='phonenumber') Phone Number
+          label(for='phonenumber') 
+            | Phone Number
+            span.red   *
           input#phonenumber.form-control(type='tel' name='phonenumber' value=parker.phonenumber)
           span#phonenumbererror
         br
+        span.red   *
         select.form-select(aria-label='Default select example' name='park')
             option(value='') Select time for parking
             option(value='day' selected=(parker.park === 'day')) Day
